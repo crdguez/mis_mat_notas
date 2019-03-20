@@ -1,2 +1,4 @@
-# mis_mat_notes
-Mis apuntes de matemáticas
+# mis_mat_notas
+Mis apuntes de matemáticas.
+
+Apuntes realizados en latex

@@ -1,0 +1,61 @@
+%\documentclass{standalone}
+%\usepackage[utf8]{inputenc}
+%\usepackage{graphicx}
+%\usepackage{xcolor}
+%\usepackage{pgf,tikz}
+%\usepackage{mathrsfs}
+%\usetikzlibrary{shapes, calc, shapes, arrows, math, babel, positioning}
+%
+%\begin{document}
+
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+\tikzstyle{level 1} = [level distance=3.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2} = [level distance=3.5cm, sibling distance=2cm]
+
+\begin{tikzpicture}[grow=right, sloped, scale=0.7]
+\node[bag] {$3_B, 2_N$}
+    child {
+        node[bag] {$3_B, 1_N$}        
+            child {
+                node[end, label=right:
+                    {$P(N_1\cap N_2)=\frac{2}{5}\cdot\frac{1}{4}$}] {}
+                edge from parent
+                node[above] {$N$}
+                node[below]  {$1/4$}
+            }
+            child {
+                node[end, label=right:
+                    {$P(N_1\cap B_2)=\frac{2}{5}\cdot\frac{3}{4}$}] {}
+                edge from parent
+                node[above] {$B$}
+                node[below] {$3/4$}
+            }
+            edge from parent 
+            node[above] {$N$}
+            node[below]  {$2/5$}
+    }
+    child {
+        node[bag] {$2_B, 2_N$}        
+        child {
+                node[end, label=right:
+                    {$P(B_1\cap N_2)=\frac{3}{5}\cdot\frac{2}{4}$}] {}
+                edge from parent
+                node[above] {$N$}
+                node[below]  {$2/4$}
+            }
+            child {
+                node[end, label=right:
+                    {$P(B_1\cap B_2)=\frac{3}{5}\cdot\frac{2}{4}$}] {}
+                edge from parent
+                node[above] {$B$}
+                node[below]  {$2/4$}
+            }
+        edge from parent         
+            node[above] {$B$}
+            node[below]  {$3/5$}
+    };
+\end{tikzpicture}
+
+%
+%\end{document}

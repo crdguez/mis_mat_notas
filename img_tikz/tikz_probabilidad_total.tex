@@ -1,0 +1,79 @@
+%\documentclass{standalone}
+%\usepackage[utf8]{inputenc}
+%\usepackage{graphicx}
+%\usepackage{xcolor}
+%\usepackage{pgf,tikz}
+%\usepackage{mathrsfs}
+%\usetikzlibrary{shapes, calc, shapes, arrows, math, babel, positioning}
+%
+%\begin{document}
+
+
+\begin{tikzpicture}
+\tikzset{
+    myrectangle/.style={
+        draw=black,
+        minimum width=4cm,
+        minimum height=2cm,
+    },
+    B/.style={
+        draw=blue,
+    },
+    A/.style={
+        draw=green,
+    },
+    >=stealth,
+    node distance=1cm and 1cm,
+}
+
+    \node[myrectangle] (left) {};
+    \node[myrectangle] (right) [right=of left] {};
+    \path (left.south east) -- coordinate (tmp) (right.south west);
+    \node[myrectangle] (bottom) [below=of tmp] {};
+
+    % "contents" of left node
+    \path (left.north west) -- node[pos=.5] {$ESO_1$} (left.center);
+    \path (left.north east) -- node[pos=.5] {$ESO_2$} (left.center);    
+    \path (left.south west) -- node[pos=.5] {$ESO_3$} (left.center);
+    \path (left.south east) -- node[pos=.5] {$ESO_4$} (left.center);
+    
+    
+    
+\draw[B] ($(left.north west) ! .5 ! (left.north east)$) -- ($(left.south west) ! .5 ! (left.south east)$);
+
+\draw[B] ($(left.north west) ! .5 ! (left.south west)$) -- ($(left.north east) ! .5 ! (left.south east)$);
+
+
+    % "contents" of right node
+    \draw[A] (right.center) ellipse [x radius=1.3cm, y radius=.7cm] node {$G$};
+
+    % "contents" of bottom node
+    \path (bottom.north west) -- node[pos=.73] {$G\cap E_1$} (bottom.center);
+    \path (bottom.north east) -- node[pos=.73] {$G\cap E_2$} (bottom.center);    
+    \path (bottom.south west) -- node[pos=.73] {$G\cap E_3$} (bottom.center);
+    \path (bottom.south east) -- node[pos=.73] {$G\cap E_4$} (bottom.center);
+
+\draw[B] ($(bottom.north west) ! .5 ! (bottom.north east)$) -- ($(bottom.south west) ! .5 ! (bottom.south east)$);
+
+\draw[B] ($(bottom.north west) ! .5 ! (bottom.south west)$) -- ($(bottom.north east) ! .5 ! (bottom.south east)$);
+
+    \draw[A] (bottom.center) ellipse [x radius=1.3cm, y radius=.7cm];
+
+    % arrows
+    \begin{scope}[
+        shorten >=.2cm,
+        shorten <=.2cm,
+    ]
+        \draw[->, black] (left) -- (bottom);
+        \draw[->, black] (right) -- (bottom);
+    \end{scope}
+
+    % labels on top
+    \node at (left.north east) [anchor=south east] {E};
+    \node at (right.north east) [anchor=south east] {E};
+    \node at (bottom.north east) [anchor=south east] {E};
+
+\end{tikzpicture}
+
+%
+%\end{document}

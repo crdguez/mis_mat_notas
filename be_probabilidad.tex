@@ -1,0 +1,229 @@
+\documentclass[11pt]{beamer}
+\usetheme{Boadilla}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+
+\usepackage{pgf,tikz}
+
+\usetikzlibrary{shapes, calc, shapes, arrows, math, babel, positioning}
+\newcommand{\degre}{\ensuremath{^\circ}}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+%\author{}
+\title{Probabilidad}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+%\institute{} 
+\date{} 
+%\subject{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+\begin{frame}{Experimentos aleatorios}
+\begin{block}{}
+Un experimento es aleatorio cuando depende de muchos factores y cualquier pequeña modificación de alguno implica obtener un resultado diferente.
+\end{block}
+\begin{itemize}
+ \item \textbf{Aleatorio}: Lanzar un dado y ver el resultado
+ \item \textbf{Determinista}: Calcular el tiempo que tarda en caer un objeto al suelo desde una distancia determinada
+ \end{itemize} 
+
+\end{frame}
+
+
+
+\begin{frame}{Espacio muestral y sucesos}
+\begin{itemize}
+\item \textbf{Espacio muestral}: Conjunto de los posibles resultados del experimento. Se denota: $E$
+\item \textbf{Sucesos simples o elementales}: Cualquiera de los elementos del espacio muestral
+\item \textbf{Sucesos compuestos}: Sucesos formados por varios simples. 
+\item \textbf{Suceso seguro}: Suceso compuesto por los elementos del Espacio muestral. Se cumple siempre
+\item \textbf{Suceso imposible}: Cualquier suceso que no se cumpla nunca. Se denota con el símbolo: $\varnothing$
+\item \textbf{Suceso contrario}: Si $A$ es un suceso, $\overline{A}$ es el suceso contrario. Es aquel que se cumple cuando no se cumple $A$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ejemplos:}
+Lanzamos un dado y comprobamos la cara que sale:
+\begin{itemize}
+\item \textbf{Espacio muestral}: $E=\lbrace 1,2,3,4,5,6 \rbrace $
+\item \textbf{Sucesos simples o elementales}: $1$, $2$, $3$, $4$, $5$ ó $6$
+\item \textbf{Sucesos compuestos}: $A=\lbrace que\ salga\ par\rbrace=\lbrace2,4,6\rbrace$
+\item \textbf{Suceso seguro}: $E=\lbrace 1,2,3,4,5,6 \rbrace $
+\item \textbf{Suceso imposible}: $\varnothing=\lbrace que\ salga \ mayor \ que \ 6\rbrace$
+\item \textbf{Suceso contrario}: Si $A=\lbrace que\ salga\ par\rbrace=\lbrace2,4,6\rbrace$, $\overline{A}=\lbrace que\ salga\ impar\rbrace=\lbrace1,3,5\rbrace$ 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+{Operaciones con sucesos y relaciones}
+
+\begin{block}{}
+la \textbf{unión} de los sucesos $A$ y $B$ es aquel suceso que contiene a todos los elementos de $A$ y a  los de $B$. Se denota: $A\cup B$ 
+\end{block}
+
+\input{img_tikz/tikz_union}
+\end{frame}
+
+\begin{frame}
+{Operaciones con sucesos y relaciones}
+
+\begin{block}{}
+la \textbf{intersección} de los sucesos $A$ y $B$ es aquel suceso que contiene a todos los elementos que están tanto en $A$ como en $B$. Se denota: $A\cap B$ 
+\end{block}
+
+\input{img_tikz/tikz_interseccion}
+\end{frame}
+
+\begin{frame}
+{Operaciones con sucesos y relaciones}
+
+ Tomamos como experimento el resultado de lanzar un dado, y los sucesos: \\
+\begin{tabular}{l}
+$A=\lbrace que\ salga\ par\rbrace=\lbrace2,4,6\rbrace$ \\
+$B=\lbrace que\ sea\ mayor\ que\ 3\rbrace=\lbrace4,5,6\rbrace$ \\
+$C=\lbrace que\ salga\ impar\rbrace=\lbrace1,3,5\rbrace$
+\end{tabular}
+
+\begin{itemize}	
+	\item $A\cup B=\lbrace2,4,5,6\rbrace$ \\
+	%\input{img_tikz/tikz_ej_union}
+	\item $A\cap B=\lbrace4,6\rbrace$\\
+	%\input{img_tikz/tikz_ej_interseccion}
+
+	\item $A\cup C=\lbrace1,2,3,4,5,6\rbrace=E$
+	\item $A\cap C=\varnothing$
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Compatibilidad de sucesos}
+\begin{block}{}
+Se dice que dos sucesos son \textbf{incompatibles} cuando su intersección es el conjunto vacío. En caso contrario se dice que son \textbf{compatibles}.
+\end{block}
+
+Tomamos como experimento el resultado de lanzar un dado, y los sucesos: \\
+\begin{tabular}{l}
+$A=\lbrace que\ salga\ par\rbrace=\lbrace2,4,6\rbrace$ \\
+$B=\lbrace que\ sea\ mayor\ que\ 3\rbrace=\lbrace4,5,6\rbrace$ \\
+$C=\lbrace que\ salga\ impar\rbrace=\lbrace1,3,5\rbrace$
+\end{tabular}
+
+$A$ y $B$ son compatibles y $A$ y $C$ incompatibles.
+
+\end{frame}
+
+\begin{frame}{Regla de Laplace}
+\begin{block}{}
+ La probabilidad de un suceso de un experimento regular viene determinada por la \textbf{Regla de Laplace}:
+$$P(A)=\dfrac{Casos\ favorables}{Casos\ posibles} $$
+\end{block}
+
+Al lanzar un dado, los casos posibles son 6 ($\lbrace1,2,3,4,5,6\rbrace$):\\
+\begin{tabular}{l}
+La probabilidad de sacar un 3: $\lbrace3\rbrace\to \dfrac{1}{6}$\\
+La probabilidad de sacar par: $\lbrace2,4,6\rbrace\to\dfrac{3}{6}$ \\
+La probabilidad de sacar más de 4: $\lbrace5,6\rbrace\to\dfrac{2}{6}$
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Propiedades de la probabilidad} La probabilidad de un experimento regular cumple las siguientes propiedades:
+\begin{itemize}
+\item $0 \leq P(A) \leq 1$ 
+\item $P(E) = 1$ y $P(\varnothing) = 0$
+\item $P(A) + P(\overline A) = 1$
+\item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$. Si $A$ y $B$ son incompatibles: $P(A \cup B) = P(A) + P(B)$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Probabilidad condicionada}
+\begin{block}{}
+$$P(A|B)=\dfrac{P(A\cap B)}{P(B)}$$
+\end{block}
+Despejando:
+$$P(A\cap B) = P(A|B)\cdot P(B)$$
+
+\begin{itemize}
+\item Se dice que dos sucesos son \textbf{independientes} cuando la probabilidad de cada uno no depende del resultado del otro. 
+
+$$A\ y \ B\ son \ independientes \Longleftrightarrow P(B|A)=P(B)$$
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ejemplo sin remplazamiento}
+En una urna hay tres bolas blancas y dos negras. Se extraen dos bolas \textbf{sin} reemplazamiento:
+\input{img_tikz/tikz_arbol_1}
+\begin{itemize}
+\item Probabilidad de que sean del mismo color: \\
+$P((B_1\cap B_2)\cup (N_1\cap N_2))=\frac{3}{10}+\frac{1}{10}=\frac{2}{5}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ejemplo con remplazamiento}
+En una urna hay tres bolas blancas y dos negras. Se extraen dos bolas \textbf{con} reemplazamiento:
+\input{img_tikz/tikz_arbol_2}
+\begin{itemize}
+\item Probabilidad de que sean del mismo color: \\
+$P((B_1\cap B_2)\cup (N_1\cap N_2))=\frac{9}{25}+\frac{4}{25}=\frac{13}{25}$
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Teorema de la probabilidad total}
+Si $A_1$, $A_2$, ..., $A_n$   son sucesos incompatibles dos a dos y cuya unión es todo el espacio muestral, entonces la probabilidad de cualquier otro suceso $B$ es:
+
+$$P(B)=\sum_{i=1}^n P(A_i)\cdot  P(B|A_i) $$
+\end{frame}
+
+\begin{frame}{Ejemplo de probabilidad total}
+En una urna en la que hay tres bolas blancas y dos negras. Si se extraen dos bolas \textbf{sin} reemplazamiento:
+\input{img_tikz/tikz_arbol_3}
+
+$$P(B_2)=P(B_1)\cdot P(B_2|B_1) + P(N_1)\cdot P(B_2|N_1)
+= \frac{3}{5}\cdot\frac{2}{4} + \frac{2}{5}\cdot\frac{3}{4}$$
+\end{frame}
+
+
+\begin{frame}{Teorema de Bayes}
+Si $A_1$, $A_2$, ..., $A_n$   son sucesos incompatibles dos a dos y cuya unión es todo el espacio muestral, y $B$ otro suceso cualquiera:
+
+$$P(A_i|B)=\dfrac{P(A_i \cap B)}{\sum_{i=1}^n P(A_i)\cdot  P(B|A_i)} $$
+
+\end{frame}
+
+\begin{frame}{Ejemplo de Bayes}
+En una urna en la que hay tres bolas blancas y dos negras. Si se extraen dos bolas\textbf{sin} reemplazamiento:
+\input{img_tikz/tikz_arbol_3}
+
+$$P(B_1|B_2)=\dfrac{P(B_1 \cap B_2)}{P(B_1)\cdot  P(B_2|B_1)+P(N_1)\cdot  P(N_2|B_1)}=\dfrac{\dfrac{3}{5}\cdot\dfrac{2}{4}}{\dfrac{3}{5}\cdot\dfrac{2}{4} + \dfrac{2}{5}\cdot\dfrac{3}{4}}$$
+\end{frame}
+
+
+
+\end{document}

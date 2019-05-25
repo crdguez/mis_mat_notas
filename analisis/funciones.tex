@@ -244,25 +244,26 @@ $$\lim_{x \to 0^-} \frac{1}{x} = -\infty$$
   \path[name path=y] plot[smooth] coordinates {(-0.3,2) (2,1.5) (4,2.8) (6,5)};
   \scope[name intersections = {of = x and y, name = i}]
     \fill[gray!20] (i-1) -- (i-2 |- i-1) -- (i-2) -- cycle;
-    \draw      (0.3,0.5) -- (6.7,4.7) node[pos=0.8, below right] {Sekante};
+    \draw      (0.3,0.5) -- (6.7,4.7) node[pos=0.8, below right] {};
     \draw[red] plot[smooth] coordinates {(-0.3,2) (2,1.5) (4,2.8) (6,5)};
     \draw (i-1) node[dot, label = {above:$P$}] (i-1) {} -- node[left]
       {$f(x_0)$} (i-1 |- O) node[dot, label = {below:$x_0$}] {};
     \path (i-2) node[dot, label = {above:$Q$}] (i-2) {} -- (i-2 |- i-1)
       node[dot] (i-12) {};
     \draw           (i-12) -- (i-12 |- O) node[dot,
-                              label = {below:$x_0 + \varepsilon$}] {};
-    \draw[blue, <->] (i-2) -- node[right] {$f(x_0 + \varepsilon) - f(x_0)$}
+                              label = {below:$x_0 + h$}] {};
+    \draw[blue, <->] (i-2) -- node[right] {$f(x_0 + h) - f(x_0)$}
                               (i-12);
-    \draw[blue, <->] (i-1) -- node[below] {$\varepsilon$} (i-12);
-    \path       (i-1 |- O) -- node[below] {$\varepsilon$} (i-2 |- O);
+    \draw[blue, <->] (i-1) -- node[below] {$h$} (i-12);
+    \path       (i-1 |- O) -- node[below] {$h$} (i-2 |- O);
     \draw[gray]      (i-2) -- (i-2 -| xmax);
     \draw[gray, <->] ([xshift = -0.5cm]i-2 -| xmax) -- node[fill = white]
-      {$f(x_0 + \varepsilon)$}  ([xshift = -0.5cm]xmax);
+      {$f(x_0 + h)$}  ([xshift = -0.5cm]xmax);
   \endscope
 \end{tikzpicture}
 
 \newpage
+
 
 \begin{tabular}{|c|c|}\hline 
 Función  & Derivada  \\ 
@@ -286,6 +287,18 @@ $f(x) = \tan x$ &                  $f'(x)$= $\frac{1}{{{{\cos }^2}x}}$\\
 %f(x) = arc cos x         $f'(x)$= $\frac{{ - 1}}{{\sqrt {1 - {x^2}} }}$
 %f(x) = arc tg x           $f'(x)$= $\frac{1}{{1 + {x^2}}}$
 %f(x) = arc cotg x       $f'(x)$= $\frac{{ - 1}}{{1 + {x^2}}}$
+\hline
+
+\end{tabular} 
+
+\begin{tabular}{|c|}\hline 
+Operaciones con derivadas  \\ 
+\hline
+$y=u + v \rightarrow y' = u' + v'$    \\ 
+$y=u - v \rightarrow y' = u' - v'$    \\
+$y=K\cdot u \rightarrow y' = K \cdot u'$    \\ 
+$y=u \cdot v \rightarrow y' = u'\cdot v + u\cdot v'$    \\
+$y= \frac{u}{v}  \rightarrow y' = \frac{u'\cdot v - u\cdot v'}{v^2}$    \\  
 \hline
 
 \end{tabular} 

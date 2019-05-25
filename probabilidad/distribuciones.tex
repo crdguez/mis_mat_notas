@@ -84,16 +84,22 @@ $x_i$ &  &  $P(x_i)$\\ \hline
 
 Podemos representar la relación anterior mediante una función:
 
-
+%$$f\colon \begin{array}{lc} 
+%         & X \rightarrow Y \\ 
+%         & x \mapsto f(x)=\frac{x-1}{2} 
+%         \end{array}$$
+%
+%
 %$$f\colon \begin{array}{>{\displaystyle}l} 
 %          X \rightarrow Y \\ 
 %          x\mapsto f(x)=\frac{x-1}{2} 
 %         \end{array}$$
 
-$$P\colon \begin{array}{>{\displaystyle}l} 
+$$P\colon \begin{array}{ll} 
           X \rightarrow \mathbb{R} \\ 
-          x_i\rightarrow P(X=x_i)=\frac{1}{n} 
+          x_i\mapsto P(X=x_i)=\frac{1}{n} 
          \end{array}$$
+
 Todas las caras tienen la misma probabilidad: $\frac{1}{n}$, siendo $n$ el número de caras, o tamaño del espacio muestral. 
 
 A este tipo de distribución se le llama \textbf{uniforme discreta}.
@@ -120,9 +126,9 @@ $$P\left(Salgan \ 3 \ caras\right)=\binom{5}{3}\left(\frac{1}{2}\right)^3\cdot  
 
 Si asociamos al experimento "lanzar 5 monedas" le asignamos la variable "número de caras obtenidas", podemos determinar la probabilidad mediante la siguiente función.
 
-$$P\colon \begin{array}{>{\displaystyle}l} 
+$$P\colon \begin{array}{l} 
           X \rightarrow \mathbb{R} \\ 
-          k\rightarrow P(X=k)=\binom{5}{k}\left(\frac{1}{2}\right)^k\cdot  \left(\frac{1}{2}\right)^{5-k} 
+          k\mapsto P(X=k)=\binom{5}{k}\left(\frac{1}{2}\right)^k\cdot  \left(\frac{1}{2}\right)^{5-k} 
          \end{array}$$
 
 Esto es un ejemplo de distribución binomial de tamaño $5$ y probabilidad $0.5$ .
@@ -149,6 +155,11 @@ A este tipo de variable y su distribución de probabilidades se le llama binomia
 En general tendremos una binomial de tamaño n y probabilidad p, cuando el experimento simple se haga n veces y la probabilidad de acierto se p.
 
 La función de probabilidad en este caso nos queda:
+ 
+ $$P\colon \begin{array}{l} 
+          X \rightarrow \mathbb{R} \\ 
+          k\mapsto P(X=k)=\binom{n}{k}\left(p\right)^k\cdot  \left(1-p\right)^{n-k} 
+         \end{array}$$
  
 
 	

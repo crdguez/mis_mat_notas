@@ -1,0 +1,156 @@
+\begin{center}
+\begin{tikzpicture}[every day/.style={anchor = north}]
+\calendar[
+  dates=\year-09-01 to \year-11-30,
+  name=cal,
+  day yshift = 3em,
+  day code=
+  {
+    \node[name=\pgfcalendarsuggestedname,every day,shape=rectangle,
+    minimum height= .8cm, text width = 6.3cm, draw = gray]{ \scriptsize{\tikzdaytext}};
+    \draw (-3.cm, -.0ex) node[anchor = west]{\scriptsize%
+      \pgfcalendarweekdayshortname{\pgfcalendarcurrentweekday}};
+  },
+  execute before day scope=
+  {
+    \ifdate{day of month=1}
+    {
+      % Shift right
+      \pgftransformxshift{6.6cm}
+      % Print month name
+      \draw (0,0)node [shape=rectangle, minimum height= .7cm,
+        text width = 6.3cm, fill = red, text= white, draw = red, text centered]
+        {\textbf{\pgfcalendarmonthname{\pgfcalendarcurrentmonth}}};
+    }{}
+    \input{formato_calen}
+  },
+ execute at begin day scope=
+  {
+    % each day is shifted down according to the day of month
+    \pgftransformyshift{-.8*\pgfcalendarcurrentday cm}
+  }
+];
+
+%\input{nombres_calen}
+\end{tikzpicture}
+
+% Repeat the whole thing for the second page
+\pagebreak
+
+\begin{tikzpicture}[every day/.style={anchor = north}]
+\calendar[
+  dates=\year-12-01 to \nyear-02-29,
+  name=cal,
+  day yshift = 3em,
+  day code=
+  {
+    \node[name=\pgfcalendarsuggestedname,every day,shape=rectangle,
+    minimum height= .8cm, text width = 6.3cm, draw = gray]{ \scriptsize{\tikzdaytext}};
+    \draw (-3.cm, -.0ex) node[anchor = west]{\scriptsize%
+      \pgfcalendarweekdayshortname{\pgfcalendarcurrentweekday}};
+  },
+  execute before day scope=
+  {
+    \ifdate{day of month=1}
+    {
+      % Shift right
+      \pgftransformxshift{6.6cm}
+      % Print month name
+      \draw (0,0)node [shape=rectangle, minimum height= .7cm,
+        text width = 6.3cm, fill = red, text= white, draw = red, text centered]
+        {\textbf{\pgfcalendarmonthname{\pgfcalendarcurrentmonth}}};
+    }{}
+    \input{formato_calen}
+  },
+ execute at begin day scope=
+  {
+    % each day is shifted down according to the day of month
+    \pgftransformyshift{-.8*\pgfcalendarcurrentday cm}
+  }
+];
+
+%\input{nombres_calen}
+\end{tikzpicture}
+
+% Repeat the whole thing for the second page
+\pagebreak
+
+\begin{tikzpicture}[every day/.style={anchor = north}]
+\calendar[
+  dates=\nyear-03-01 to \nyear-05-31,
+  name=cal,
+  day yshift = 3em,
+  day code=
+  {
+    \node[name=\pgfcalendarsuggestedname,every day,shape=rectangle,
+    minimum height= .8cm, text width = 6.3cm, draw = gray]{ \scriptsize{\tikzdaytext}};
+    \draw (-3.cm, -.0ex) node[anchor = west]{\scriptsize%
+      \pgfcalendarweekdayshortname{\pgfcalendarcurrentweekday}};
+  },
+  execute before day scope=
+  {
+    \ifdate{day of month=1}
+    {
+      % Shift right
+      \pgftransformxshift{6.6cm}
+      % Print month name
+      \draw (0,0)node [shape=rectangle, minimum height= .7cm,
+        text width = 6.3cm, fill = red, text= white, draw = red, text centered]
+        {\textbf{\pgfcalendarmonthname{\pgfcalendarcurrentmonth}}};
+    }{}
+    \input{formato_calen}
+  },
+ execute at begin day scope=
+  {
+    % each day is shifted down according to the day of month
+    \pgftransformyshift{-.8*\pgfcalendarcurrentday cm}
+  }
+];
+
+%\input{nombres_calen}
+\end{tikzpicture}
+
+% Repeat the whole thing for the second page
+\pagebreak
+
+\begin{tikzpicture}[every day/.style={anchor = north}]
+\calendar[
+  dates=\nyear-06-01 to \nyear-08-31,
+  name=cal,
+  day yshift = 3em,
+  day code=
+  {
+    \node[name=\pgfcalendarsuggestedname,every day,shape=rectangle,
+    minimum height= .8cm, text width = 6.3cm, draw = gray]{ \scriptsize{\tikzdaytext}};
+    \draw (-3.cm, -.0ex) node[anchor = west]{\scriptsize%
+      \pgfcalendarweekdayshortname{\pgfcalendarcurrentweekday}};
+  },
+  execute before day scope=
+  {
+    \ifdate{day of month=1}
+    {
+      % Shift right
+      \pgftransformxshift{6.6cm}
+      % Print month name
+      \draw (0,0)node [shape=rectangle, minimum height= .7cm,
+        text width = 6.3cm, fill = red, text= white, draw = red, text centered]
+        {\textbf{\pgfcalendarmonthname{\pgfcalendarcurrentmonth}}};
+    }{}
+    \input{formato_calen}
+  },
+ execute at begin day scope=
+  {
+    % each day is shifted down according to the day of month
+    \pgftransformyshift{-.8*\pgfcalendarcurrentday cm}
+  }
+];
+
+%\input{nombres_calen}
+\end{tikzpicture}
+
+% Repeat the whole thing for the second page
+\pagebreak
+
+
+
+\end{center}

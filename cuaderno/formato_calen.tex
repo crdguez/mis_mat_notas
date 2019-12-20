@@ -1,0 +1,19 @@
+\ifdate{workday}
+{
+  % normal days are white
+  \tikzset{every day/.style={fill=white}}
+  % Vacation  gray background
+  \ifdate{between=\year-09-01 and \year-09-12}{%
+    \tikzset{every day/.style={fill=gray!30}}}{}
+  \ifdate{between=\year-12-21 and \nyear-01-06}{%
+    \tikzset{every day/.style={fill=gray!30}}}{}
+  \ifdate{equals=10-10}{\tikzset{every day/.style={fill=gray!30}}}{}
+  \ifdate{equals=10-11}{\tikzset{every day/.style={fill=gray!30}}}{}
+  \ifdate{equals=11-01}{\tikzset{every day/.style={fill=gray!30}}}{}
+  \ifdate{equals=05-01}{\tikzset{every day/.style={fill=gray!30}}}{}
+
+}{}
+% Saturdays and half holidays (Christma's and New year's eve)
+\ifdate{Saturday}{\tikzset{every day/.style={fill=red!10}}}{}
+% Sundays and full holidays
+\ifdate{Sunday}{\tikzset{every day/.style={fill=red!20}}}{}

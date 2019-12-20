@@ -1,0 +1,21 @@
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{xcolor}
+\usepackage{pgffor}
+\usepackage[cm]{fullpage}
+
+\def\stdpat       {std}        % Standard, ten squares per inch (s.p.i.)
+\def\stdeightpat  {stdeight}   % Standard, eight s.p.i.
+\def\majminpat    {majmin}     % Eight s.p.i. w/ major grid ever 1/2 inch
+% Indica si std, stdeight, majmin
+%\def\usepat{majmin} 
+
+\definecolor{plum}{rgb}{0.36078, 0.20784, 0.4}
+\definecolor{chameleon}{rgb}{0.30588, 0.60392, 0.023529}
+\definecolor{cornflower}{rgb}{0.12549, 0.29020, 0.52941}
+\definecolor{scarlet}{rgb}{0.8, 0, 0}
+\definecolor{brick}{rgb}{0.64314, 0, 0}
+\definecolor{sunrise}{rgb}{0.80784, 0.36078, 0}
+
+\colorlet{minorcolor}{cornflower!35}
+\colorlet{majorcolor}{cornflower!60}

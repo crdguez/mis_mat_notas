@@ -1,0 +1,44 @@
+\pagebreak
+
+% Indica si std, stdeight, majmin
+%\def\usepat{stdeight}
+
+
+
+\begin{tikzpicture}[remember picture, overlay]
+
+  % Change "very thin" to "thin" if the lines are too thin.
+  \tikzset{
+    minorgrid/.style={minorcolor, thin},
+    majorgrid/.style={majorcolor, thin},
+  }
+
+\ifx\usepat\stdpat
+% Draw a grid with 10 squares per inch.
+\draw[style=minorgrid, shift={(current page.south west)},shift={(0.2in,0.2in)}] (0,0) coordinate (a) grid
+[step=0.1in] (20.0cm,27.95cm) coordinate (b);
+
+% Draw a frame around the grid.
+\draw[style=majorgrid] (a) rectangle (b);
+\fi
+
+\ifx\usepat\stdeightpat
+% Draw a grid with 10 squares per inch.
+\draw[style=minorgrid, shift={(current page.south west)},shift={(0.1875in,0.1875in)}] (0,0) coordinate (a)
+grid [step=0.125in] (20.0cm,27.95cm) coordinate (b);
+
+% Draw a frame around the grid.
+\draw[style=majorgrid] (a) rectangle (b);
+\fi
+
+\ifx\usepat\majminpat
+% Draw a grid with 10 squares per inch.
+\draw[style=minorgrid, shift={(current page.south west)},shift={(0.225in,0.25in)}] (0,0) coordinate (a) grid [step=0.125in] (20.0cm,27.95cm) coordinate (b);
+
+\draw[style=majorgrid, shift={(current page.south west)},shift={(0.225in,0.25in)}] (0,0) coordinate (a) grid [step=0.5in] (20.0cm,27.95cm) coordinate (b);
+
+% Draw a frame around the grid.
+\draw[style=majorgrid] (a) rectangle (b);
+\fi
+
+\end{tikzpicture}

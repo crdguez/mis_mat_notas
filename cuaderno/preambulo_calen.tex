@@ -1,0 +1,58 @@
+\usepackage{pdflscape}
+%\usepackage{lscape}
+%\usepackage[absolute]{textpos}
+
+\usepackage[spanish]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage{tikz} 			% Use the calendar.sty style
+
+\usepackage{translator}	% German Month and Day names
+\usepackage{fancyhdr}		% header and footer
+\usepackage{fix-cm}		% Large year in header
+
+\usepackage[headheight = 2cm, margin=.5cm,
+  top = 3.2cm, nofoot]{geometry}
+%  \usepackage[landscape, headheight = 2cm, margin=.5cm, top = 3.2cm, nofoot]{geometry}
+\usetikzlibrary{calc}
+\usetikzlibrary{calendar}
+%%%<
+\usepackage{verbatim}
+\usepackage[tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+%\begin{comment}
+%:Title: A calender for doublesided DIN-A4
+%Tags: Calendar library;Calendars
+%:Author: Robert Krause
+%
+%An example how the calendar package can be used to provide
+%an doublesided calendar for the whole year.
+%\end{comment}
+
+%\renewcommand*\familydefault{\sfdefault}
+
+% Names of Holidays are inserted by employing this macro
+\def\termin#1#2{
+  \node [anchor=north west, text width= 3.4cm] at
+    ($(cal-#1.north west)+(3em, 0em)$) {\tiny{#2}};
+}
+
+
+\fancypagestyle{style1}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.0pt}
+\setlength{\headheight}{0.ex}
+}
+
+
+\fancypagestyle{style2}{
+\renewcommand{\headrulewidth}{0.0pt}
+\setlength{\headheight}{6.9ex}
+\setlength{\footskip}{0.ex}
+\fancyfoot{}
+\chead{
+  \fontsize{30}{36}\selectfont\textbf{\year/\nyear}
+  \Large\textbf{Grupo: \rule{3cm}{.5pt}}\hfill
+}
+}

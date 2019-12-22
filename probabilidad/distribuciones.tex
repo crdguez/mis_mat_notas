@@ -133,6 +133,13 @@ $$P\colon \begin{array}{l}
 
 Esto es un ejemplo de distribución binomial de tamaño $5$ y probabilidad $0.5$ .
 
+Realizando los cálculos para $k = 1,...,5 $, la distribución de probabilidad de $X$ que resulta es:\\
+$\left\{ 0 : 0.03125, \  1 : 0.15625, \  2 : 0.3125, \  3 : 0.3125, \  4 : 0.15625, \  5 : 0.03125 \right\}$
+
+Y gráficamente: 
+
+\input{img_tikz/tikz_binomial_0}
+
 
 \paragraph{Generalización de distribución Binomial:} Hablaremos de una distribución binomial cuando:
 \begin{itemize}
@@ -148,11 +155,12 @@ En la situación anterior, la distribución binomial vendrá determinada por dos
 \end{itemize}
 
 
-A este tipo de variable y su distribución de probabilidades se le llama binomial
+A este tipo de variable y su distribución de probabilidades se le llama binomial. \\
 
-\paragraph{Ejemplo:} Así en el ejemplo de las monedas, el experimento se compone de 5 lanzamientos de moneda. Si sale cara es acierto y si no fracaso. La variable aleatoria asociada al experimento será el número de caras que salen al lanzar 5 monedas. Esta variable sigue una distribución binomial y por tanto:
 
-En general tendremos una binomial de tamaño n y probabilidad p, cuando el experimento simple se haga n veces y la probabilidad de acierto se p.
+\paragraph{Ejemplo:} Así en el ejemplo de las monedas, el experimento se compone de \textbf{5 lanzamientos de moneda}. Si sale cara es acierto y si no fracaso. La variable aleatoria asociada al experimento será el número de caras que salen al lanzar 5 monedas. Esta variable sigue una distribución binomial.
+
+\textbf{En general tendremos una binomial de tamaño $n$ y probabilidad $p$}, cuando el experimento simple se haga $n$ veces y la probabilidad de acierto sea $p$.
 
 La función de probabilidad en este caso nos queda:
  
@@ -160,10 +168,18 @@ La función de probabilidad en este caso nos queda:
           X \rightarrow \mathbb{R} \\ 
           k\mapsto P(X=k)=\binom{n}{k}\left(p\right)^k\cdot  \left(1-p\right)^{n-k} 
          \end{array}$$
+         
+\paragraph{Ejemplos:} Representación gráfica de algunas binomiales:    
+         
+\input{img_tikz/tikz_binomial}
+         
  
 
-	
+\subsubsection{Distribución Normal}
 
+\input{img_tikz/tikz_normal}
+
+\input{img_tikz/tikz_normal_2}
 
 
 

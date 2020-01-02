@@ -1,0 +1,87 @@
+\section{Inferencia Estadística}
+
+\paragraph{Objetivo:} Obtener conclusiones válidas para toda la población a partir del estudio de una muestra.  
+
+\paragraph{¿Cómo?:} Mediante los métodos de estimación puntual y de intervalos de confianza
+
+\section{Estimación puntual} Se recurre a cálculos con los datos de la muestra para inferir algunos aspectos de la población. Al cálculo realizado se le llama estadístico.
+
+\paragraph{Definición:} Dado $\lambda$, un parámetro de la población. Decimos que el estadístico $\widehat{\lambda}$
+es un estimador suyo si es
+un parámetro obtenido a partir de una muestra y cuyo es asignar un valor
+aproximado a $\lambda$.
+
+La estimación puntual sirve de poco mientras
+desconozcamos cuál es el grado de aproximación del estimador al parámetro real. Por ese motivo se procede
+a la estimación mediante un intervalo.
+
+\section{Estimación por intervalos de confianza} 
+
+ A partir de una muestra aleatoria de tamaño $n$, podemos estimar el valor de un parámetro de la población del siguiente modo:
+ 
+\begin{itemize}
+\item Dando un intervalo dentro del cual confiamos que esté el parámetro. Se llama \textbf{intervalo de confianza}.
+\item Hallando la probabilidad de que tal cosa ocurra. A dicha probabilidad se la llama \textbf{nivel de confianza}.
+\end{itemize}
+
+
+\subsection{Estimación de la media por intervalo de confianza} Se desea estimar la media, $\mu$, de una población cuya desviación típica, $\sigma$, es
+conocida.
+Para ello, se recurre a una muestra de tamaño n de la cual se obtiene la media,
+$\overline{x}$ (media muestral).
+Si la población de partida es normal, o si el tamaño de la muestra es $n \geqslant 30 $, el intervalo de confianza de $\mu$, con un nivel de confianza de $\left( 1 - \alpha \right)\cdot 100 \% $, es: $$ \left( \overline{x} - z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} ,  \overline{x} + z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}
+\right)$$
+
+siendo: \begin{itemize}
+\item $\overline{x}$: La media de los datos de la muestra
+\item $z_{\alpha / 2}$: El valor de la distribución normal $Z\leadsto N\left((0,1\right)$
+\item $\sigma$: La desviación típica de la distribución de la población (o si no se conoce de un estimador sesgado de la misma)
+\item $n$: El tamaño de la muestra
+\end{itemize}
+
+\paragraph{Error máximo cometido:} $$E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}$$
+Es el radio del entorno dado por el intervalo de confianza. \textbf{NOTA:} Disminuye al aumentar el tamaño de la muestra y por tanto si se quiere garantizar un error determinado para un nivel de confianza habrá que tomar muestras de al menos un \textbf{tamaño determinado de la muestra}. 
+
+\paragraph{Ejemplo 2:} Se desea realizar una investigación para estimar el peso medio de los recién nacidos de madres fumadoras. Se admite un error máximo de 50 gramos, con una confianza del 95\%. Si por estudios anteriores se sabe que la desviación típica del peso medio de tales recién nacidos es de 400 gramos, ¿qué tamaño mínimo de muestra se necesita en la investigación?\\
+
+\subparagraph{Solución:}$E=50$, Confianza=$95$ y $\sigma=400$ \\
+$\alpha=1-0.95=0.05 \to \frac{\alpha}{2}=\frac{0.05}{2}=0.025$
+. \\ Por tanto, el valor crítico será: \\
+$P\left(Z \leqslant z_{\alpha / 2} \right)= 0.95 + 0.025 = 0.975 \to z_{\alpha / 2} = 1.96$\\ A partir de la definición de error máximo admitido:
+$$E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} \to 
+n = \left( \frac{z_{\alpha / 2} \cdot \sigma}{E} \right) ^ 2$$
+Luego: \\
+$$n = \left( \frac{1.96 \cdot 400}{50} \right) ^ 2\approx 245.8534 \to n=246
+$$
+
+\subsection{Estimación de la proporción por intervalo de confianza} Se desea estimar la proporción, $p$, que una determinada característica se cumple en una población.
+Para ello, se recurre a una muestra de tamaño n de la cual se calcula la 
+$\overline{p}$ (proporción muestral).
+Si la población de partida es normal, o si el tamaño de la muestra es $n \geqslant 30 $, el intervalo de confianza de $p$, con un nivel de confianza de $\left( 1 - \alpha \right)\cdot 100 \% $, es: $$ \left( \overline{p} - z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}} ,  \overline{p} + z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}}\right)$$
+
+En este caso el error máximo admitido es:
+
+$$E=z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}}$$
+
+\paragraph{Ejemplo:} Para estimar la proporción de personas con sobrepeso en una población se ha tomado una
+muestra aleatoria simple de tamaño 100 personas, de las cuales 21 tienen sobrepeso. Calcular el intervalo
+de confianza al 96\% para la proporción de personas con sobrepeso en la población.
+
+\subparagraph{Solución:}$\overline{p}=0.21$, Confianza=$96$ \\
+$\alpha=1-0.96=0.04 \to \frac{\alpha}{2}=\frac{0.04}{2}=0.02$
+. \\ Por tanto, el valor crítico será: \\
+
+$P\left(Z \leqslant z_{\alpha / 2} \right)= 0.96 + 0.02 = 0.98 \to z_{\alpha / 2} \approx 2.05$
+\input{img_tikz/tikz_intervalo_1} 
+A partir de la definición de error máximo admitido:
+$$E=z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}}\approx 2.05 \cdot \sqrt{\frac{0.21\cdot 0.79}{100}}\approx 0.08$$
+Luego el intervalo es: \\ 
+$$\left( 0.21 - 0.08 , 0.21 + 0,08 \right) = \left(0.13, 0.29 \right)
+$$
+Por tanto con una alta probabilidad, en concreto 0.96, el porcentaje de individuos con sobrepeso en la población se encuentra entre el 13\% y el 29\% 
+
+
+
+
+
+

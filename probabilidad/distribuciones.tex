@@ -1,10 +1,10 @@
-\section{Distribuciones de probabilidad}
+\section{Variables aleatorias y distribuciones de probabilidad}
 
-\paragraph{Finalidad :} Abstraer matemáticamente un tipo de experimento aleatorio. Y, con ello, poder estimar de manera teórica lo que sucedería de manera experimental mediante una estadística 
+\paragraph{Finalidad :} Abstraer matemáticamente un tipo de experimento aleatorio. Y, con ello, poder estimar de manera teórica lo que sucedería de manera experimental mediante una estadística. 
 
-\paragraph{¿Cómo?:} Mediante variables aleatorias y distribuciones de probabilidad asociadas a esas variables
+\paragraph{¿Cómo?:} Mediante variables aleatorias y distribuciones de probabilidad asociadas a esas variables:
 
-\subsection{Variables aleatorias} Una variable aleatoria es una función que a cada suceso
+\section{Variables aleatorias} Una variable aleatoria es una función que a cada suceso
 elemental de un espacio muestral le asigna un número. Para hacer referencia a las variables se usan las letras: $X$, $Y$, ...
 
 \paragraph{Ejemplo:} Sea el experimento aleatorio “lanzar un dado”: El espacio muestral lo componen las 6 caras del dado. Podemos asignar la variable $X$ que a cada cara le asocia el número que represente su cara.
@@ -45,13 +45,16 @@ X,X & $\rightarrow$ & 0 \\
 
 \paragraph{Ejemplo de variables continua:} \emph{X = “Distancia al centro de la diana medida desde la posición en que cae un dardo lanzado por un tirador experto” }. En este caso la variable puede tomar cualquier valor en el rango entre 0 y el radio de la diana 
 
-\subsection{Distribuciones de probabilidad}
+\section{Distribuciones de probabilidad}
 
 Llamaremos Distribución de probabilidad a la relación entre los valores de la variable y sus probabilidades.
 
 Estas relaciones se pueden indicar mediante funciones. El tratamiento de estas funciones es diferente según las variables sean discretas o continuas.
 
-\subsubsection{Distribución uniforme discreta}
+Veamos algunas distribuciones:
+
+
+\section{Distribución uniforme discreta}
 
 \paragraph{Ejemplo: } Sea la variable \emph{X = “Número obtenido al lanzar una dado”}\\
 A cada valor de la variable podemos asignarle su probabilidad:
@@ -104,7 +107,7 @@ Todas las caras tienen la misma probabilidad: $\frac{1}{n}$, siendo $n$ el núme
 
 A este tipo de distribución se le llama \textbf{uniforme discreta}.
 
-\subsubsection{Distribución Binomial}
+\section{Distribución Binomial}
 
 \paragraph{Ejemplo:} Queremos calcular las probabilidades de que al lanzar 5 monedas, obtengamos tres caras.
 Un suceso que cumple el enunciado es:
@@ -133,8 +136,20 @@ $$P\colon \begin{array}{l}
 
 Esto es un ejemplo de distribución binomial de tamaño $5$ y probabilidad $0.5$ .
 
-Realizando los cálculos para $k = 1,...,5 $, la distribución de probabilidad de $X$ que resulta es:\\
-$\left\{ 0 : 0.03125, \  1 : 0.15625, \  2 : 0.3125, \  3 : 0.3125, \  4 : 0.15625, \  5 : 0.03125 \right\}$
+Realizando los cálculos para $k = 1,...,5 $, la distribución de probabilidad de $X$ que resulta es:
+
+\begin{center}
+\begin{tabular}{ccc}
+ & $P(X)$ &  \\
+$x_i$ &  &  $P(x_i)$\\ \hline 
+0 & $\rightarrow$ & $0.03125$ \\ 
+1 & $\rightarrow$ & $0.15625$ \\ 
+2 & $\rightarrow$ & $0.3125$ \\ 
+3 & $\rightarrow$ & $0.3125$ \\ 
+4 & $\rightarrow$ & $0.15625$ \\ 
+5 & $\rightarrow$ & $0.03125$ \\ 
+\end{tabular} 
+\end{center}
 
 Y gráficamente: 
 
@@ -175,7 +190,7 @@ La función de probabilidad en este caso nos queda:
          
  
 
-\subsubsection{Distribución Normal}
+\section{Distribución Normal}
 
 \input{img_tikz/tikz_normal}
 

@@ -219,23 +219,33 @@ X \sim \mathcal{N}(\mu,\,\sigma)
 \input{img_tikz/tikz_normal}
 
 \subsection{Cálculo práctico de la probabilidad de la Normal:} En realidad, para calcular la probabilidad no se hace la integral, sino que se utiliza una tabla que ya tiene calculadas probabilidades de la  $Z \sim \mathcal{N}(0,\,1)
-    $.
+    $:
     
-\begin{figure}[h]
-   \centering
-   \includegraphics[page=1,width=.45\textwidth]{probabilidad/distribucionnormal.pdf}
-%   \begin{tabular}{@{}c@{\hspace{.5cm}}c@{}}
-%       \includegraphics[page=1,width=.45\textwidth]{probabilidad/distribucionnormal} %& 
-%%       \includegraphics[page=2,width=.45\textwidth]{somemultipagepdf} \\[.5cm]
-%%       \includegraphics[page=3,width=.45\textwidth]{somemultipagepdf} \\
-%   \end{tabular}
- \caption{Test}
- \label{fig:Test}
-\end{figure}
-    
-%\includepdf[pages=-,scale=0.9]{probabilidad/distribucionnormal.pdf}
+\includegraphics[page=1,width=.45\textwidth]{probabilidad/distribucion_normal}
 
-\input{img_tikz/tikz_normal_2}
+Y que refleja:
+
+$$P\left(Z\leq k \right), \ \  k \in \left[ 0 , 4'09 \right]$$
+\begin{center}
+    \input{img_tikz/tikz_normal_z}
+\end{center}
+
+\subsubsection{Cálculo en la $Z \sim \mathcal{N}(0,\,1)$}
+Para determinar la probabilidad de que la normal tome un valor menor (o igual) que un valor concreto $k$, deberemos ir a la tabla al valor del cruce de la fila y columna correspondiente. Teniendo en cuenta que la fila es el valor hasta las décimas y la columna las centésimas
+\paragraph{Ejemplos:} 
+\begin{itemize}
+    \item $P\left(Z\leq 0 \right)=0.5 $. Ya que en este caso $k=0=0.00$ la suma del valor de la fila 0 con el valor de la columna 0 me da el valor de $k$, y la probabilidad asociada es $0.5$
+    \item $P\left(Z\leq 1.23 \right)= 0.89065$. En este caso la probabilidad asociada a 1.23 se busca en la fila 1.2 y la columna 0.03 
+\end{itemize}
+
+
+Las probabilidades en conjuntos de valores de la distribución que no se puedan obtener directamente de la tabla se transformarán en operaciones con probabilidades que sí estén en la tabla:
+
+
+
+\subsubsection{Cálculo en el resto de normales o tipificación de normal}
+
+%\input{img_tikz/tikz_normal_2}
 
 
 

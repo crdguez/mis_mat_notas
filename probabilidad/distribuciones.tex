@@ -203,7 +203,7 @@ X \sim \mathcal{N}(\mu,\,\sigma)\,.
 La probabilidad total es 1 y la variable $X$ puede tomar $\infty$ valores ($x \in \left(-\infty, +\infty\right)$). Por tanto, en variables continuas la probabilidad de que tome un valor concreto será 0 ($\lim_{x \to \infty}\frac{1}{x}=0$).    
 
 \subsection{función de densidad de una variable continua:}  En variables continuas solo tiene sentido calcular la probabilidad en intervalos.
-Se llama \textbf{función de densidad} ($f(x)$) aquella que: 
+Se llama \textbf{función de densidad} ($f(x)$) a aquella que: 
 
 $$P\left(a\leq X \leq b \right) = \int_{a}^{b} f(x) dx$$
 
@@ -240,6 +240,17 @@ Para determinar la probabilidad de que la normal tome un valor menor (o igual) q
 
 
 Las probabilidades en conjuntos de valores de la distribución que no se puedan obtener directamente de la tabla se transformarán en operaciones con probabilidades que sí estén en la tabla:
+
+\paragraph{Ejemplos:}
+\begin{itemize}
+    \item $P\left(Z\geq 1.23 \right)= 1 - P\left(Z\leq 1.23 \right) = 1 - 0.89065= 0.10935$. Basta fijarse en la relación que hay entre las áreas: 
+    \begin{center}
+        \input{img_tikz/tikz_normal_z21}
+        \input{img_tikz/tikz_normal_z22}
+        \input{img_tikz/tikz_normal_z23}
+    \end{center}
+    \item  $P\left(Z\leq -2.15 \right)=P\left(Z\geq 2.15 \right)=1-P\left(Z\leq 2.15 \right)$
+\end{itemize}
 
 
 

@@ -230,7 +230,7 @@ $$P\left(Z\leq k \right), \ \  k \in \left[ 0 , 4'09 \right]$$
     \input{img_tikz/tikz_normal_z}
 \end{center}
 
-\subsubsection{Cálculo en la $Z \sim \mathcal{N}(0,\,1)$}
+\subsubsection{Cálculo en la $Z \sim \mathcal{N}(0,\,1)$ o normal estándar}
 Para determinar la probabilidad de que la normal tome un valor menor (o igual) que un valor concreto $k$, deberemos ir a la tabla al valor del cruce de la fila y columna correspondiente. Teniendo en cuenta que la fila es el valor hasta las décimas y la columna las centésimas
 \paragraph{Ejemplos:} 
 \begin{itemize}
@@ -281,6 +281,21 @@ $$P(Z<=k)=0.85$$
 Vamos a la tabla y buscamos los dos valores seguidos de la tabla entre los que se quede el $0.85$ y encontramos:
 $$0.84849 < 0.85 < 0.85083 $$
 Como queda más cerca del $0.85083$, me quedo con la celda correspondiente y veo que se corresponde con la fila $1$ y columna $0.04$. Concluimos finalmente que el valor de la variable $Z$ buscado es $k=1.04$.
+
+
+\subsubsection{Cálculo en el resto de normales mediante tipificación}
+
+Para manejar $X \sim \mathcal{N}(\mu,\,\sigma)$ reduciremos los cálculos a cálculos en la $Z \sim \mathcal{N}(0,\,1)$ a partir de la siguiente propiedad:
+
+$$ Si \  X \sim \mathcal{N}(\mu,\,\sigma) \Rightarrow X^{'}=\frac{X - \mu}{\sigma} \sim \mathcal{N}(0,\,1) $$
+
+Al proceso de transformar la variable anterior a una $Z\sim \mathcal{N}(0,\,1)$ se denomina tipificarla.
+
+\paragraph{Ejemplos:}
+\begin{itemize}
+    \item 
+\end{itemize}
+
 
 %\input{img_tikz/tikz_normal_2}
 

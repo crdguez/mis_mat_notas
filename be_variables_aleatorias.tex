@@ -272,7 +272,7 @@ A este tipo de variable y su distribución de probabilidades se le llama \textbf
 
 La función de probabilidad en este caso nos queda:
 
-\begin{block}
+\begin{block}{}
  $$P\colon \begin{array}{l} 
           X \rightarrow \mathbb{R} \\ 
           k\mapsto P(X=k)=\binom{n}{k}\left(p\right)^k\cdot  \left(1-p\right)^{n-k} 
@@ -283,27 +283,12 @@ La función de probabilidad en este caso nos queda:
 \end{frame}
 
 \begin{frame}{Distribución Binomial}
-         
-\paragraph{Ejemplos:} Representación gráfica de la distribución de probabilidad de algunas binomiales:    
+Ejemplos de representación gráfica de la distribución de probabilidad de algunas binomiales:    
          
 \input{img_tikz/tikz_binomial}
     
 \end{frame}
 
-
-
-\begin{frame}
-{Distribución Normal}
-
-Se trata de una distribución asociada a a un variable continua. Tiene dos parámetros:
-\begin{itemize} [<+->]
-    \item $\mu :$ Media de la distribución
-    \item $\sigma :$ Desviación típica
-\end{itemize}
-Y se denota así: $
-X \sim \mathcal{N}(\mu,\,\sigma)\,.
-    $ 
-\end{frame}
 
 \begin{frame}{Distribución de probabilidades en una variable continua}
 
@@ -327,6 +312,25 @@ La interpretación gráfica de lo anterior nos dice que la probabilidad de un in
 \end{center}
 \end{frame}
 
+\begin{frame}
+{Distribución Normal}
+
+Se trata de una distribución asociada a a un variable continua . Resulta de aproximar una binomial para valores muy grandes de $n$. 
+\begin{block}{} Y se denota: $
+X \sim \mathcal{N}(\mu,\,\sigma)\,.
+    $ 
+\end{block}
+\pause
+Tiene dos parámetros:
+\begin{itemize} [<+->]
+    \item $\mu :$ Media de la distribución
+    \item $\sigma :$ Desviación típica
+\end{itemize}
+
+\pause    
+Esta distribución aparece asociada a muchos fenómenos naturales. 
+\end{frame}
+
 
 \begin{frame}{Función de densidad de una distribución normal}  
 \begin{columns}
@@ -338,7 +342,7 @@ X \sim \mathcal{N}(\mu,\,\sigma)
     $$f(x)=\frac{1}{{\sigma \sqrt {2\pi } }}e^{{{ - \left( {x - \mu } \right)^2 } \mathord{\left/ {\vphantom {{ - \left( {x - \mu } \right)^2 } {2\sigma ^2 }}} \right. \kern-\nulldelimiterspace} {2\sigma ^2 }}}$$
 \end{block}
 \end{column}
-\begin{column}{0.6\textwidth}
+\begin{column}{0.6\textwidth} Ejemplos de gráficas:
 \input{img_tikz/tikz_normal}
 \end{column}
 \end{columns}{}
@@ -349,7 +353,7 @@ X \sim \mathcal{N}(\mu,\,\sigma)
 \begin{columns}
 \begin{column}{0.4\textwidth}
 \begin{block}{}
-En realidad, para calcular la probabilidad no se hace la integral, sino que se utiliza una tabla que ya tiene calculadas probabilidades de la  $Z \sim \mathcal{N}(0,\,1)
+En realidad, para calcular la probabilidad no se hace la integral, sino que \textbf{se utiliza una tabla} que ya tiene calculadas probabilidades de la  $Z \sim \mathcal{N}(0,\,1)
     $ ...
 \end{block}
 \end{column}
@@ -480,6 +484,8 @@ Para manejar $X \sim \mathcal{N}(\mu,\,\sigma)$ reduciremos los cálculos a cál
 \begin{block}{}
 $$ Si \  X \sim \mathcal{N}(\mu,\,\sigma) \Rightarrow X^{'}=\frac{X - \mu}{\sigma} \sim \mathcal{N}(0,\,1) $$
 \end{block}
+
+\pause
 
 Al proceso de transformar la variable anterior a una $Z\sim \mathcal{N}(0,\,1)$ se denomina \textbf{tipificarla}.
 

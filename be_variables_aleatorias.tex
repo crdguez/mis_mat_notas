@@ -105,112 +105,296 @@ X,X & $\rightarrow$ & 0 \\
 
 
 
-\begin{frame}{Espacio muestral y sucesos}
+\begin{frame}{Tipos de variables aleatorias}
 \begin{itemize}[<+->]
-\item \textbf{Espacio muestral}: Conjunto de los posibles resultados del experimento. Se denota: $E$
-\item \textbf{Sucesos simples o elementales}: Cualquiera de los elementos del espacio muestral
-\item \textbf{Sucesos compuestos}: Sucesos formados por varios simples. 
-\item \textbf{Suceso seguro}: Suceso compuesto por los elementos del Espacio muestral. Se cumple siempre
-\item \textbf{Suceso imposible}: Cualquier suceso que no se cumpla nunca. Se denota con el símbolo: $\varnothing$
-\item \textbf{Suceso contrario}: Si $A$ es un suceso, $\overline{A}$ es el suceso contrario. Es aquel que se cumple cuando no se cumple $A$
+    \item{Discretas:} Toman un número finito o numerable de valores. \textbf{Ejemplo de variables discreta:} Sea la \emph{X =“El número de caras al lanzar dos dados”}. Los valores posibles son 0, 1 o 2 (que es un conjunto finito de datos, en concreto 3 datos)
+\item{Continuas:} Toman valores en un rango continuo. \textbf{Ejemplo:} \emph{X = “Distancia al centro de la diana medida desde la posición en que cae un dardo lanzado por un tirador experto” }. En este caso la variable puede tomar cualquier valor en el rango entre 0 y el radio de la diana 
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Ejemplos:}
-Lanzamos un dado y comprobamos la cara que sale:
-\begin{itemize}[<+->]
-\item \textbf{Espacio muestral}: $E=\lbrace 1,2,3,4,5,6 \rbrace $
-\item \textbf{Sucesos simples o elementales}: $1$, $2$, $3$, $4$, $5$ ó $6$
-\item \textbf{Sucesos compuestos}: $A=\lbrace que\ salga\ par\rbrace=\lbrace2,4,6\rbrace$
-\item \textbf{Suceso seguro}: $E=\lbrace 1,2,3,4,5,6 \rbrace $
-\item \textbf{Suceso imposible}: $\varnothing=\lbrace que\ salga \ mayor \ que \ 6\rbrace$
-\item \textbf{Suceso contrario}: Si $A=\lbrace que\ salga\ par\rbrace=\lbrace2,4,6\rbrace$, $\overline{A}=\lbrace que\ salga\ impar\rbrace=\lbrace1,3,5\rbrace$ 
-\end{itemize}
+\begin{frame}{Distribuciones de probabilidad}
+Llamaremos Distribución de probabilidad a la relación entre los valores de la variable y sus probabilidades.
+
+Estas relaciones se pueden indicar mediante el uso de funciones. El tipo de función y su tratamiento es diferente según las variables sean discretas o continuas.
+
+Veamos algunas distribuciones:
 \end{frame}
 
 
 \begin{frame}
-{Operaciones con sucesos y relaciones}
+{Distribución uniforme discreta}
 
-\begin{block}{}
-la \textbf{unión} de los sucesos $A$ y $B$ es aquel suceso que contiene a todos los elementos de $A$ y a  los de $B$. Se denota: $A\cup B$ 
-\end{block}
+Sea la variable \emph{X = “Número obtenido al lanzar una dado”}\\
+A cada valor de la variable podemos asignarle su probabilidad:
 
-\input{img_tikz/tikz_union}
+%\begin{center}
+%\begin{tabular}{ccc}
+% & $P(X)$ &  \\
+%Suceso &  &  $y_i$ \\ \hline 
+%1 & $\rightarrow$ & \frac{1}{6} \\ 
+%2 & $\rightarrow$ & \frac{1}{6} \\ 
+%3 & $\rightarrow$ & \frac{1}{6} \\ 
+%4 & $\rightarrow$ & \frac{1}{6} \\ 
+%5 & $\rightarrow$ & \frac{1}{6} \\ 
+%6 & $\rightarrow$ & \frac{1}{6} \\ 
+%\end{tabular} 
+%\end{center}
+
+\begin{center}
+\begin{tabular}{ccc}
+ & $P(X)$ &  \\
+$x_i$ &  &  $P(x_i)$\\ \hline 
+1 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
+2 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
+3 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
+4 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
+5 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
+6 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
+\end{tabular} 
+\end{center}
+
+Podemos representar la relación anterior mediante una función:
+
+%$$f\colon \begin{array}{lc} 
+%         & X \rightarrow Y \\ 
+%         & x \mapsto f(x)=\frac{x-1}{2} 
+%         \end{array}$$
+%
+%
+%$$f\colon \begin{array}{>{\displaystyle}l} 
+%          X \rightarrow Y \\ 
+%          x\mapsto f(x)=\frac{x-1}{2} 
+%         \end{array}$$
+
+$$P\colon \begin{array}{ll} 
+          X \rightarrow \mathbb{R} \\ 
+          x_i\mapsto P(X=x_i)=\frac{1}{n} 
+         \end{array}$$
+
+
+A este tipo de distribución se le llama \textbf{uniforme discreta}.
 \end{frame}
 
 \begin{frame}
-{Operaciones con sucesos y relaciones}
+{Distribución Binomial}
+\paragraph{Ejemplo:} Queremos calcular las probabilidades de que al lanzar 5 monedas, obtengamos tres caras.
+Un suceso que cumple el enunciado es:
+$$S_1=\left\lbrace C,C,C,X,X \right\rbrace$$
+Teniendo en cuenta que lanzar cada moneda son experimentos independientes, la probabilidad de ese suceso será:
+%$$P\left(S_1\right)=P\left(C_1\right)\cdot P\left(C_2 C_1 \right)$$
+\begin{eqnarray*}
+P\left(S_1\right) & = &P\left(C_1\right)\cdot P\left(C_2 | C_1 \right)\cdot ... \cdot P\left(X_5 | C_1 \cap C_2  \cap C_3  \cap X_4   \right)= \\ &  = & P\left(C_1\right)\cdot  P\left(C_2\right) \cdot P\left(C_3\right) \cdot P\left(X_4\right) \cdot P\left(X_5\right)= \\
+& = & P\left(C\right)^3\cdot  P\left(X\right)^2
+\end{eqnarray*}
 
-\begin{block}{}
-la \textbf{intersección} de los sucesos $A$ y $B$ es aquel suceso que contiene a todos los elementos que están tanto en $A$ como en $B$. Se denota: $A\cap B$ 
-\end{block}
+Como la probabilidad de que una moneda sea cara es $\frac{1}{2}$ y la de que sea cruz también:
 
-\input{img_tikz/tikz_interseccion}
-\end{frame}
+$$P\left(S_1\right)=\left(\frac{1}{2}\right)^3\cdot  \left(\frac{1}{2}\right)^2$$
 
-\begin{frame}
-{Operaciones con sucesos y relaciones}
+Ahora bien, habrá tantos sucesos que cumplan el enunciado como combinaciones de 5 elementos tomados de 3 en 3. Por tanto la probabilidad de que salgan 3 caras será:
 
- Tomamos como experimento el resultado de lanzar un dado, y los sucesos: \\
-\begin{tabular}{l}
-$A=\lbrace que\ salga\ par\rbrace=\lbrace2,4,6\rbrace$ \\
-$B=\lbrace que\ sea\ mayor\ que\ 3\rbrace=\lbrace4,5,6\rbrace$ \\
-$C=\lbrace que\ salga\ impar\rbrace=\lbrace1,3,5\rbrace$
-\end{tabular}
-
-\begin{itemize}	[<+->]
-	\item $A\cup B=\lbrace2,4,5,6\rbrace$ \\
-	%\input{img_tikz/tikz_ej_union}
-	\item $A\cap B=\lbrace4,6\rbrace$\\
-	%\input{img_tikz/tikz_ej_interseccion}
-
-	\item $A\cup C=\lbrace1,2,3,4,5,6\rbrace=E$
-	\item $A\cap C=\varnothing$
-\end{itemize}
+$$P\left(Salgan \ 3 \ caras\right)=\binom{5}{3}\left(\frac{1}{2}\right)^3\cdot  \left(\frac{1}{2}\right)^2$$
 
 \end{frame}
 
+\begin{frame}{Distribución Binomial}
 
-\begin{frame}{Compatibilidad de sucesos}
-\begin{block}{}
-Se dice que dos sucesos son \textbf{incompatibles} cuando su intersección es el conjunto vacío. En caso contrario se dice que son \textbf{compatibles}.
-\end{block}
+Al experimento "lanzar 5 monedas" le asignamos la variable "número de caras obtenidas", podemos determinar la probabilidad mediante la siguiente función.
 
-Tomamos como experimento el resultado de lanzar un dado, y los sucesos: \\
-\begin{tabular}{l}
-$A=\lbrace que\ salga\ par\rbrace=\lbrace2,4,6\rbrace$ \\
-$B=\lbrace que\ sea\ mayor\ que\ 3\rbrace=\lbrace4,5,6\rbrace$ \\
-$C=\lbrace que\ salga\ impar\rbrace=\lbrace1,3,5\rbrace$
-\end{tabular}
+$$P\colon \begin{array}{l} 
+          X \rightarrow \mathbb{R} \\ 
+          k\mapsto P(X=k)=\binom{5}{k}\left(\frac{1}{2}\right)^k\cdot  \left(\frac{1}{2}\right)^{5-k} 
+         \end{array}$$
 
-$A$ y $B$ son compatibles y $A$ y $C$ incompatibles.
-
+Esto es un ejemplo de distribución binomial de tamaño $5$ y probabilidad $0.5$ .
 \end{frame}
 
-\begin{frame}{Regla de Laplace}
-\begin{block}{}
- La probabilidad de un suceso de un experimento regular viene determinada por la \textbf{Regla de Laplace}:
-$$P(A)=\dfrac{Casos\ favorables}{Casos\ posibles} $$
-\end{block}
 
-Al lanzar un dado, los casos posibles son 6 ($\lbrace1,2,3,4,5,6\rbrace$):\\
-\begin{tabular}{l}
-La probabilidad de sacar un 3: $\lbrace3\rbrace\to \dfrac{1}{6}$\\
-La probabilidad de sacar par: $\lbrace2,4,6\rbrace\to\dfrac{3}{6}$ \\
-La probabilidad de sacar más de 4: $\lbrace5,6\rbrace\to\dfrac{2}{6}$
-\end{tabular}
+\begin{frame}{Distribución Binomial}
+Realizando los cálculos para $k = 1,...,5 $, la distribución de probabilidad de $X$ que resulta es:
+\begin{columns}
+\begin{column}{0.3\textwidth}
+\begin{center}
+\begin{tabular}{ccc}
+ & $P(X)$ &  \\
+$x_i$ &  &  $P(x_i)$\\ \hline 
+0 & $\rightarrow$ & $0.03125$ \\ 
+1 & $\rightarrow$ & $0.15625$ \\ 
+2 & $\rightarrow$ & $0.3125$ \\ 
+3 & $\rightarrow$ & $0.3125$ \\ 
+4 & $\rightarrow$ & $0.15625$ \\ 
+5 & $\rightarrow$ & $0.03125$ \\ 
+\end{tabular} 
+\end{center}
+\end{column}
+\begin{column}{0.7\textwidth}
+\begin{center}
+\input{img_tikz/tikz_binomial_0}
+\end{center}
+\end{column}
 
+\end{columns}
 \end{frame}
 
-\begin{frame}{Propiedades de la probabilidad} La probabilidad de un experimento regular cumple las siguientes propiedades:
+
+
+\begin{frame}{Distribución Binomial}
+Hablaremos de una distribución binomial cuando:
 \begin{itemize}[<+->]
-\item $0 \leq P(A) \leq 1$ 
-\item $P(E) = 1$ y $P(\varnothing) = 0$
-\item $P(A) + P(\overline A) = 1$
-\item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$. Si $A$ y $B$ son incompatibles: $P(A \cup B) = P(A) + P(B)$
+\item Se parte de un experimento compuesto de varios simples independientes
+\item Los experimentos simples son dicotómicos. Es decir, solo puede haber dos sucesos elementales: uno al que llamaremos acierto y otro al que llamaremos fracaso
+\item Asociado al experimento compuesto tenemos la variable número de aciertos cuando realizamos el experimento simple un número determinado de veces
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Distribución Binomial}
+En la situación anterior, la distribución binomial vendrá determinada por dos parámetros:
+\begin{itemize}
+\item Parámetro $n$: Número de veces que se realiza el experimento simple 
+\item Parámetro $p$: La probabilidad de que ocurra el suceso acierto
+\end{itemize}
+
+
+A este tipo de variable y su distribución de probabilidades se le llama binomial.
+\end{frame}
+
+\begin{frame}{Distribución Binomial}
+\textbf{Ejemplo:} Así en el ejemplo de las monedas, el experimento se compone de \textbf{5 lanzamientos de moneda}. Si sale cara es acierto y si no fracaso. La variable aleatoria asociada al experimento será el número de caras que salen al lanzar 5 monedas. Esta variable sigue una distribución binomial.
+
+
+A este tipo de variable y su distribución de probabilidades se le llama binomial.
+\end{frame}
+
+\begin{frame}{Probabilidad de la binomial}
+\textbf{En general tendremos una binomial de tamaño $n$ y probabilidad $p$}, cuando el experimento simple se haga $n$ veces y la probabilidad de acierto sea $p$.
+
+La función de probabilidad en este caso nos queda:
+
+\begin{block}
+ $$P\colon \begin{array}{l} 
+          X \rightarrow \mathbb{R} \\ 
+          k\mapsto P(X=k)=\binom{n}{k}\left(p\right)^k\cdot  \left(1-p\right)^{n-k} 
+         \end{array}$$
+
+\end{block} 
+    
+\end{frame}
+
+\begin{frame}{Distribución Binomial}
+         
+\paragraph{Ejemplos:} Representación gráfica de la distribución de probabilidad de algunas binomiales:    
+         
+\input{img_tikz/tikz_binomial}
+    
+\end{frame}
+
+
+
+\begin{frame}
+{Distribución Normal}
+
+Se trata de una distribución asociada a a un variable continua. Tiene dos parámetros:
+\begin{itemize} [<+->]
+    \item $\mu :$ Media de la distribución
+    \item $\sigma :$ Desviación típica
+\end{itemize}
+Y se denota así: $
+X \sim \mathcal{N}(\mu,\,\sigma)\,.
+    $ 
+\end{frame}
+
+\begin{frame}{Distribución de probabilidades en una variable continua}
+
+La probabilidad total es 1 y la variable $X$ puede tomar $\infty$ valores ($x \in \left(-\infty, +\infty\right)$). Por tanto, en variables continuas la probabilidad de que tome un valor concreto será 0 ($\lim_{x \to \infty}\frac{1}{x}=0$).    
+
+Para calcular las probabilidades no se utilizarán funciones de probabilidad como hemos visto hasta ahora sino \textbf{funciones de densidad}:
+\end{frame}
+
+\begin{frame}{Función de densidad}
+En variables continuas solo tiene sentido calcular la probabilidad en intervalos.
+Se llama \textbf{función de densidad} ($f(x)$) a aquella que: 
+\begin{block}{}
+$$P\left(a\leq X \leq b \right) = \int_{a}^{b} f(x) dx$$
+\end{block}    
+
+
+La interpretación gráfica de lo anterior nos dice que la probabilidad de un intervalo corresponde con el área de la función de densidad en ese intervalo.
+\begin{center}
+\input{img_tikz/tikz_densidad_1}
+
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Función de densidad de una distribución normal}  
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\begin{block}{}
+Si $
+X \sim \mathcal{N}(\mu,\,\sigma)
+    $, la función de densidad es:
+    $$f(x)=\frac{1}{{\sigma \sqrt {2\pi } }}e^{{{ - \left( {x - \mu } \right)^2 } \mathord{\left/ {\vphantom {{ - \left( {x - \mu } \right)^2 } {2\sigma ^2 }}} \right. \kern-\nulldelimiterspace} {2\sigma ^2 }}}$$
+\end{block}
+\end{column}
+\begin{column}{0.6\textwidth}
+\input{img_tikz/tikz_normal}
+\end{column}
+\end{columns}{}
+
+\end{frame}
+
+\begin{frame}{Cálculo práctico de la probabilidad de la Normal:}
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\begin{block}{}
+En realidad, para calcular la probabilidad no se hace la integral, sino que se utiliza una tabla que ya tiene calculadas probabilidades de la  $Z \sim \mathcal{N}(0,\,1)
+    $ ...
+\end{block}
+\end{column}
+\begin{column}{0.6\textwidth}
+\includegraphics[page=1,width=1\textwidth]{probabilidad/distribucion_normal}
+\end{column}
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}{Cálculo práctico de la probabilidad de la Normal:}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\begin{block}{}
+... y que refleja:
+
+$$P\left(Z\leq k \right), \ \  k \in \left[ 0 , 4'09 \right]$$
+\begin{center}
+    \input{img_tikz/tikz_normal_z}
+\end{center}
+\end{block}
+\end{column}
+\begin{column}{0.4\textwidth}
+\includegraphics[page=1,width=1\textwidth]{probabilidad/distribucion_normal}
+\end{column}
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}{Cálculo en la $Z \sim \mathcal{N}(0,\,1)$ o normal estándar}
+\begin{itemize} [<+->]
+    \item $P\left(Z\leq 0 \right)=0.5 $. Ya que en este caso $k=0=0.00$ la suma del valor de la fila 0 con el valor de la columna 0 me da el valor de $k$, y la probabilidad asociada es $0.5$
+    \item $P\left(Z\leq 1.23 \right)= 0.89065$. En este caso la probabilidad asociada a 1.23 se busca en la fila 1.2 y la columna 0.03 
+\end{itemize}
+
+
+
+\end{frame}
+
+\begin{frame}{Cálculo en $X \sim \mathcal{N}(\mu,\,\sigma)$} 
+\begin{block}
+    Las probabilidades en conjuntos de valores de la distribución que no se puedan obtener directamente de la tabla se transformarán en operaciones con probabilidades que sí estén en la tabla:
+\end{block}
+Veamos algunos ejemplos:
 \end{frame}
 
 

@@ -1,5 +1,5 @@
-%\documentclass[11pt]{beamer}
-\documentclass[11pt,handout]{beamer}
+\documentclass[11pt]{beamer}
+%\documentclass[11pt,handout]{beamer}
 \usetheme{Boadilla}
 %\usetheme{metropolis}
 
@@ -47,12 +47,12 @@
 %\end{frame}
 
 \begin{frame}{Variables aleatorias y distribuciones de probabilidad}
-\begin{block}{Finalidad:} Abstraer matemáticamente un tipo de experimento aleatorio. Y, con ello, poder estimar de manera teórica lo que sucedería de manera experimental mediante una estadística.
+\begin{block}{Finalidad:} \textbf{Abstraer matemáticamente} un tipo de \textbf{experimento aleatorio}. Y, con ello, poder estimar de manera teórica lo que sucedería de manera experimental mediante una estadística.
 \end{block}
 
 \pause
 
-\begin{block}{¿Cómo?:} Mediante variables aleatorias y distribuciones de probabilidad asociadas a esas variables
+\begin{block}{¿Cómo?:} Mediante \textbf{variables aleatorias} y \textbf{distribuciones de probabilidad} asociadas a esas variables
 
 \end{block}
 
@@ -61,15 +61,18 @@
 
 \begin{frame}{Variables aleatorias}
 \begin{block}{}
-Una variable aleatoria es una función que a cada suceso
-elemental de un espacio muestral le asigna un número. Para hacer referencia a las variables se usan las letras: $X$, $Y$, ...
+Una \textbf{variable aleatoria} es una función que a cada suceso
+elemental de un espacio muestral le asigna un número. \\ Para hacer referencia a las variables se usan las letras: $X$, $Y$, ...
 \end{block}
 \end{frame}
 
-\begin{frame}{Variables aleatorias}
-\begin{block}{Ejemplo:}
-Sea el experimento aleatorio “lanzar un dado”: El espacio muestral lo componen las 6 caras del dado. Podemos asignar la variable $X$ que a cada cara le asocia el número que represente su cara.
+\begin{frame}{Ejemplo}
+\begin{block}{}
+Sea el \textbf{experimento aleatorio “lanzar un dado”}El espacio muestral lo componen las 6 caras del dado 
 \end{block}
+\pause
+El espacio muestral lo componen las 6 caras del dado.\\
+Podemos asignar la variable $X$ que a cada cara le asocia el número que represente su cara.
 \begin{center}
 \begin{tabular}{ccc}
  & $X$ &  \\
@@ -85,10 +88,12 @@ Cara 6 & $\rightarrow$ & 6 \\
 \end{frame}
 
 
-\begin{frame}{Variables aleatorias}
-\begin{block}{Ejemplo:}
-Sea el experimento compuesto lanzar dos monedas. Podemos asignar la variable aleatoria:
+\begin{frame}{Ejemplo}
+\begin{block}{}
+Sea el \textbf{experimento compuesto "lanzar dos monedas"} 
 \end{block}
+\pause
+Podemos asignar la variable aleatoria:
 \begin{center}
 \emph{Y = \{Número de caras\}} \\
 \begin{tabular}{ccc}
@@ -107,40 +112,37 @@ X,X & $\rightarrow$ & 0 \\
 
 \begin{frame}{Tipos de variables aleatorias}
 \begin{itemize}[<+->]
-    \item{Discretas:} Toman un número finito o numerable de valores. \textbf{Ejemplo de variables discreta:} Sea la \emph{X =“El número de caras al lanzar dos dados”}. Los valores posibles son 0, 1 o 2 (que es un conjunto finito de datos, en concreto 3 datos)
-\item{Continuas:} Toman valores en un rango continuo. \textbf{Ejemplo:} \emph{X = “Distancia al centro de la diana medida desde la posición en que cae un dardo lanzado por un tirador experto” }. En este caso la variable puede tomar cualquier valor en el rango entre 0 y el radio de la diana 
+    \item{Discretas:} Toman un \textbf{número finito o numerable} de valores. \textbf{Ejemplo:} Sea la \emph{X =“El número de caras al lanzar dos dados”}. Los valores posibles son 0, 1 o 2 (que es un conjunto finito de datos, en concreto 3 datos)
+\item{Continuas:} Toman valores en un \textbf{rango continuo}. \textbf{Ejemplo:} \emph{X = “Distancia al centro de la diana medida desde la posición en que cae un dardo lanzado por un tirador experto” }. En este caso la variable puede tomar cualquier valor en el rango entre 0 y el radio de la diana 
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Distribuciones de probabilidad}
-Llamaremos Distribución de probabilidad a la relación entre los valores de la variable y sus probabilidades.
+\begin{block}{}
+Llamaremos \textbf{distribución de probabilidad} a la relación entre los valores de la variable y sus probabilidades.
+\end{block}
 
-Estas relaciones se pueden indicar mediante el uso de funciones. El tipo de función y su tratamiento es diferente según las variables sean discretas o continuas.
+\begin{itemize}[<+->]
+    \item Estas relaciones se pueden indicar mediante el uso de funciones
+    \item El tipo de función y su tratamiento es diferente según las variables sean discretas o continuas
+    
+\end{itemize}
 
-Veamos algunas distribuciones:
+
+Veamos algunas distribuciones ...
 \end{frame}
 
 
 \begin{frame}
 {Distribución uniforme discreta}
-
-Sea la variable \emph{X = “Número obtenido al lanzar una dado”}\\
+\begin{block}{Ejemplo}
+Sea la variable \emph{X = “Número obtenido al lanzar una dado”}
+\end{block}
+\pause
+\begin{columns}
+\begin{column}{0.5 \textwidth}
 A cada valor de la variable podemos asignarle su probabilidad:
-
-%\begin{center}
-%\begin{tabular}{ccc}
-% & $P(X)$ &  \\
-%Suceso &  &  $y_i$ \\ \hline 
-%1 & $\rightarrow$ & \frac{1}{6} \\ 
-%2 & $\rightarrow$ & \frac{1}{6} \\ 
-%3 & $\rightarrow$ & \frac{1}{6} \\ 
-%4 & $\rightarrow$ & \frac{1}{6} \\ 
-%5 & $\rightarrow$ & \frac{1}{6} \\ 
-%6 & $\rightarrow$ & \frac{1}{6} \\ 
-%\end{tabular} 
-%\end{center}
-
 \begin{center}
 \begin{tabular}{ccc}
  & $P(X)$ &  \\
@@ -153,32 +155,26 @@ $x_i$ &  &  $P(x_i)$\\ \hline
 6 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
 \end{tabular} 
 \end{center}
-
-Podemos representar la relación anterior mediante una función:
-
-%$$f\colon \begin{array}{lc} 
-%         & X \rightarrow Y \\ 
-%         & x \mapsto f(x)=\frac{x-1}{2} 
-%         \end{array}$$
-%
-%
-%$$f\colon \begin{array}{>{\displaystyle}l} 
-%          X \rightarrow Y \\ 
-%          x\mapsto f(x)=\frac{x-1}{2} 
-%         \end{array}$$
+\end{column}
+\pause
+\begin{column}{0.5 \textwidth}
+ Podemos representar la relación anterior mediante una función:
 
 $$P\colon \begin{array}{ll} 
           X \rightarrow \mathbb{R} \\ 
           x_i\mapsto P(X=x_i)=\frac{1}{n} 
          \end{array}$$
+\end{column}
+\end{columns}
 
-
+\pause
 A este tipo de distribución se le llama \textbf{uniforme discreta}.
 \end{frame}
 
 \begin{frame}
-{Distribución Binomial}
-\paragraph{Ejemplo:} Queremos calcular las probabilidades de que al lanzar 5 monedas, obtengamos tres caras.
+{Distribución Binomial. Introducción}
+\begin{block}{Ejemplo} Queremos calcular las probabilidades de que al lanzar 5 monedas, obtengamos tres caras.
+\end{block}
 Un suceso que cumple el enunciado es:
 $$S_1=\left\lbrace C,C,C,X,X \right\rbrace$$
 Teniendo en cuenta que lanzar cada moneda son experimentos independientes, la probabilidad de ese suceso será:
@@ -188,30 +184,32 @@ P\left(S_1\right) & = &P\left(C_1\right)\cdot P\left(C_2 | C_1 \right)\cdot ... 
 & = & P\left(C\right)^3\cdot  P\left(X\right)^2
 \end{eqnarray*}
 
+
+\end{frame}
+
+\begin{frame}{}
 Como la probabilidad de que una moneda sea cara es $\frac{1}{2}$ y la de que sea cruz también:
 
 $$P\left(S_1\right)=\left(\frac{1}{2}\right)^3\cdot  \left(\frac{1}{2}\right)^2$$
-
 Ahora bien, habrá tantos sucesos que cumplan el enunciado como combinaciones de 5 elementos tomados de 3 en 3. Por tanto la probabilidad de que salgan 3 caras será:
 
 $$P\left(Salgan \ 3 \ caras\right)=\binom{5}{3}\left(\frac{1}{2}\right)^3\cdot  \left(\frac{1}{2}\right)^2$$
 
 \end{frame}
 
-\begin{frame}{Distribución Binomial}
+\begin{frame}{}
 
-Al experimento "lanzar 5 monedas" le asignamos la variable "número de caras obtenidas", podemos determinar la probabilidad mediante la siguiente función.
+Podemos determinar la probabilidad mediante la siguiente función.
 
 $$P\colon \begin{array}{l} 
           X \rightarrow \mathbb{R} \\ 
           k\mapsto P(X=k)=\binom{5}{k}\left(\frac{1}{2}\right)^k\cdot  \left(\frac{1}{2}\right)^{5-k} 
          \end{array}$$
 
-Esto es un ejemplo de distribución binomial de tamaño $5$ y probabilidad $0.5$ .
 \end{frame}
 
 
-\begin{frame}{Distribución Binomial}
+\begin{frame}{}
 Realizando los cálculos para $k = 1,...,5 $, la distribución de probabilidad de $X$ que resulta es:
 \begin{columns}
 \begin{column}{0.3\textwidth}
@@ -235,35 +233,38 @@ $x_i$ &  &  $P(x_i)$\\ \hline
 \end{column}
 
 \end{columns}
+\pause
+Esto es un ejemplo de \textbf{distribución binomial} de tamaño $5$ y probabilidad $0.5$ .
 \end{frame}
 
 
 
 \begin{frame}{Distribución Binomial}
-Hablaremos de una distribución binomial cuando:
+Hablaremos de una \textbf{distribución binomial} cuando:
 \begin{itemize}[<+->]
-\item Se parte de un experimento compuesto de varios simples independientes
-\item Los experimentos simples son dicotómicos. Es decir, solo puede haber dos sucesos elementales: uno al que llamaremos acierto y otro al que llamaremos fracaso
-\item Asociado al experimento compuesto tenemos la variable número de aciertos cuando realizamos el experimento simple un número determinado de veces
+\item Se parte de un \textbf{experimento compuesto} de varios simples independientes
+\item Los experimentos simples son \textbf{dicotómicos}. Es decir, solo puede haber dos sucesos elementales: uno al que llamaremos acierto y otro al que llamaremos fracaso
+\item Asociado al experimento compuesto tenemos la variable \textbf{número de aciertos} cuando realizamos el experimento simple un número determinado de veces
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Distribución Binomial}
 En la situación anterior, la distribución binomial vendrá determinada por dos parámetros:
-\begin{itemize}
+\begin{itemize}[<+->]
 \item Parámetro $n$: Número de veces que se realiza el experimento simple 
 \item Parámetro $p$: La probabilidad de que ocurra el suceso acierto
 \end{itemize}
+\pause
 
-
-A este tipo de variable y su distribución de probabilidades se le llama binomial.
+A este tipo de variable y su distribución de probabilidades se le llama \textbf{binomial} y se denota $$X \sim \mathcal{B}(n,\,p)$$.
 \end{frame}
 
-\begin{frame}{Distribución Binomial}
-\textbf{Ejemplo:} Así en el ejemplo de las monedas, el experimento se compone de \textbf{5 lanzamientos de moneda}. Si sale cara es acierto y si no fracaso. La variable aleatoria asociada al experimento será el número de caras que salen al lanzar 5 monedas. Esta variable sigue una distribución binomial.
+\begin{frame}{Ejemplo}
+\begin{block}{Lanzamineto de 5 monedas} El experimento se compone de \textbf{5 lanzamientos de moneda}. Si sale cara es acierto y si no fracaso. La variable aleatoria asociada al experimento será el número de caras que salen al lanzar 5 monedas. Esta variable sigue una distribución binomial $X \sim \mathcal{B}(5,\,0.5)$.
+\end{block}
 
 
-A este tipo de variable y su distribución de probabilidades se le llama binomial.
+
 \end{frame}
 
 \begin{frame}{Probabilidad de la binomial}
@@ -381,6 +382,7 @@ $$P\left(Z\leq k \right), \ \  k \in \left[ 0 , 4'09 \right]$$
 \end{frame}
 
 \begin{frame}{Cálculo en la $Z \sim \mathcal{N}(0,\,1)$ o normal estándar}
+\includegraphics[page=1,width=0.8\textwidth]{probabilidad/calculonormal.png}
 \begin{itemize} [<+->]
     \item $P\left(Z\leq 0 \right)=0.5 $. Ya que en este caso $k=0=0.00$ la suma del valor de la fila 0 con el valor de la columna 0 me da el valor de $k$, y la probabilidad asociada es $0.5$
     \item $P\left(Z\leq 1.23 \right)= 0.89065$. En este caso la probabilidad asociada a 1.23 se busca en la fila 1.2 y la columna 0.03 
@@ -390,80 +392,109 @@ $$P\left(Z\leq k \right), \ \  k \in \left[ 0 , 4'09 \right]$$
 
 \end{frame}
 
-\begin{frame}{Cálculo en $X \sim \mathcal{N}(\mu,\,\sigma)$} 
-\begin{block}
+\begin{frame}{Cálculo en la $Z \sim \mathcal{N}(0,\,1)$ o normal estándar} 
+\begin{block}{}
     Las probabilidades en conjuntos de valores de la distribución que no se puedan obtener directamente de la tabla se transformarán en operaciones con probabilidades que sí estén en la tabla:
 \end{block}
 Veamos algunos ejemplos:
 \end{frame}
 
 
-\begin{frame}{Probabilidad condicionada}
-\begin{block}{}
-$$P(A|B)=\dfrac{P(A\cap B)}{P(B)}$$
+\begin{frame}{Cálculo en la $Z \sim \mathcal{N}(0,\,1)$ o normal estándar}
+\begin{block}{Ejemplo}
+$P\left(Z\geq 1.23 \right)= 1 - P\left(Z\leq 1.23 \right) = 1 - 0.89065= 0.10935$.
 \end{block}
-Despejando:
-$$P(A\cap B) = P(A|B)\cdot P(B)$$
+Basta fijarse en la relación que hay entre las áreas:
+\begin{center}
+   \input{img_tikz/tikz_normal_z21} 
+\end{center}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+ \input{img_tikz/tikz_normal_z22}
+\end{column}
+\begin{column}{0.5\textwidth}
+ \input{img_tikz/tikz_normal_z23}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Cálculo en la $Z \sim \mathcal{N}(0,\,1)$ o normal estándar}
+\begin{block}{Ejemplo}
+$P\left(Z\leq -2.15 \right)=P\left(Z\geq 2.15 \right)=1-P\left(Z\leq 2.15 \right)=1-0.98422=0.01578$.
+\end{block}
+Basta fijarse en la relación que hay entre las áreas:
+\begin{center}
+   \input{img_tikz/tikz_normal_z31} 
+\end{center}
+\end{frame}
+
+\begin{frame}{Cálculo en la $Z \sim \mathcal{N}(0,\,1)$ o normal estándar}
+\begin{block}{Ejemplo}
+$P\left( -1.3 < Z < 3.1\right)=P\left( Z < 3.1\right)-P\left(  Z < -1.3\right)=
+    P\left( Z < 3.1\right) - \left[ 1 - P\left(  Z < 1.3\right) \right]= 0.99903 - 1 + 0.9032 = 0.90223$.
+\end{block}
+Basta fijarse en la relación que hay entre las áreas:
+\begin{center}
+   \input{img_tikz/tikz_normal_z41} 
+\end{center}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+ \input{img_tikz/tikz_normal_z42}
+\end{column}
+\begin{column}{0.5\textwidth}
+ \input{img_tikz/tikz_normal_z43}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Cálculo en la $Z \sim \mathcal{N}(0,\,1)$ o normal estándar}
+\begin{block}{Cálculo del valor de la variable a partir de la probabilidad}
+El uso de la tabla normal nos permite realizar el proceso inverso. Es decir, fijada una probabilidad $Pr$, encontrar el valor de la variable $k$ que cumpla:
+$$P(Z<=k)=Pr$$
+    \begin{center}
+        \input{img_tikz/tikz_normal_z5}
+    \end{center}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Ejemplo}
+
+Dada $Z \sim \mathcal{N}(0,\,1)$, calcula el valor de la variable sabiendo que la probabilidad de que tome un valor menor que ese es de un 85\%. 
+
+$$P(Z<=k)=0.85$$
+    \begin{center}
+        \input{img_tikz/tikz_normal_z6}
+    \end{center}
+
+Vamos a la tabla y buscamos los dos valores seguidos de la tabla entre los que se quede el $0.85$ y encontramos:
+$$0.84849 < 0.85 < 0.85083 $$
+Como queda más cerca del $0.85083$, me quedo con la celda correspondiente a la fila $1$ y columna $0.04$  $\Rightarrow k=1.04$.
+\end{frame}
+
+\begin{frame}{Cálculo en $X \sim \mathcal{N}(\mu,\,\sigma)$ - Tipifiación}
+Para manejar $X \sim \mathcal{N}(\mu,\,\sigma)$ reduciremos los cálculos a cálculos en la $Z \sim \mathcal{N}(0,\,1)$ a partir de la siguiente propiedad:
+
+\begin{block}{}
+$$ Si \  X \sim \mathcal{N}(\mu,\,\sigma) \Rightarrow X^{'}=\frac{X - \mu}{\sigma} \sim \mathcal{N}(0,\,1) $$
+\end{block}
+
+Al proceso de transformar la variable anterior a una $Z\sim \mathcal{N}(0,\,1)$ se denomina \textbf{tipificarla}.
+
+
+\end{frame}
+
+
+
+\begin{frame}{Ejemplos}
 
 \begin{itemize}[<+->]
-\item Se dice que dos sucesos son \textbf{independientes} cuando la probabilidad de cada uno no depende del resultado del otro. 
-
-$$A\ y \ B\ son \ independientes \Longleftrightarrow P(B|A)=P(B)$$
-
+    \item $X \sim \mathcal{N}(1,\,2) \to P(X<=2.32)=P(X'<=\frac{2.32-1}{2})=P(Z<=0.66)=0.74537$
+    \item $X \sim \mathcal{N}(5,\,3) \to P(X<=3.59)=P(X'<=\frac{3.59-5}{3})=P(Z<=-0.47)=1-P(Z<=0.47)=1-0.68082=0.31918$
 \end{itemize}
 \end{frame}
-
-\begin{frame}{Ejemplo sin remplazamiento}
-En una urna hay tres bolas blancas y dos negras. Se extraen dos bolas \textbf{sin} reemplazamiento:
-\input{img_tikz/tikz_arbol_1}
-\begin{itemize}[<+->]
-\item Probabilidad de que sean del mismo color: \\
-$P((B_1\cap B_2)\cup (N_1\cap N_2))=\frac{3}{10}+\frac{1}{10}=\frac{2}{5}$
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Ejemplo con remplazamiento}
-En una urna hay tres bolas blancas y dos negras. Se extraen dos bolas \textbf{con} reemplazamiento:
-\input{img_tikz/tikz_arbol_2}
-\begin{itemize}
-\item Probabilidad de que sean del mismo color: \\
-$P((B_1\cap B_2)\cup (N_1\cap N_2))=\frac{9}{25}+\frac{4}{25}=\frac{13}{25}$
-\end{itemize}
-
-\end{frame}
-
-
-
-\begin{frame}{Teorema de la probabilidad total}
-Si $A_1$, $A_2$, ..., $A_n$   son sucesos incompatibles dos a dos y cuya unión es todo el espacio muestral, entonces la probabilidad de cualquier otro suceso $B$ es:
-
-$$P(B)=\sum_{i=1}^n P(A_i)\cdot  P(B|A_i) $$
-\end{frame}
-
-\begin{frame}{Ejemplo de probabilidad total}
-En una urna en la que hay tres bolas blancas y dos negras. Si se extraen dos bolas \textbf{sin} reemplazamiento:
-\input{img_tikz/tikz_arbol_3}
-
-$$P(B_2)=P(B_1)\cdot P(B_2|B_1) + P(N_1)\cdot P(B_2|N_1)
-= \frac{3}{5}\cdot\frac{2}{4} + \frac{2}{5}\cdot\frac{3}{4}$$
-\end{frame}
-
-
-\begin{frame}{Teorema de Bayes}
-Si $A_1$, $A_2$, ..., $A_n$   son sucesos incompatibles dos a dos y cuya unión es todo el espacio muestral, y $B$ otro suceso cualquiera:
-
-$$P(A_i|B)=\dfrac{P(A_i \cap B)}{\sum_{i=1}^n P(A_i)\cdot  P(B|A_i)} $$
-
-\end{frame}
-
-\begin{frame}{Ejemplo de Bayes}
-En una urna en la que hay tres bolas blancas y dos negras. Si se extraen dos bolas \textbf{sin} reemplazamiento:
-\input{img_tikz/tikz_arbol_3}
-
-$$P(B_1|B_2)=\dfrac{P(B_1 \cap B_2)}{P(B_1)\cdot  P(B_2|B_1)+P(N_1)\cdot  P(B_2|N_1)}=\dfrac{\dfrac{3}{5}\cdot\dfrac{2}{4}}{\dfrac{3}{5}\cdot\dfrac{2}{4} + \dfrac{2}{5}\cdot\dfrac{3}{4}}$$
-\end{frame}
-
 
 
 \end{document}

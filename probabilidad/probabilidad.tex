@@ -301,6 +301,58 @@ $P(N_1\cap N_2)=P(N_1)\cdot P(N_2|N_1)=\frac{2}{5}\cdot\frac{2}{5}=\frac{4}{25}$
 $P((B_1\cap B_2)\cup (N_1\cap N_2))=\frac{9}{25}+\frac{4}{25}=\frac{13}{25}$
 \end{list}
 
+\section{Tablas de contingencia}
+
+Si tenemos dos particiones del espacio muestral, generalmente por dos características diferentes de la población, resulta útil el uso de tablas de contingencia para el cálculo de probabilidades.
+
+\paragraph{Ejemplo:} En una cadena de televisión se hizo una encuesta a 2 500 personas para saber la audiencia de un debate y de una película que se emitieron en horas distintas: 2 100 vieron la película, 1 500 vieron el debate y 350 no
+vieron ninguno de los dos programas. Si elegimos al azar a uno de los encuestados:
+\begin{itemize}
+    \item ¿Cuál es la probabilidad de que viera la película y el debate?
+    \item ¿Cuál es la probabilidad de que viera la película, sabiendo que vio el debate?
+    \item Sabiendo que vio la película, ¿cuál es la probabilidad de que viera el debate?
+\end{itemize}
+
+Si llamamos $D$ al suceso 'haber visto el debate'  y $P$ a 'haber visto la película', podemos organizar la información en una tabla:
+
+\begin{center}
+ \begin{tabular}{|c | c | c | c |} 
+ \hline
+  &  $D$ & $\overline{D}$ & Total \\ [0.5ex] 
+ \hline
+ $P$ &  &  & 2100 \\ 
+ \hline
+ $\overline{P}$ &  & 350 &  \\
+ \hline
+ Total & 1500 &  &  2500 \\
+ \hline
+\end{tabular}
+\end{center}
+
+Podemos completar la tabla calculando diferencias:
+
+\begin{center}
+ \begin{tabular}{|c | c | c | c |} 
+ \hline
+  &  $D$ & $\overline{D}$ & Total \\ [0.5ex] 
+ \hline
+ $P$ & \color{red}1450 & \color{red}650 & 2100 \\ 
+ \hline
+ $\overline{P}$ & \color{red}50  & 350 & \color{red}400 \\
+ \hline
+ Total & 1500 & \color{red}1000 &  2500 \\
+ \hline
+\end{tabular}
+\end{center}
+
+Mediante la regla de Laplace directamente o usando la probabilidad condicionada:
+
+\begin{itemize}
+    \item $P(P \cap D)= \frac{1450}{2500}=\frac{29}{50}$, o bien $P(P \cap D)= P(P)\cdot P(D|P)=\frac{1450}{2500}\cdot \frac{1450}{2100}=\frac{29}{50}$
+    \item $P(P|D)=\frac{1450}{1500}=\frac{29}{30}$, o bien $P(D \cap P)=\frac{P(P \cap D)}{P(D)} =\frac{\frac{29}{50}}{\frac{1500}{2500}}=\frac{29}{30}$
+    \item $P(D|P)=\frac{1450}{2100}=\frac{29}{42}$, o bien $P(D|P)= \frac{P(D \cap P)}{P(P)} \cdot P(D|P)=\frac{\frac{1450}{2500}}{\frac{2100}{2500}}=\frac{29}{42}$
+\end{itemize}
+
 
 \section{Teorema de la probabilidad total}
 \paragraph{Ejemplo:} En un instituto de ESO hay 4 cursos: 1º, 2º, 3º y 4º. Se quiere estudiar la probabilidad de que un alumno del instituto esté con la gripe (Llamamos $G$ al suceso tener gripe). 

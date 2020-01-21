@@ -87,22 +87,24 @@ Lanzamos un dado y comprobamos la cara que sale:
 
 \begin{frame}
 {Operaciones con sucesos y relaciones}
-
+\begin{columns}
+\begin{column}{0.6\textwidth}
 \begin{block}{}
-la \textbf{unión} de los sucesos $A$ y $B$ es aquel suceso que contiene a todos los elementos de $A$ y a  los de $B$. Se denota: $A\cup B$ 
+la \textbf{unión} de los sucesos $A$ y $B$ es aquel suceso que contiene a todos los elementos de $A$ y a  los de $B$. Por tanto los sucesos que están en $A$ \textbf{o} en $B$ o en los dos a la vez. Se denota: $A\cup B$ 
+\end{block}
+\begin{block}{}
+la \textbf{intersección} de los sucesos $A$ y $B$ es aquel suceso que contiene a todos los elementos que están tanto en $A$ como en $B$. Están en $A$ \textbf{y} en $B$. Se denota: $A\cap B$ 
 \end{block}
 
+
+\end{column}
+\begin{column}{0.4\textwidth}
 \input{img_tikz/tikz_union}
-\end{frame}
-
-\begin{frame}
-{Operaciones con sucesos y relaciones}
-
-\begin{block}{}
-la \textbf{intersección} de los sucesos $A$ y $B$ es aquel suceso que contiene a todos los elementos que están tanto en $A$ como en $B$. Se denota: $A\cap B$ 
-\end{block}
 
 \input{img_tikz/tikz_interseccion}
+\end{column}
+\end{columns}
+
 \end{frame}
 
 \begin{frame}
@@ -160,12 +162,16 @@ La probabilidad de sacar más de 4: $\lbrace5,6\rbrace\to\dfrac{2}{6}$
 \end{frame}
 
 \begin{frame}{Propiedades de la probabilidad} La probabilidad de un experimento regular cumple las siguientes propiedades:
-\begin{itemize}[<+->]
-\item $0 \leq P(A) \leq 1$ 
-\item $P(E) = 1$ y $P(\varnothing) = 0$
-\item $P(A) + P(\overline A) = 1$
-\item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$. Si $A$ y $B$ son incompatibles: $P(A \cup B) = P(A) + P(B)$
-\end{itemize}
+\begin{block}{}
+    \begin{itemize}[<+->]
+        \item $0 \leq P(A) \leq 1$ 
+        \item $P(E) = 1$ y $P(\varnothing) = 0$
+        \item $P(A) + P(\overline A) = 1$
+        \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$. Si $A$ y $B$ son incompatibles: $P(A \cup B) = P(A) + P(B)$
+    \end{itemize}
+
+\end{block}
+
 \end{frame}
 
 
@@ -176,10 +182,17 @@ $$P(A|B)=\dfrac{P(A\cap B)}{P(B)}$$
 Despejando:
 $$P(A\cap B) = P(A|B)\cdot P(B)$$
 
-\begin{itemize}[<+->]
-\item Se dice que dos sucesos son \textbf{independientes} cuando la probabilidad de cada uno no depende del resultado del otro. 
 
-$$A\ y \ B\ son \ independientes \Longleftrightarrow P(B|A)=P(B)$$
+Se dice que dos sucesos son \textbf{independientes} cuando la probabilidad de cada uno no depende del resultado del otro. 
+
+
+
+
+\begin{itemize}[<+->]
+
+\item $A\ y \ B\ son \ independientes \Longleftrightarrow P(A|B)=P(A)$
+
+\item $A\ y \ B\ son \ independientes \Rightarrow P(A \cap B)=P(A) \cdot P(B)$
 
 \end{itemize}
 \end{frame}
@@ -187,8 +200,10 @@ $$A\ y \ B\ son \ independientes \Longleftrightarrow P(B|A)=P(B)$$
 \begin{frame}{Ejemplo sin remplazamiento}
 En una urna hay tres bolas blancas y dos negras. Se extraen dos bolas \textbf{sin} reemplazamiento:
 \input{img_tikz/tikz_arbol_1}
+\pause
 \begin{itemize}[<+->]
 \item Probabilidad de que sean del mismo color: \\
+\pause
 $P((B_1\cap B_2)\cup (N_1\cap N_2))=\frac{3}{10}+\frac{1}{10}=\frac{2}{5}$
 \end{itemize}
 
@@ -197,25 +212,105 @@ $P((B_1\cap B_2)\cup (N_1\cap N_2))=\frac{3}{10}+\frac{1}{10}=\frac{2}{5}$
 \begin{frame}{Ejemplo con remplazamiento}
 En una urna hay tres bolas blancas y dos negras. Se extraen dos bolas \textbf{con} reemplazamiento:
 \input{img_tikz/tikz_arbol_2}
+\pause
 \begin{itemize}
 \item Probabilidad de que sean del mismo color: \\
+\pause
 $P((B_1\cap B_2)\cup (N_1\cap N_2))=\frac{9}{25}+\frac{4}{25}=\frac{13}{25}$
 \end{itemize}
 
 \end{frame}
 
+\begin{frame}{Tablas de Contingencia}
+\begin{block}{}
+Si tenemos \textbf{dos particiones del espacio muestral}, generalmente por dos características diferentes de la población, resulta útil el uso de \textbf{tablas de contingencia} para el cálculo de probabilidades.
+\end{block}
+\end{frame}
 
+\begin{frame}{Ejemplo de tabla de contingencia}
+
+\begin{block}{}
+En una cadena de televisión se hizo una encuesta a 2500 personas para saber la audiencia de un \textbf{debate} y de una \textbf{película} que se emitieron en horas distintas: 2100 vieron la película, 1500 vieron el debate y 350 no
+vieron ninguno de los dos programas.
+\end{block}
+
+Si llamamos $D$ al suceso 'haber visto el debate'  y $P$ a 'haber visto la película', podemos organizar la información en una tabla y completarla: 
+\newline
+
+\pause
+
+\begin{columns}
+\begin{column}{0.41\textwidth}  
+     \begin{tabular}{|c | c | c | c |} 
+     \hline
+       &  $D$ & $\overline{D}$ & Total \\ [0.5ex] 
+     \hline
+     $P$ &  &  & 2100 \\ 
+     \hline
+     $\overline{P}$ &  & 350 &  \\
+     \hline
+     Total & 1500 &  &  2500 \\
+     \hline
+    \end{tabular}
+\end{column}
+\begin{column}{0.05\textwidth}
+  $$\to$$  
+\end{column}
+\begin{column}{0.41\textwidth}
+\pause
+     \begin{tabular}{|c | c | c | c |} 
+     \hline
+      &  $D$ & $\overline{D}$ & Total \\ [0.5ex] 
+     \hline
+     $P$ & \color{red}1450 & \color{red}650 & 2100 \\ 
+     \hline
+     $\overline{P}$ & \color{red}50  & 350 & \color{red}400 \\
+     \hline
+     Total & 1500 & \color{red}1000 &  2500 \\
+     \hline
+    \end{tabular}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Ejemplo de tabla de contingencia}
+Ejemplos de cálculo de probabilidades a través de Laplace y condicionales:
+\begin{columns}
+\begin{column}{0.41\textwidth}
+     \begin{tabular}{|c | c | c | c |} 
+     \hline
+      &  $D$ & $\overline{D}$ & Total \\ [0.5ex] 
+     \hline
+     $P$ & \color{red}1450 & \color{red}650 & 2100 \\ 
+     \hline
+     $\overline{P}$ & \color{red}50  & 350 & \color{red}400 \\
+     \hline
+     Total & 1500 & \color{red}1000 &  2500 \\
+     \hline
+    \end{tabular}
+\end{column}
+\begin{column}{0.6\textwidth}  
+\begin{itemize}[<+->]
+    \item $P(P \cap D)= \frac{1450}{2500}=\frac{29}{50}$, o bien $P(P \cap D)= P(P)\cdot P(D|P)=\frac{1450}{2500}\cdot \frac{1450}{2100}=\frac{29}{50}$
+    \item $P(P|D)=\frac{1450}{1500}=\frac{29}{30}$, o bien $P(D \cap P)=\frac{P(P \cap D)}{P(D)} =\frac{\frac{29}{50}}{\frac{1500}{2500}}=\frac{29}{30}$
+    \item $P(D|P)=\frac{1450}{2100}=\frac{29}{42}$, o bien $P(D|P)= \frac{P(D \cap P)}{P(P)} \cdot P(D|P)=\frac{\frac{1450}{2500}}{\frac{2100}{2500}}=\frac{29}{42}$
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
 
 \begin{frame}{Teorema de la probabilidad total}
 Si $A_1$, $A_2$, ..., $A_n$   son sucesos incompatibles dos a dos y cuya unión es todo el espacio muestral, entonces la probabilidad de cualquier otro suceso $B$ es:
-
+\begin{block}{}
 $$P(B)=\sum_{i=1}^n P(A_i)\cdot  P(B|A_i) $$
+\end{block}
+
 \end{frame}
 
 \begin{frame}{Ejemplo de probabilidad total}
 En una urna en la que hay tres bolas blancas y dos negras. Si se extraen dos bolas \textbf{sin} reemplazamiento:
 \input{img_tikz/tikz_arbol_3}
-
+\pause
 $$P(B_2)=P(B_1)\cdot P(B_2|B_1) + P(N_1)\cdot P(B_2|N_1)
 = \frac{3}{5}\cdot\frac{2}{4} + \frac{2}{5}\cdot\frac{3}{4}$$
 \end{frame}
@@ -223,16 +318,16 @@ $$P(B_2)=P(B_1)\cdot P(B_2|B_1) + P(N_1)\cdot P(B_2|N_1)
 
 \begin{frame}{Teorema de Bayes}
 Si $A_1$, $A_2$, ..., $A_n$   son sucesos incompatibles dos a dos y cuya unión es todo el espacio muestral, y $B$ otro suceso cualquiera:
-
+\begin{block}{}
 $$P(A_i|B)=\dfrac{P(A_i \cap B)}{\sum_{i=1}^n P(A_i)\cdot  P(B|A_i)} $$
-
+\end{block}
 \end{frame}
 
 \begin{frame}{Ejemplo de Bayes}
 En una urna en la que hay tres bolas blancas y dos negras. Si se extraen dos bolas \textbf{sin} reemplazamiento:
 \input{img_tikz/tikz_arbol_3}
-
-$$P(B_1|B_2)=\dfrac{P(B_1 \cap B_2)}{P(B_1)\cdot  P(B_2|B_1)+P(N_1)\cdot  P(B_2|N_1)}=\dfrac{\dfrac{3}{5}\cdot\dfrac{2}{4}}{\dfrac{3}{5}\cdot\dfrac{2}{4} + \dfrac{2}{5}\cdot\dfrac{3}{4}}$$
+\pause 
+$P(B_1|B_2)=\dfrac{P(B_1 \cap B_2)}{P(B_1)\cdot  P(B_2|B_1)+P(N_1)\cdot  P(B_2|N_1)}=\dfrac{\dfrac{3}{5}\cdot\dfrac{2}{4}}{\dfrac{3}{5}\cdot\dfrac{2}{4} + \dfrac{2}{5}\cdot\dfrac{3}{4}}$
 \end{frame}
 
 

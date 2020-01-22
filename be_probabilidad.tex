@@ -48,9 +48,10 @@
 
 \begin{frame}{Experimentos aleatorios}
 \begin{block}{}
-Un experimento es aleatorio cuando depende de muchos factores y cualquier pequeña modificación de alguno implica obtener un resultado diferente.
+Un experimento es \textbf{aleatorio} cuando depende de muchos factores y cualquier pequeña modificación de alguno implica obtener un resultado diferente.
 \end{block}
 \pause
+\textbf{Ejemplos:}
 \begin{itemize}[<+->]
  \item \textbf{Aleatorio}: Lanzar un dado y ver el resultado
  \item \textbf{Determinista}: Calcular el tiempo que tarda en caer un objeto al suelo desde una distancia determinada
@@ -72,8 +73,8 @@ Un experimento es aleatorio cuando depende de muchos factores y cualquier peque�
 
 \end{frame}
 
-\begin{frame}{Ejemplos:}
-Lanzamos un dado y comprobamos la cara que sale:
+\begin{frame}{Ejemplo}
+Lanzamos \textbf{un dado} y comprobamos la cara que sale:
 \begin{itemize}[<+->]
 \item \textbf{Espacio muestral}: $E=\lbrace 1,2,3,4,5,6 \rbrace $
 \item \textbf{Sucesos simples o elementales}: $1$, $2$, $3$, $4$, $5$ ó $6$
@@ -108,9 +109,9 @@ la \textbf{intersección} de los sucesos $A$ y $B$ es aquel suceso que contiene 
 \end{frame}
 
 \begin{frame}
-{Operaciones con sucesos y relaciones}
+{Ejemplo}
 
- Tomamos como experimento el resultado de lanzar un dado, y los sucesos: \\
+ Tomamos como experimento el resultado de \textbf{lanzar un dado}, y los sucesos: \\
 \begin{tabular}{l}
 $A=\lbrace que\ salga\ par\rbrace=\lbrace2,4,6\rbrace$ \\
 $B=\lbrace que\ sea\ mayor\ que\ 3\rbrace=\lbrace4,5,6\rbrace$ \\
@@ -134,15 +135,15 @@ $C=\lbrace que\ salga\ impar\rbrace=\lbrace1,3,5\rbrace$
 \begin{block}{}
 Se dice que dos sucesos son \textbf{incompatibles} cuando su intersección es el conjunto vacío. En caso contrario se dice que son \textbf{compatibles}.
 \end{block}
-
-Tomamos como experimento el resultado de lanzar un dado, y los sucesos: \\
+\pause
+\textbf{Ejemplo:} Tomamos como experimento el resultado de \textbf{lanzar un dado}, y los sucesos: \\
 \begin{tabular}{l}
 $A=\lbrace que\ salga\ par\rbrace=\lbrace2,4,6\rbrace$ \\
 $B=\lbrace que\ sea\ mayor\ que\ 3\rbrace=\lbrace4,5,6\rbrace$ \\
 $C=\lbrace que\ salga\ impar\rbrace=\lbrace1,3,5\rbrace$
 \end{tabular}
-
-$A$ y $B$ son compatibles y $A$ y $C$ incompatibles.
+\newline
+$A$ y $B$ son \textbf{compatibles} y $A$ y $C$ \textbf{incompatibles}.
 
 \end{frame}
 
@@ -152,7 +153,9 @@ $A$ y $B$ son compatibles y $A$ y $C$ incompatibles.
 $$P(A)=\dfrac{Casos\ favorables}{Casos\ posibles} $$
 \end{block}
 
-Al lanzar un dado, los casos posibles son 6 ($\lbrace1,2,3,4,5,6\rbrace$):\\
+\pause
+
+\textbf{Ejemplo:} Al \textbf{lanzar un dado}, los casos posibles son 6 ($\lbrace1,2,3,4,5,6\rbrace$):\\
 \begin{tabular}{l}
 La probabilidad de sacar un 3: $\lbrace3\rbrace\to \dfrac{1}{6}$\\
 La probabilidad de sacar par: $\lbrace2,4,6\rbrace\to\dfrac{3}{6}$ \\
@@ -179,9 +182,12 @@ La probabilidad de sacar más de 4: $\lbrace5,6\rbrace\to\dfrac{2}{6}$
 \begin{block}{}
 $$P(A|B)=\dfrac{P(A\cap B)}{P(B)}$$
 \end{block}
+
+\pause
 Despejando:
 $$P(A\cap B) = P(A|B)\cdot P(B)$$
 
+\pause
 
 Se dice que dos sucesos son \textbf{independientes} cuando la probabilidad de cada uno no depende del resultado del otro. 
 
@@ -289,10 +295,10 @@ Ejemplos de cálculo de probabilidades a través de Laplace y condicionales:
      \hline
     \end{tabular}
 \end{column}
-\begin{column}{0.6\textwidth}  
+\begin{column}{0.65\textwidth}  
 \begin{itemize}[<+->]
-    \item $P(P \cap D)= \frac{1450}{2500}=\frac{29}{50}$, o bien $P(P \cap D)= P(P)\cdot P(D|P)=\frac{1450}{2500}\cdot \frac{1450}{2100}=\frac{29}{50}$
-    \item $P(P|D)=\frac{1450}{1500}=\frac{29}{30}$, o bien $P(D \cap P)=\frac{P(P \cap D)}{P(D)} =\frac{\frac{29}{50}}{\frac{1500}{2500}}=\frac{29}{30}$
+    \item $P(P \cap D)= \frac{1450}{2500}=\frac{29}{50}$, o bien $P(P \cap D)= P(P)\cdot P(D|P)=\frac{2100}{2500}\cdot \frac{1450}{2100}=\frac{29}{50}$
+    \item $P(P|D)=\frac{1450}{1500}=\frac{29}{30}$, o bien $P(P|D)=\frac{P(P \cap D)}{P(D)} =\frac{\frac{1450}{2500}}{\frac{1500}{2500}}=\frac{29}{30}$
     \item $P(D|P)=\frac{1450}{2100}=\frac{29}{42}$, o bien $P(D|P)= \frac{P(D \cap P)}{P(P)} \cdot P(D|P)=\frac{\frac{1450}{2500}}{\frac{2100}{2500}}=\frac{29}{42}$
 \end{itemize}
 \end{column}

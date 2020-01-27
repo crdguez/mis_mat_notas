@@ -1,5 +1,5 @@
-\documentclass[11pt]{beamer}
-%\documentclass[11pt,handout]{beamer}
+%\documentclass[11pt]{beamer}
+\documentclass[11pt,handout]{beamer}
 \usetheme{Boadilla}
 %\usetheme{metropolis}
 
@@ -68,7 +68,7 @@ elemental de un espacio muestral le asigna un número. \\ Para hacer referencia 
 
 \begin{frame}{Ejemplo}
 \begin{block}{}
-Sea el \textbf{experimento aleatorio “lanzar un dado”}El espacio muestral lo componen las 6 caras del dado 
+Sea el \textbf{experimento aleatorio “lanzar un dado”} 
 \end{block}
 \pause
 El espacio muestral lo componen las 6 caras del dado.\\
@@ -292,7 +292,11 @@ Ejemplos de representación gráfica de la distribución de probabilidad de algu
 
 \begin{frame}{Distribución de probabilidades en una variable continua}
 
-La probabilidad total es 1 y la variable $X$ puede tomar $\infty$ valores ($x \in \left(-\infty, +\infty\right)$). Por tanto, en variables continuas la probabilidad de que tome un valor concreto será 0 ($\lim_{x \to \infty}\frac{1}{x}=0$).    
+Observa que la probabilidad total tiene que ser 1 y la variable $X$, al ser continua, puede tomar $\infty$ valores.
+\begin{block}{}
+Si queremos repartir la probabilidad entre infinitos valores, \textbf{la probabilidad de un valor concreto será 0} ($\lim_{x \to \infty}\frac{1}{x}=0$). 
+\end{block}
+   
 
 Para calcular las probabilidades no se utilizarán funciones de probabilidad como hemos visto hasta ahora sino \textbf{funciones de densidad}:
 \end{frame}

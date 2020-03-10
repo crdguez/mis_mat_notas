@@ -8,16 +8,53 @@
 
 \paragraph{Definición:} Dado $\lambda$, un parámetro de la población. Decimos que el estadístico $\widehat{\lambda}$
 es un estimador suyo si es
-un parámetro obtenido a partir de una muestra y cuyo es asignar un valor
-aproximado a $\lambda$.
+un parámetro obtenido a partir de una muestra y da un valor
+aproximado de $\lambda$.
+
+\subsection{Estimación de la media}
+Un buen estimador de $\mu$ es la media muestral:
+$$\overline{x}= \frac{x_1 + x_2 + ....+x_n} {n}=\frac{{\sum_{i=1}^n x_i }}{n}$$
+
+\subsection{Estimación de varianza}
+Un buen estimador de $\sigma^2$ es la cuasivarianza muestral:
+
+$$S_n^2=\frac{\sum_{i=1}^n x_i^2 }{n-1} - \bar x^2$$
+
+\subsection{Estimación de la proporción}
+Un estimador de $p$ es la proporción muestral:
+$$\widehat{p}=\frac{Cantidad \ de \ elementos \ favorables}{Cantidad \ de \ elementos \ de \ la \ muestra}$$
+\section{Distibuciones muestrales}
+
+\subsection{Teorema central del límite}
+
+El teorema central del límite que dice que si sumamos variables cualesquiera (no necesariamente normales), la variable suma seguirá una distribución normal, sobre todo cuando el número de sumas es grande:
+$$Y\mathrm{=}X_{\mathrm{1}}\mathrm{+}X_{\mathrm{2}}\mathrm{+...+}X_n\ \mathrm{\approx }\ N\left(\sum^n_{i\mathrm{=1}}{}{\mu }_i,\sqrt{\sum^n_{i\mathrm{=1}}{}{\sigma }^{\mathrm{2}}_i}\right).$$
+
+\subsection{Distribución muestral de la media }
+Aplicando el teorema central de límite:
+
+$$\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$$
+
+\paragraph{Ejemplo:}
+ Se ha seleccionado una muestra al azar de 50 mujeres de una población de mayores
+de 18 años. Se desconoce la talla media de la población, pero en la muestra se ha
+observado que la media de las 50 tallas es 1,60 m. Si se sabe por otros estudios que
+la desviación típica en la población es de 3,3 cm, determina la probabilidad de que la
+media de la población no difiere en más de 1 cm de la de la muestra. 
+\subsection{Distribución muestral de la proporción}
+
+Podemos considerar la proporción de la población como la probabilidad de acierto de un experimento dicotómico.
+El número de éxitos x de una muestra de tamaño n, se distribuye de forma binomial $B(n, p)$; si la aproximamos a una normal será $B(n, p) \approx N( n\cdot p, \sqrt{n\cdot p \cdot (1-p)})$  Como $p = \frac{x}{n}$:
+
+$$\widehat{p} \rightarrow N \left ( p , \sqrt{ \frac{p \cdot (1-p)} {n}}\right )$$
+
+\section{Estimación por intervalos de confianza}
 
 La estimación puntual sirve de poco mientras
 desconozcamos cuál es el grado de aproximación del estimador al parámetro real. Por ese motivo se procede
 a la estimación mediante un intervalo.
 
-\section{Estimación por intervalos de confianza} 
-
- A partir de una muestra aleatoria de tamaño $n$, podemos estimar el valor de un parámetro de la población del siguiente modo:
+A partir de una muestra aleatoria de tamaño $n$, podemos estimar el valor de un parámetro de la población del siguiente modo:
  
 \begin{itemize}
 \item Dando un intervalo dentro del cual confiamos que esté el parámetro. Se llama \textbf{intervalo de confianza}.
@@ -80,9 +117,16 @@ $$\left( 0.21 - 0.08 , 0.21 + 0,08 \right) = \left(0.13, 0.29 \right)
 $$
 Por tanto con una alta probabilidad, en concreto 0.96, el porcentaje de individuos con sobrepeso en la población se encuentra entre el 13\% y el 29\% 
 
-\subsection{Conclusiones} A ver pues. Intentando realizar documentos desde overleaf. Parece que va bien
+\subsection{Referencias}
+Me ha resultado útil el siguiente enlace 
 
+\href{http://maralboran.org/wikipedia/index.php/}{Wiki del IES Mar de Alborán}. Una vez allí ir a Optativas/Estadística (2º BH)
 
+\href{https://probabilidadyestadisticaitsav.blogspot.com/2012/06/52-estimaciones-puntuales-y-por.html}{https://probabilidadyestadisticaitsav.blogspot.com/2012/06/52-estimaciones-puntuales-y-por.html}
+
+\href{https://bookdown.org/aquintela/EBE/el-teorema-central-del-limite.html}{https://bookdown.org/aquintela/EBE/el-teorema-central-del-limite.html}
+
+\href{https://www.ugr.es/~mvargas/tema6sd.pdf}{https://www.ugr.es/~mvargas/tema6sd.pdf}
 
 
 

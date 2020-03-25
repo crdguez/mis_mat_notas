@@ -239,6 +239,34 @@ Por Gauss se llega a la matriz escalonada: \\ $A^* \thicksim \left(\begin{matrix
     \item Fila 1: $2x-y+3z=-3 \to x= -1 - \frac{4\lambda}{3} $
 \end{itemize}
 
+\subsection{Ejemplo:}
+Discutir y resolver el siguiente sistema con parámetro $k$: \\ $$\left\{ \begin{matrix}k x + k z + y \left(k^{2} + 1\right) = k \\ k y + x + z = 0 \\ k^{2} z + x + y \left(k + 1\right) = 2 k - 1 \\ \end{matrix}\right.$$ 
+
+\textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}k & k^{2} + 1 & k & k\\1 & k & 1 & 0\\1 & k + 1 & k^{2} & 2 k - 1\end{matrix}\right) \thicksim \left(\begin{matrix}1 & k & 1 & 0\\0 & 1 & 0 & k\\0 & 0 & k^{2} - 1 & k - 1\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item Si $k = -1 \to$ $$\left(\begin{matrix}1 & -1 & 1 & 0\\0 & 1 & 0 & -1\\0 & 0 & 0 & -2\end{matrix}\right)$$ La última fila es $0z=-2 \to $ S.I.\item Si $k = 1 \to$ $$\left(\begin{matrix}1 & 1 & 1 & 0\\0 & 1 & 0 & 1\\0 & 0 & 0 & 0\end{matrix}\right)$$ La última fila es $0z=0 \to $ S.C.I\begin{itemize}\item $\left(\begin{matrix}0 & 0 & 0 & 0\end{matrix}\right) \to z = \lambda$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & 1 & 0 & 1\end{matrix}\right) \to y = 1$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & 1 & 1 & 0\end{matrix}\right) \to x = -\lambda - 1$\end{itemize}\item si $k\neq [-1, 1]  \to $ S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & k^{2} - 1 & k - 1\end{matrix}\right) \to z = \frac{1}{k + 1}$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & 1 & 0 & k\end{matrix}\right) \to y = k$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & k & 1 & 0\end{matrix}\right) \to x = - \frac{k^{3} + k^{2} + 1}{k + 1}$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=k^{4} - k^{2} \left(k^{2} + 1\right) + 1 \to \left|A\right|=0 \quad si \quad k = \left [ -1, \quad 1\right ]$\begin{itemize}\item Si $k=-1 \to rg(A)=2 \land rg(A^*)=3 \to $ S.I.\item Si $k=1 \to rg(A)=2 \land rg(A^*)=2 \to $ S.C.I. $\to$ solo se puede resolver por Gauss, ver más arriba\item Si $k=1 \to rg(A)=2 \land rg(A^*)=2 \to $ S.C.D. $\to$ solo se puede resolver por Gauss, (ver más arriba) \\ Por Cramer: \begin{itemize}\item $x=\frac{\left[\begin{matrix}k & k^{2} + 1 & k & k\\0 & k & 1 & 1\\2 k - 1 & k + 1 & k^{2} & 1\end{matrix}\right]}{- k^{2} + 1}=\frac{k^{4} - k^{2} + k - 1}{- k^{2} + 1}=- \frac{k^{3} + k^{2} + 1}{k + 1}$\item $y=\frac{\left[\begin{matrix}k & k & k & k^{2} + 1\\1 & 0 & 1 & k\\1 & 2 k - 1 & k^{2} & k + 1\end{matrix}\right]}{- k^{2} + 1}=\frac{- k^{3} + k}{- k^{2} + 1}=k$\item $z=\frac{\left[\begin{matrix}k & k^{2} + 1 & k & k\\1 & k & 0 & 1\\1 & k + 1 & 2 k - 1 & k^{2}\end{matrix}\right]}{- k^{2} + 1}=\frac{- k + 1}{- k^{2} + 1}=\frac{1}{k + 1}$\end{itemize}\end{itemize}
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 %\end{multicols*}
 %

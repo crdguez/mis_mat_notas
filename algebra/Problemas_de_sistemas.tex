@@ -1,0 +1,309 @@
+
+        \documentclass[spanish, 11pt]{exam}
+
+        %These tell TeX which packages to use.
+        \usepackage{array,epsfig}
+        \usepackage{amsmath, textcomp}
+        \usepackage{amsfonts}
+        \usepackage{amssymb}
+        \usepackage{amsxtra}
+        \usepackage{amsthm}
+        \usepackage{mathrsfs}
+        \usepackage{color}
+        \usepackage{multicol, xparse}
+        \usepackage{verbatim}
+        
+        \usepackage{pgf,tikz,pgfplots}
+        \usetikzlibrary{shapes, calc, shapes, arrows, math, babel, positioning}
+         \usepackage{tikzit}
+
+
+
+        \usepackage[utf8]{inputenc}
+        \usepackage[spanish]{babel}
+        \usepackage{eurosym}
+
+        \usepackage{graphicx}
+        \graphicspath{{../img/}}
+        \usepackage{pgf}
+
+
+
+        \printanswers
+        \nopointsinmargin
+        \pointformat{}
+
+        %Pagination stuff.
+        %\setlength{\topmargin}{-.3 in}
+        %\setlength{\oddsidemargin}{0in}
+        %\setlength{\evensidemargin}{0in}
+        %\setlength{\textheight}{9.in}
+        %\setlength{\textwidth}{6.5in}
+        %\pagestyle{empty}
+
+        \let\multicolmulticols\multicols
+        \let\endmulticolmulticols\endmulticols
+        \RenewDocumentEnvironment{multicols}{mO{}}
+         {%
+          \ifnum#1=1
+            #2%
+          \else % More than 1 column
+            \multicolmulticols{#1}[#2]
+          \fi
+         }
+         {%
+          \ifnum#1=1
+          \else % More than 1 column
+            \endmulticolmulticols
+          \fi
+         }
+        \renewcommand{\solutiontitle}{\noindent\textbf{Sol:}\enspace}
+
+        \newcommand{\samedir}{\mathbin{\!/\mkern-5mu/\!}}
+
+        \newcommand{\class}{2º Bachillerato}
+        \newcommand{\examdate}{\today}
+
+        \newcommand{\tipo}{A}
+
+
+        \newcommand{\timelimit}{50 minutos}
+
+
+
+        \pagestyle{head}
+        \firstpageheader{\includegraphics[width=0.2\columnwidth]{header_left}}{\textbf{Departamento de Matemáticas\linebreak \class}\linebreak \examnum}{\includegraphics[width=0.1\columnwidth]{header_right}}
+        \runningheader{\class}{\examnum}{Página \thepage\ of \numpages}
+        \runningheadrule
+
+        \newcommand{\examnum}{Ejercicios de problemas de sistemas}
+        \begin{document}
+        \begin{questions}
+        
+\question Halle tres números sabiendo que el primero menos el segundo es igual a un quinto del tercero, 
+si al doble del primero le restamos 6 nos queda la suma del segundo y el tercero y, además, 
+el triple del segundo menos el doble del tercero es igual al primero menos 8
+\begin{solution}
+    Llamamos $x$, $y$ y $z$  a los tres números,\\
+    El sistema a resolver: $$\left\{ \begin{matrix}5 x - 5 y - z = 0 \\ 2 x - y - z = 6 \\ x - 3 y + 2 z = 8 \\ \end{matrix}\right.$$
+    \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}5 & -5 & -1 & 0\\2 & -1 & -1 & 6\\1 & -3 & 2 & 8\end{matrix}\right) \thicksim \left(\begin{matrix}5 & -5 & -1 & 0\\0 & 1 & - \frac{3}{5} & 6\\0 & 0 & 1 & 20\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & 1 & 20\end{matrix}\right) \to z = 20$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & 1 & - \frac{3}{5} & 6\end{matrix}\right) \to y = 18$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}5 & -5 & -1 & 0\end{matrix}\right) \to x = 22$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}5 & -5 & -1\\2 & -1 & -1\\1 & -3 & 2\end{matrix}\right|=5  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}0 & -5 & -1\\6 & -1 & -1\\8 & -3 & 2\end{matrix}\right|}{5}=\frac{110}{5}=22$\item $y=\frac{\left|\begin{matrix}5 & 0 & -1\\2 & 6 & -1\\1 & 8 & 2\end{matrix}\right|}{5}=\frac{90}{5}=18$\item $z=\frac{\left|\begin{matrix}5 & -5 & 0\\2 & -1 & 6\\1 & -3 & 8\end{matrix}\right|}{5}=\frac{100}{5}=20$\end{itemize}\end{itemize}
+    \textbf{SOLUCIÓN: } Los números son: 22, 18 y 20
+\end{solution}
+\question Una tienda vende una clase de calcetines a 1200 pts el par.  
+Al llegar las rebajas,  durante el primer mes realiza un 30\% descuento sobre el precio inicial 
+y en el segundo mes un 40\% también sobre el precio inicial punto sabiendo que vende un total de
+600 pares de calcetines por 597600 pts  y que en las rebajas ha vendido la mitad de dicho total (de calcetines), 
+¿a cuántos pares de calcetines se le aplica se le ha aplicado un descuento del 40\%?
+\begin{solution}
+    Llamamos $x$, $y$ y $z$ al número de pares de calcetines sin rebaja, con un 30\% y con un 40\% respectivamente
+    \\ El sistema a resolver es:$$\left\{ \begin{matrix}x + y + z = 600 \\ 1200 x + 840.0 y + 720.0 z = 597600 \\ y + z = 300 \\ \end{matrix}\right.$$ \\
+    \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}1 & 1 & 1 & 600\\10 & 7 & 6 & 4980\\0 & 1 & 1 & 300\end{matrix}\right) \thicksim \left(\begin{matrix}1 & 1 & 1 & 600\\0 & -3 & -4 & -1020\\0 & 0 & - \frac{1}{3} & -40\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & - \frac{1}{3} & -40\end{matrix}\right) \to z = 120$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & -3 & -4 & -1020\end{matrix}\right) \to y = 180$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & 1 & 1 & 600\end{matrix}\right) \to x = 300$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}1 & 1 & 1\\10 & 7 & 6\\0 & 1 & 1\end{matrix}\right|=1  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}600 & 1 & 1\\4980 & 7 & 6\\300 & 1 & 1\end{matrix}\right|}{1}=\frac{300}{1}=300$\item $y=\frac{\left|\begin{matrix}1 & 600 & 1\\10 & 4980 & 6\\0 & 300 & 1\end{matrix}\right|}{1}=\frac{180}{1}=180$\item $z=\frac{\left|\begin{matrix}1 & 1 & 600\\10 & 7 & 4980\\0 & 1 & 300\end{matrix}\right|}{1}=\frac{120}{1}=120$\end{itemize}\end{itemize}
+    \textbf{SOLUCIÓN: } 120 pares
+    
+     
+\end{solution}
+
+\question La suma de las tres cifras de un número es 16, y la suma de la primera y la tercera igual 
+a la segunda. Permutando entre si dichas cifras ( primera y tercera) resulta un número que supera en 198 
+unidades al número dado.¿Cuál es dicho número?
+
+\begin{solution}
+    Llamamos $x$ a las centenas del número, $y$ a las decenas y $z$ a las unidades. \\ El sistema a resolver es:$$\left\{ \begin{matrix}x + y + z = 16 \\ x + z = y \\ x + 10 y + 100 z - 198 = 100 x + 10 y + z \\ \end{matrix}\right.$$ \\
+    \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}1 & 1 & 1 & 16\\1 & -1 & 1 & 0\\-99 & 0 & 99 & 198\end{matrix}\right) \thicksim \left(\begin{matrix}1 & 1 & 1 & 16\\0 & -2 & 0 & -16\\0 & 0 & 198 & 990\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & 198 & 990\end{matrix}\right) \to z = 5$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & -2 & 0 & -16\end{matrix}\right) \to y = 8$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & 1 & 1 & 16\end{matrix}\right) \to x = 3$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}1 & 1 & 1\\1 & -1 & 1\\-99 & 0 & 99\end{matrix}\right|=-396  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}16 & 1 & 1\\0 & -1 & 1\\198 & 0 & 99\end{matrix}\right|}{-396}=\frac{-1188}{-396}=3$\item $y=\frac{\left|\begin{matrix}1 & 16 & 1\\1 & 0 & 1\\-99 & 198 & 99\end{matrix}\right|}{-396}=\frac{-3168}{-396}=8$\item $z=\frac{\left|\begin{matrix}1 & 1 & 16\\1 & -1 & 0\\-99 & 0 & 198\end{matrix}\right|}{-396}=\frac{-1980}{-396}=5$\end{itemize}\end{itemize}
+    
+    \textbf{SOLUCIÓN: } El número es el 385.
+\end{solution}
+
+\question Una empresa envasadora ha comprado un total de 1500 cajas de pescado en tres mercados 
+diferentes, a un precio por caja 30, 20 y 40  euros respectivamente. el coste total de la operación ha sido 
+de 40500\euro. Calcular cuánto ha pagado la empresa en cada mercado, sabiendo que en el primero de ellos ha 
+comprado el 30\% de las cajas
+
+\begin{solution}
+    Llamamos $x$, $y$ y $z$ cajas de 30, 20 y 40\euro \  respectivamente.
+    El sistema a resolver es:$\left\{ \begin{matrix}x + y + z = 1500 \\ 30 x + 20 y + 40 z = 40500 \\ x = 450 \\ \end{matrix}\right.$ \\ 
+    \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}1 & 1 & 1 & 1500\\30 & 20 & 40 & 40500\\1 & 0 & 0 & 450\end{matrix}\right) \thicksim \left(\begin{matrix}1 & 1 & 1 & 1500\\0 & -10 & 10 & -4500\\0 & 0 & -2 & -600\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & -2 & -600\end{matrix}\right) \to z = 300$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & -10 & 10 & -4500\end{matrix}\right) \to y = 750$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & 1 & 1 & 1500\end{matrix}\right) \to x = 450$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}1 & 1 & 1\\30 & 20 & 40\\1 & 0 & 0\end{matrix}\right|=20  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}1500 & 1 & 1\\40500 & 20 & 40\\450 & 0 & 0\end{matrix}\right|}{20}=\frac{9000}{20}=450$\item $y=\frac{\left|\begin{matrix}1 & 1500 & 1\\30 & 40500 & 40\\1 & 450 & 0\end{matrix}\right|}{20}=\frac{15000}{20}=750$\item $z=\frac{\left|\begin{matrix}1 & 1 & 1500\\30 & 20 & 40500\\1 & 0 & 450\end{matrix}\right|}{20}=\frac{6000}{20}=300$\end{itemize}\end{itemize}
+    \textbf{SOLUCIÓN: } 13500 (450x30), 15000 y 12000 \euro.
+\end{solution}
+
+\question Un mayorista de café dispone de tres tipos base:  Moka, Brasil y Colombia, para preparar 3 tipos de mezcla: A, B y C, envasa en sacos de 60 kg con los siguientes contenidos en kilos y precio: \\
+\begin{tabular}{|c|c|c|c|}
+\hline
+& Mezcla A & Mezcla B & Mezcla C \\
+\hline
+Moka & 15 & 30 & 12 \\
+\hline
+Brasil & 20 & 10 & 18 \\
+\hline
+Colombia & 15 & 20 & 30 \\
+\hline
+Precio/kg & 4 & 4.5 & 4.7 \\
+\hline
+\end{tabular}
+
+Suponiendo que el preparado de las mezclas no supone coste alguno, ¿cuál es el precio de cada uno de los tipos base de café?
+
+\begin{solution}
+    Llamando $x$, $y$ y $z$ al precio de Moka, Brasil y Colombia respectivamente, el sistema a resolver es:$$\left\{ \begin{matrix}15 x + 30 y + 15 z = 240 \\ 30 x + 10 y + 20 z = 270 \\ 12 x + 18 y + 30 z = 282 \\ \end{matrix}\right.$$ 
+    \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}1 & 2 & 1 & 16\\3 & 1 & 2 & 27\\2 & 3 & 5 & 47\end{matrix}\right) \thicksim \left(\begin{matrix}1 & 2 & 1 & 16\\0 & -5 & -1 & -21\\0 & 0 & \frac{16}{5} & \frac{96}{5}\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & \frac{16}{5} & \frac{96}{5}\end{matrix}\right) \to z = 6$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & -5 & -1 & -21\end{matrix}\right) \to y = 3$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & 2 & 1 & 16\end{matrix}\right) \to x = 4$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}1 & 2 & 1\\3 & 1 & 2\\2 & 3 & 5\end{matrix}\right|=-16  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}16 & 2 & 1\\27 & 1 & 2\\47 & 3 & 5\end{matrix}\right|}{-16}=\frac{-64}{-16}=4$\item $y=\frac{\left|\begin{matrix}1 & 16 & 1\\3 & 27 & 2\\2 & 47 & 5\end{matrix}\right|}{-16}=\frac{-48}{-16}=3$\item $z=\frac{\left|\begin{matrix}1 & 2 & 16\\3 & 1 & 27\\2 & 3 & 47\end{matrix}\right|}{-16}=\frac{-96}{-16}=6$\end{itemize}\end{itemize}
+    
+    \textbf{SOLUCIÓN: } Precio Moka = 4 \euro, Precio Brasil = 3 \euro, Precio Colombia = 6 \euro
+\end{solution}
+
+\question  Por la abertura A del mecanismo de tubos de la figura se introducen 50 bolas que se deslizan hasta salir por B. Sabemos que por el tubo W han pasado 10 bolas
+ \ctikzfig{ejercicio_tuberias_sistemas}
+\begin{parts}
+\part Justificar si es posible hallar el número de bolas que pasan exactamente por cada uno de los tubos X, Y y Z.
+\begin{solution}
+    Del enunciado obtenemos: $$\left\{ \begin{matrix}y + z = 40 \\ x = y + 10 \\ \end{matrix}\right.$$
+    Y las matrices:
+    $A=\left(\begin{matrix}0 & 1 & 1\\1 & -1 & 0\end{matrix}\right)$ y $A^*=\left(\begin{matrix}0 & 1 & 1 & 40\\1 & -1 & 0 & 10\end{matrix}\right)$
+    Como $rg(A)=rg(A^*)=2<3=variables \to$ S.C.I. \\
+    
+    \\ \textbf{SOLUCIÓN: } Por tanto no hay solución única
+
+\end{solution}
+\part Supongamos que podemos controlar el número de bolas que pasan por el tubo Y Escribir las expresiones que determinan el número de bolas que pasan por los tubos X y Z en función de las que pasan por Y.
+
+\begin{solution}
+    Despejando las variables $z$ y $x$ de las ecuaciones tenemos:
+    $$x=10+y$$
+    $$z=40-y$$
+\end{solution}
+\part Se sabe un dato nuevo:  por Y circulan tres veces más bolas que por Z, ¿cuántas circulan por X, Y y Z? 
+\begin{solution}
+    Con la nueva condición el sistema a resolver queda:
+    $$\left\{ \begin{matrix}y + z = 40 \\ x = y + 10 \\ y - 3 z = 0 \\ \end{matrix}\right.$$
+    \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}0 & 1 & 1 & 40\\1 & -1 & 0 & 10\\0 & 1 & -3 & 0\end{matrix}\right) \thicksim \left(\begin{matrix}1 & -1 & 0 & 10\\0 & 1 & 1 & 40\\0 & 0 & -4 & -40\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & -4 & -40\end{matrix}\right) \to z = 10$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & 1 & 1 & 40\end{matrix}\right) \to y = 30$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & -1 & 0 & 10\end{matrix}\right) \to x = 40$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}0 & 1 & 1\\1 & -1 & 0\\0 & 1 & -3\end{matrix}\right|=4  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}40 & 1 & 1\\10 & -1 & 0\\0 & 1 & -3\end{matrix}\right|}{4}=\frac{160}{4}=40$\item $y=\frac{\left|\begin{matrix}0 & 40 & 1\\1 & 10 & 0\\0 & 0 & -3\end{matrix}\right|}{4}=\frac{120}{4}=30$\item $z=\frac{\left|\begin{matrix}0 & 1 & 40\\1 & -1 & 10\\0 & 1 & 0\end{matrix}\right|}{4}=\frac{40}{4}=10$\end{itemize}\end{itemize}
+    \textbf{SOLUCIÓN: } $x=40$, $y=30$ y $z=10$
+\end{solution}
+\end{parts}
+
+\question En un supermercado se ofrecen dos lotes formados por distintas cantidades de los mismos productos.  El primer lote está compuesto por una botella de cerveza, 3 bolsas de cacahuetes y 7 vasos y su precio es de 565 pesetas.  El segundo lote está compuesto por una botella de cerveza 4 bolsas de cacahuetes y 10 vasos y su precio es de 740 pesetas.  Con estos datos, ¿se podría averiguar cuánto debería valer un lote formado por una botella de cerveza, una bolsa de cacahuetes y un vaso?. justifica tu respuesta
+\begin{solution}
+    Del enunciado obtenemos: $$\left\{ \begin{matrix}y + 3y + z = 565 \\ x + 4y +10z = 740 \\ \end{matrix}\right.$$ llamando $x$, $y$ y $z$ al precio de la cerveza, la bolsa de cacahuete y el vaso respectivamente.
+    \textbf{1ªForma:}
+    Nos piden si podemos determinar lo que vale $x+y+z$. Si llamamos $k$ a dicho valor obtenemos la ecuación $x+y+z=k$. Por tanto nos piden encontrar valores de $k$ para que sea compatible el sistema: $$\left\{ \begin{matrix}x + 3 y + 7 z = 565 \\ x + 4 y + 10 z = 740 \\ x + y + z = k \\ \end{matrix}\right.$$
+    Por Gauss: \\
+    $A^*= \left(\begin{matrix}1 & 3 & 7 & 565\\1 & 4 & 10 & 740\\1 & 1 & 1 & k\end{matrix}\right) \thicksim \left(\begin{matrix}1 & 3 & 7 & 565\\0 & 1 & 3 & 175\\0 & 0 & 0 & k - 215\end{matrix}\right)$.
+    \begin{itemize}
+        \item Si $ k - 215 \neq 0 \to$ Sistema Incompatible (No tiene solución)
+        \item Si $ k - 215 = 0 \to k=215 \to$ Sistema Compatible Indeterminado (tiene solución)
+    \end{itemize}
+    Luego $x+y+z=215$
+    
+    \textbf{2ª forma:} Si nos fijamos que la matriz escalonada tiene todo ceros en la tercera fila, quiere decir que $x+y+z$ se puede poner como combinación lineal de $x + 3 y + 7 z$ y $x + 4 y + 10 z$.
+    
+    En notación matricial, podemos poner la combinación lineal de la siguiente forma:
+    
+    $(1,1,1) = \lambda (1,3,7) + \mu (1,4,10)$
+    
+    $\left\{ \begin{matrix}1 = \lambda + \mu \\ 1 = 3\lambda + 4\mu \\ 1 = 7\lambda +10\mu  \end{matrix}\right.$
+    
+    De ahí obtenemos que $\lambda=3$ y $\mu=-2$. 
+    
+    Aplicando la combinación lineal a los términos independientes obtenemos que $x+y+z=3\cdot565-2\cdot740=215$
+    
+    \textbf{SOLUCIÓN:} Sí, y su precio sería 215 pts.
+    
+    
+    
+\end{solution}
+
+
+\question Varios amigos pegan en un bar 755 pesetas por 5 cervezas tres bocadillos y dos cafés. Al día siguiente consumen 3 cervezas dos bocadillos y 4 cafés por lo que pagan 645 pesetas
+\begin{parts}
+\part Si al tercer día consumen 7 cervezas y 4 bocadillos, ¿qué precio deberían pagar por ello?
+\begin{solution}
+    Del enunciado tenemos: $$\left\{ \begin{matrix}5 x + 3 y + 2 z = 755 \\ 3 x + 2 y + 4 z = 645 \\ \end{matrix}\right.$$ Siendo $x$ el precio de la cerveza, $y$ del bocadillo y $z$ del café.
+    Si llamamos $k$ al precio de 7 cervezas y 4 bocadillos, tenemos una ecuación adicional: $7x+4y=k$.
+    
+    $$\left\{ \begin{matrix}5 x + 3 y + 2 z = 755 \\ 3 x + 2 y + 4 z = 645 \\ 7x+4y=k\end{matrix}\right.$$
+    
+    Vemos que la tercera fila de coeficientes principales es dos veces la primera menos la segunda ($f_3=2f_1 - f_2$). Luego $k=2\cdot 755 - 645 = 245 $ \\
+    De otra forma, por Gauss: \\
+    $A^*= \left(\begin{matrix}5 & 3 & 2 & 755\\3 & 2 & 4 & 645\\7 & 4 & 0 & k\end{matrix}\right) \thicksim \left(\begin{matrix}5 & 3 & 2 & 755\\0 & \frac{1}{5} & \frac{14}{5} & 192\\0 & 0 & 0 & k - 865\end{matrix}\right)$.
+    
+    Para que el sistema sea compatible (indeterminado) $\to k - 865=0 \to k= 865 \quad pts$ (Si no, el sistema es incompatible)
+    
+    \\ \textbf{SOLUCIÓN:} 865 pts
+    
+    
+    
+\end{solution}
+\part ¿Puede saberse de los datos anteriores el precio de una cerveza o un bocadillo o un café? Si además sabemos que un café vale 60 pesetas ¿puede saberse el precio de una cerveza o un bocadillo?
+\begin{solution}
+    De
+     $$\left\{ \begin{matrix}5 x + 3 y + 2 z = 755 \\ 3 x + 2 y + 4 z = 645 \\ \end{matrix}\right.$$ solo podemos calcular combinaciones lineales de las ecuaciones.
+     
+     De las ecuaciones obtenemos las siguientes filas de coeficientes: $(5,3,2)$ y $(3,2,4)$ y de $x$, que sería el precio de un café, $(1,0,0)$. \\
+     
+     Si $(1,0,0)$ es combinación lineal de las otras se podrá obtener el precio a partir de las otras dos, si no no. \\
+     
+     Como $\left|\begin{matrix}5 & 3 & 2\\3 & 2 & 4\\1 & 0 & 0\end{matrix}\right|=12-4=8\neq0 \to rg(A)=3 \to $ todas las filas son linealmente independientes $\to$ No se puede obtener x \\
+     
+     Razonando igual para $y \to (0,1,0)$ y $z \to (0,0,1)$ vemos que no se puede (se deja como ejercicio) \\
+     
+     Si $z=60$ :
+     $$\left\{ \begin{matrix}5 x + 3 y + 2 z = 755 \\ 3 x + 2 y + 4 z = 645 \\ z = 60 \\ \end{matrix}\right.$$
+     \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}5 & 3 & 2 & 755\\3 & 2 & 4 & 645\\0 & 0 & 1 & 60\end{matrix}\right) \thicksim \left(\begin{matrix}5 & 3 & 2 & 755\\0 & \frac{1}{5} & \frac{14}{5} & 192\\0 & 0 & 1 & 60\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & 1 & 60\end{matrix}\right) \to z = 60$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & \frac{1}{5} & \frac{14}{5} & 192\end{matrix}\right) \to y = 120$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}5 & 3 & 2 & 755\end{matrix}\right) \to x = 55$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}5 & 3 & 2\\3 & 2 & 4\\0 & 0 & 1\end{matrix}\right|=1  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}755 & 3 & 2\\645 & 2 & 4\\60 & 0 & 1\end{matrix}\right|}{1}=\frac{55}{1}=55$\item $y=\frac{\left|\begin{matrix}5 & 755 & 2\\3 & 645 & 4\\0 & 60 & 1\end{matrix}\right|}{1}=\frac{120}{1}=120$\item $z=\frac{\left|\begin{matrix}5 & 3 & 755\\3 & 2 & 645\\0 & 0 & 60\end{matrix}\right|}{1}=\frac{60}{1}=60$\end{itemize}\end{itemize}
+     \textbf{SOLUCIÓN:} Sí, 55 y 120 pts la cerveza y el bocadillo respectivamente
+    
+    
+\end{solution}
+\end{parts}
+
+\question En una excavación arqueológica se han encontrado sortijas, monedas y pendientes.  Una sortija, una moneda y un pendiente pesan conjuntamente 30 gramos. Además, cuatro sortijas tres monedas y dos pendientes han dado un peso total de 90 gramos. El peso de un objeto deformado irreconocible es de 18 gramos. Determina si el mencionado objeto es una sortija una moneda o un pendiente sabiendo que los objetos que son del mismo tipo pesan lo mismo
+
+\begin{solution}
+    Del enunciado, llamando x a las sortijas, y a las monedas y z a los pendientes,  obtenemos el siguiente sistema: 
+    $$\left\{ \begin{matrix}x + y + z = 30 \\ 4 x + 3y +2z = 90 \\ \end{matrix}\right.$$
+    Si $x$  fuera 18 $\to x+0y+0z=18$, por tanto $\left\{ \begin{matrix}x + y + z = 30 \\ 4 x + 3y +2z = 90 \\ x = 18 \\ \end{matrix}\right.$
+
+    
+    razonando igual para y y para obtenemos tres sistemas.
+    
+    Veamos que solo uno tiene sentido, ya que los otros dos tienen soluciones con valores negativos y que en el contexto del problema no son admisibles:
+    
+    \begin{itemize}
+        \item Si $x=18$ \\
+        $$\left\{ \begin{matrix}x + y + z = 30 \\ 4 x + 3 y + 2 z = 90 \\ x = 18 \\ \end{matrix}\right.$$
+        \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}1 & 1 & 1 & 30\\4 & 3 & 2 & 90\\1 & 0 & 0 & 18\end{matrix}\right) \thicksim \left(\begin{matrix}1 & 1 & 1 & 30\\0 & -1 & -2 & -30\\0 & 0 & 1 & 18\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & 1 & 18\end{matrix}\right) \to z = 18$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & -1 & -2 & -30\end{matrix}\right) \to y = -6$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & 1 & 1 & 30\end{matrix}\right) \to x = 18$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}1 & 1 & 1\\4 & 3 & 2\\1 & 0 & 0\end{matrix}\right|=-1  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}30 & 1 & 1\\90 & 3 & 2\\18 & 0 & 0\end{matrix}\right|}{-1}=\frac{-18}{-1}=18$\item $y=\frac{\left|\begin{matrix}1 & 30 & 1\\4 & 90 & 2\\1 & 18 & 0\end{matrix}\right|}{-1}=\frac{6}{-1}=-6$\item $z=\frac{\left|\begin{matrix}1 & 1 & 30\\4 & 3 & 90\\1 & 0 & 18\end{matrix}\right|}{-1}=\frac{-18}{-1}=18$\end{itemize}\end{itemize}
+        Como $y<0$ descartamos esta solución
+        
+        \item si $y=18$ 
+        $$\left\{ \begin{matrix}x + y + z = 30 \\ 4 x + 3 y + 2 z = 90 \\ y = 18 \\ \end{matrix}\right.$$
+        \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}1 & 1 & 1 & 30\\4 & 3 & 2 & 90\\0 & 1 & 0 & 18\end{matrix}\right) \thicksim \left(\begin{matrix}1 & 1 & 1 & 30\\0 & -1 & -2 & -30\\0 & 0 & -2 & -12\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & -2 & -12\end{matrix}\right) \to z = 6$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & -1 & -2 & -30\end{matrix}\right) \to y = 18$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & 1 & 1 & 30\end{matrix}\right) \to x = 6$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}1 & 1 & 1\\4 & 3 & 2\\0 & 1 & 0\end{matrix}\right|=2  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}30 & 1 & 1\\90 & 3 & 2\\18 & 1 & 0\end{matrix}\right|}{2}=\frac{12}{2}=6$\item $y=\frac{\left|\begin{matrix}1 & 30 & 1\\4 & 90 & 2\\0 & 18 & 0\end{matrix}\right|}{2}=\frac{36}{2}=18$\item $z=\frac{\left|\begin{matrix}1 & 1 & 30\\4 & 3 & 90\\0 & 1 & 18\end{matrix}\right|}{2}=\frac{12}{2}=6$\end{itemize}\end{itemize}
+        Esta solución es factible
+        \item si $z=18$ 
+        $$\left\{ \begin{matrix}x + y + z = 30 \\ 4 x + 3 y + 2 z = 90 \\ z = 18 \\ \end{matrix}\right.$$
+        \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}1 & 1 & 1 & 30\\4 & 3 & 2 & 90\\0 & 0 & 1 & 18\end{matrix}\right) \thicksim \left(\begin{matrix}1 & 1 & 1 & 30\\0 & -1 & -2 & -30\\0 & 0 & 1 & 18\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & 1 & 18\end{matrix}\right) \to z = 18$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & -1 & -2 & -30\end{matrix}\right) \to y = -6$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & 1 & 1 & 30\end{matrix}\right) \to x = 18$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}1 & 1 & 1\\4 & 3 & 2\\0 & 0 & 1\end{matrix}\right|=-1  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}30 & 1 & 1\\90 & 3 & 2\\18 & 0 & 1\end{matrix}\right|}{-1}=\frac{-18}{-1}=18$\item $y=\frac{\left|\begin{matrix}1 & 30 & 1\\4 & 90 & 2\\0 & 18 & 1\end{matrix}\right|}{-1}=\frac{6}{-1}=-6$\item $z=\frac{\left|\begin{matrix}1 & 1 & 30\\4 & 3 & 90\\0 & 0 & 18\end{matrix}\right|}{-1}=\frac{-18}{-1}=18$\end{itemize}\end{itemize}
+        Como $y<0$ descartamos esta solución
+    \end{itemize}
+    \textbf{SOLUCIÓN:} Moneda
+\end{solution}
+
+\question Un cajero automático contiene solo billetes de 10, 20 y 50 \euro. En total hay 130 billetes con un importe de 3000 \euro.
+\begin{parts}
+\part ¿Es posible que en el cajero haya el triple de número de billetes de 10 que de 50?
+\begin{solution}
+    Llamando $x$, $y$ y $z$ a número de billetes de 10, 20, 50\euro, respectivamente, del enunciado tenemos:
+    $$\left\{ \begin{matrix}x + y + z = 130 \\ 10 x + 20 y + 50 z = 3000 \\ \end{matrix}\right.$$
+    El triple de número de billetes de 10 que de 50 $\to x = 3z$
+    $$\left\{ \begin{matrix}x + y + z = 130 \\ 10 x + 20 y + 50 z = 3000 \\ x = 3 z \\ \end{matrix}\right.$$
+    Como $rg(A)=2 < rg(A^*)=3 \to$ S.I. \\ Ya que escalonando la matriz ampliada: \\ $A^*= \left(\begin{matrix}1 & 1 & 1 & 130\\10 & 20 & 50 & 3000\\1 & 0 & -3 & 0\end{matrix}\right) \thicksim \left(\begin{matrix}1 & 1 & 1 & 130\\0 & 10 & 40 & 1700\\0 & 0 & 0 & 40\end{matrix}\right)$ \\$\left|\begin{matrix}1 & 1 & 1\\0 & 10 & 40\\0 & 0 & 0\end{matrix}\right|=0 \quad y \quad \left|\begin{matrix}1 & 1 & 130\\10 & 40 & 1700\\0 & 0 & 40\end{matrix}\right|=1200$
+    \\ \textbf{SOLUCIÓN:} No es posible
+\end{solution}
+\part Suponiendo que el número de billetes de 10 es el doble que el número de billetes de 50, calcula cuántos billetes hay de cada tipo.
+\begin{solution}
+    El número de billetes de 10 es el doble que el número de billetes de 50 $\to x = 2z$
+    $$\left\{ \begin{matrix}x + y + z = 130 \\ 10 x + 20 y + 50 z = 3000 \\ x = 2 z \\ \end{matrix}\right.$$
+    \textbf{Discusión y resolución por Gauss:} Escalonando la matriz ampliada tenemos\\$A^*= \left(\begin{matrix}1 & 1 & 1 & 130\\10 & 20 & 50 & 3000\\1 & 0 & -2 & 0\end{matrix}\right) \thicksim \left(\begin{matrix}1 & 1 & 1 & 130\\0 & 10 & 40 & 1700\\0 & 0 & 1 & 40\end{matrix}\right)$. \\  De los valores de la última fila podemos concluir:\begin{itemize}\item S.C.D.\begin{itemize}\item $\left(\begin{matrix}0 & 0 & 1 & 40\end{matrix}\right) \to z = 40$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}0 & 10 & 40 & 1700\end{matrix}\right) \to y = 10$\end{itemize}\begin{itemize}\item $\left(\begin{matrix}1 & 1 & 1 & 130\end{matrix}\right) \to x = 80$\end{itemize}\end{itemize}  \textbf{Por rangos y determinantes:} \\$\left|A\right|=\left|\begin{matrix}1 & 1 & 1\\10 & 20 & 50\\1 & 0 & -2\end{matrix}\right|=10  \neq 0 $\begin{itemize} \item $rg(A)=3 \land rg(A^*)=3 \to $ S.C.D.  \\ \\ Por Cramer: \begin{itemize}\item $x=\frac{\left|\begin{matrix}130 & 1 & 1\\3000 & 20 & 50\\0 & 0 & -2\end{matrix}\right|}{10}=\frac{800}{10}=80$\item $y=\frac{\left|\begin{matrix}1 & 130 & 1\\10 & 3000 & 50\\1 & 0 & -2\end{matrix}\right|}{10}=\frac{100}{10}=10$\item $z=\frac{\left|\begin{matrix}1 & 1 & 130\\10 & 20 & 3000\\1 & 0 & 0\end{matrix}\right|}{10}=\frac{400}{10}=40$\end{itemize}\end{itemize}
+    \\ \textbf{SOLUCIÓN:} 80, 10 y 40 billetes de 10, 20 y 50 \euro, respectivamente
+\end{solution}
+
+\end{parts}
+
+    \end{questions}
+    \end{document}
+    

@@ -83,6 +83,24 @@ siendo: \begin{itemize}
 \paragraph{Error máximo cometido:} $$E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}$$
 Es el radio del entorno dado por el intervalo de confianza. \textbf{NOTA:} Disminuye al aumentar el tamaño de la muestra y por tanto si se quiere garantizar un error determinado para un nivel de confianza habrá que tomar muestras de al menos un \textbf{tamaño determinado de la muestra}. 
 
+\paragraph{Ejemplo:} La duración de las bombillas de un fabricante es una variable aleatoria con distribución
+normal de desviación típica 75 horas. Decidimos tomar un tamaño de la muestra igual a 150, comprobamos la duración de cada
+bombilla y calculamos su promedio, que resulta ser 1053 horas. Calcular el intervalo de confianza al 98\%
+para la media de la duración de las bombillas del fabricante.\\
+
+\subparagraph{Solución:}$\overline{x}=1053$, Confianza=$98$, $\sigma=75$ y n=150 \\
+$\alpha=1-0.98=0.2 \to \frac{\alpha}{2}=\frac{0.2}{2}=0.1$
+. \\ Por tanto, el valor crítico será: \\
+$P\left(Z \leqslant z_{\alpha / 2} \right)= 0.98 + 0.1 = 0.99 \to z_{\alpha / 2} = 2.33$\\ 
+\input{img_tikz/tikz_intervalo_2} 
+A partir de la definición de intervalo de confianza de la media:
+$$ \left( \overline{x} - z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} ,  \overline{x} + z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}
+\right)$$
+Operando nos queda: \\
+$$ \left( 1053 - 2.33 \cdot \frac{75}{\sqrt{150}} ,  1053 - 2.33 \cdot \frac{75}{\sqrt{150}}
+\right)=\left(1038.73 ,  1067.27\right)
+$$
+
 \paragraph{Ejemplo 2:} Se desea realizar una investigación para estimar el peso medio de los recién nacidos de madres fumadoras. Se admite un error máximo de 50 gramos, con una confianza del 95\%. Si por estudios anteriores se sabe que la desviación típica del peso medio de tales recién nacidos es de 400 gramos, ¿qué tamaño mínimo de muestra se necesita en la investigación?\\
 
 \subparagraph{Solución:}$E=50$, Confianza=$95$ y $\sigma=400$ \\
@@ -124,7 +142,8 @@ Por tanto con una alta probabilidad, en concreto 0.96, el porcentaje de individu
 \subsection{Referencias}
 Me ha resultado útil el siguiente enlace 
 
-\href{http://maralboran.org/wikipedia/index.php/}{Wiki del IES Mar de Alborán}. Una vez allí ir a Optativas/Estadística (2º BH)
+\href{
+}. Una vez allí ir a Optativas/Estadística (2º BH)
 
 \href{https://probabilidadyestadisticaitsav.blogspot.com/2012/06/52-estimaciones-puntuales-y-por.html}{https://probabilidadyestadisticaitsav.blogspot.com/2012/06/52-estimaciones-puntuales-y-por.html}
 

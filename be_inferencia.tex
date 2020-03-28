@@ -26,7 +26,7 @@
 \usetikzlibrary{arrows}
 
 %\author{}
-\title{Variables aleatorias}
+\title{Inferencia Estadística}
 
 \setbeamercovered{transparent} 
 \setbeamertemplate{navigation symbols}{} 
@@ -46,134 +46,128 @@
 %\tableofcontents
 %\end{frame}
 
-\begin{frame}{Variables aleatorias y distribuciones de probabilidad}
-\begin{block}{Finalidad:} \textbf{Abstraer matemáticamente} un tipo de \textbf{experimento aleatorio}. Y, con ello, poder estimar de manera teórica lo que sucedería de manera experimental mediante una estadística.
+\begin{frame}{Inferencia Estadística}
+\begin{block}{Finalidad:} Obtener conclusiones válidas para toda la población a partir del estudio de una muestra.
 \end{block}
 
 \pause
 
-\begin{block}{¿Cómo?:} Mediante \textbf{variables aleatorias} y \textbf{distribuciones de probabilidad} asociadas a esas variables
-
+\begin{block}{¿Cómo?:} Mediante los métodos de estimación puntual y de intervalos de confianza
 \end{block}
 
 
 \end{frame}
 
-\begin{frame}{Variables aleatorias}
-\begin{block}{}
-Una \textbf{variable aleatoria} es una función que a cada suceso
-elemental de un espacio muestral le asigna un número. \\ Para hacer referencia a las variables se usan las letras: $X$, $Y$, ...
+\begin{frame}{Estimación Puntual de la media y la varianza}
+Dada una población de media $\mu$ y desviación típica $\sigma$
+\begin{block}{Estimación de la media}
+ Un buen estimador de $\mu$ es la \textbf{media muestral} $\overline{x}$:
+$$\overline{x}= \frac{x_1 + x_2 + ....+x_n} {n}=\frac{{\sum_{i=1}^n x_i }}{n}$$
+\end{block}
+\pause
+\begin{block}{Estimación de la varianza}
+Un buen estimador de $\sigma^2$ es la cuasivarianza muestral:
+$$\widehat{\sigma}^2=\frac{n-1}{n}s^2$$
+siendo $s^2$ la varianza muestral:
+$$s^2=\frac{\sum_{i=1}^n x_i^2 }{n} - \bar x^2$$
 \end{block}
 \end{frame}
 
 \begin{frame}{Ejemplo}
 \begin{block}{}
-Sea el \textbf{experimento aleatorio “lanzar un dado”} 
+Una muestra aleatoria de 36 personas, empleadas en una gran industria, da el número medio de días al año que faltan al trabajo es $\overline{x} = 12$ con $s = 4$
 \end{block}
-\pause
-El espacio muestral lo componen las 6 caras del dado.\\
-Podemos asignar la variable $X$ que a cada cara le asocia el número que represente su cara.
-\begin{center}
-\begin{tabular}{ccc}
- & $X$ &  \\
-Suceso &  &  $x_i$\\ \hline 
-Cara 1 & $\rightarrow$ & 1 \\ 
-Cara 2 & $\rightarrow$ & 2 \\ 
-Cara 3 & $\rightarrow$ & 3 \\ 
-Cara 4 & $\rightarrow$ & 4 \\ 
-Cara 5 & $\rightarrow$ & 5 \\ 
-Cara 6 & $\rightarrow$ & 6 \\ 
-\end{tabular} 
-\end{center}
-\end{frame}
 
-
-\begin{frame}{Ejemplo}
-\begin{block}{}
-Sea el \textbf{experimento compuesto "lanzar dos monedas"} 
-\end{block}
-\pause
-Podemos asignar la variable aleatoria:
-\begin{center}
-\emph{Y = \{Número de caras\}} \\
-\begin{tabular}{ccc}
- & $Y$ &  \\
-Suceso &  &  $y_i$\\ \hline 
-C,C & $\rightarrow$ & 2 \\ 
-C,X & $\rightarrow$ & 1 \\ 
-X,C & $\rightarrow$ & 1 \\ 
-X,X & $\rightarrow$ & 0 \\ 
-\end{tabular} 
-\end{center}
-\end{frame}
-
-
-
-
-\begin{frame}{Tipos de variables aleatorias}
 \begin{itemize}[<+->]
-    \item{Discretas:} Toman un \textbf{número finito o numerable} de valores. \textbf{Ejemplo:} Sea la \emph{X =“El número de caras al lanzar dos dados”}. Los valores posibles son 0, 1 o 2 (que es un conjunto finito de datos, en concreto 3 datos)
-\item{Continuas:} Toman valores en un \textbf{rango continuo}. \textbf{Ejemplo:} \emph{X = “Distancia al centro de la diana medida desde la posición en que cae un dardo lanzado por un tirador experto” }. En este caso la variable puede tomar cualquier valor en el rango entre 0 y el radio de la diana 
+    \item Dar una estimación puntual de $\mu$ (media poblacional)
+    \pause 
+    \\ Un estimador es la media muestral que en este caso vale 12
+    \item Dar una estimación puntual de $\sigma^2$ (varianza poblacional)
+    \pause 
+    \\ Un estimador es la cuasivarianza muestral:
+    $$\widehat{\sigma}^2=\frac{n-1}{n}s^2=\frac{35}{36}\cdot 4\approx 3.9$$
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Distribuciones de probabilidad}
-\begin{block}{}
-Llamaremos \textbf{distribución de probabilidad} a la relación entre los valores de la variable y sus probabilidades.
-\end{block}
 
+\begin{frame}{Estimación por intervalos}
+\begin{block}{}
+La estimación puntual sirve de poco mientras
+desconozcamos cuál es el grado de aproximación del estimador al parámetro real. Por ese motivo se procede
+a la \textbf{estimación mediante un intervalo de confianza}.
+\end{block}
+\pause
+Veremos cómo calcular intervalos de confianza para estimar
+\begin{itemize}
+    \item La media de la población
+    \item La proporción de la población que cumple una característica
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Distribuciones muestrales}
+\begin{block}{} A partir de los diferentes valores que puede tomar una muestra se pude construir una variable aleatoria a la que podemos asociar una probabilidad. Esto nos da una distribución a la que llamaremos \textbf{distribución muestral}
+
+\end{block}    
+\pause
 \begin{itemize}[<+->]
-    \item Estas relaciones se pueden indicar mediante el uso de funciones
-    \item El tipo de función y su tratamiento es diferente según las variables sean discretas o continuas
+    \item{Media} La distribución de medias muestrales nos permitirá obtener intervalos de confianza de la media poblacional
+    \begin{block}{}
+        $$\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$$
+    \end{block}
+
+    \item{Proporción} La distribución de proporciones muestrales nos permitirá obtener intervalos de confianza de la media poblacional
+    \begin{block}{}
+    $$\widehat{p} \rightarrow N \left ( p , \sqrt{ \frac{p \cdot (1-p)} {n}}\right )$$
+    \end{block}
     
 \end{itemize}
 
+\end{frame}
 
-Veamos algunas distribuciones ...
+\begin{frame}{Ejemplo}
+
+
+Solución: Como $\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$, tipificando $\frac{\overline{X} -\mu}{\frac{\sigma}{\sqrt{n}}} \rightarrow Z(0,1)$ y por tanto: $P(\mu-1 < \overline{X} < \mu +1)=P(\frac{-1}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{1}{\frac{\sigma}{\sqrt{n}}})\approx 0.967866646858422$
+
+\begin{itemize}[<+->]
+    \item  Se ha seleccionado una muestra al azar de 50 mujeres de una población de mayores
+de 18 años. En la muestra se ha observado que la media de las 50 tallas es 1,60 m. Si se sabe que
+la desviación típica en la población es de 3,3 cm, determina la probabilidad de que la
+media de la población no difiere en más de 1 cm de la de la muestra. 
+    \item Como $\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$, tipificando $\frac{\overline{X} -\mu}{\frac{\sigma}{\sqrt{n}}} \rightarrow Z(0,1)$ y por tanto: $P(\mu-1 < \overline{X} < \mu +1)=P(\frac{-1}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{1}{\frac{\sigma}{\sqrt{n}}})\approx 0.967866646858422$
+    
+\end{itemize}
+
 \end{frame}
 
 
 \begin{frame}
-{Distribución uniforme discreta}
-\begin{block}{Ejemplo}
-Sea la variable \emph{X = “Número obtenido al lanzar una dado”}
+{Estimación de la media por intervalo de confianza}
+A partir de una muestra de tamaño n y un grado de confianza $1-\alpha$: 
+\begin{block}{Intervalo de confianza para la media}
+$$ \left( \overline{x} - z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} ,  \overline{x} + z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}
+\right)$$
+siendo: \begin{itemize}
+\item $\overline{x}$: La media de los datos de la muestra
+\item $z_{\alpha / 2}$ o valor crítico: El valor de la distribución normal  $Z\leadsto N\left((0,1\right)$ tal que $P(Z>z_{\alpha / 2})=\frac{\alpha}{2}$ 
+\item $\sigma$: La desviación típica de la distribución de la población (o si no se conoce de un estimador sesgado de la misma)
+\item $n$: El tamaño de la muestra
+\end{itemize}
 \end{block}
 \pause
-\begin{columns}
-\begin{column}{0.5 \textwidth}
-A cada valor de la variable podemos asignarle su probabilidad:
-\begin{center}
-\begin{tabular}{ccc}
- & $P(X)$ &  \\
-$x_i$ &  &  $P(x_i)$\\ \hline 
-1 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
-2 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
-3 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
-4 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
-5 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
-6 & $\rightarrow$ & $\tfrac{1}{6}$ \\ 
-\end{tabular} 
-\end{center}
-\end{column}
-\pause
-\begin{column}{0.5 \textwidth}
- Podemos representar la relación anterior mediante una función:
 
-$$P\colon \begin{array}{ll} 
-          X \rightarrow \mathbb{R} \\ 
-          x_i\mapsto P(X=x_i)=\frac{1}{n} 
-         \end{array}$$
-\end{column}
-\end{columns}
-
-\pause
-A este tipo de distribución se le llama \textbf{uniforme discreta}.
 \end{frame}
 
 \begin{frame}
-{Distribución Binomial. Introducción}
-\begin{block}{Ejemplo} Queremos calcular las probabilidades de que al lanzar 5 monedas, obtengamos tres caras.
+{Ejemplo}
+\begin{block}{Ejemplo} La duración de las bombillas de un fabricante es una variable aleatoria con distribución
+normal de desviación típica 75 horas. Decidimos tomar un tamaño de la muestra igual a 150, comprobamos la duración de cada
+bombilla y calculamos su promedio, que resulta ser 1053 horas. Calcular el intervalo de confianza al 98\%
+para la media de la duración de las bombillas del fabricante.
 \end{block}
 Un suceso que cumple el enunciado es:
 $$S_1=\left\lbrace C,C,C,X,X \right\rbrace$$

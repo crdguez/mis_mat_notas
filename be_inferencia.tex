@@ -50,308 +50,30 @@
 \begin{block}{Finalidad:} Obtener conclusiones válidas para toda la población a partir del estudio de una muestra.
 \end{block}
 
+\textbf{Ejemplo:} He preguntado la nota de matemáticas a 3 alumnos y la media de las notas es $6.4$. ¿Podemos extraer alguna conclusión sobre la nota media de la clase?¿Con qué grado de confianza?
+
 \pause
 
-\begin{block}{¿Cómo?:} Mediante los métodos de estimación puntual y de intervalos de confianza
+\begin{block}{¿Cómo?:} Mediante los m\textbf{étodos de estimación puntual} y de \textbf{intervalos de confianza}
 \end{block}
-
 
 \end{frame}
 
-\begin{frame}{Estimación Puntual de la media y la varianza}
-Dada una población de media $\mu$ y desviación típica $\sigma$
-\begin{block}{Estimación de la media}
- Un buen estimador de $\mu$ es la \textbf{media muestral} $\overline{x}$:
-$$\overline{x}= \frac{x_1 + x_2 + ....+x_n} {n}=\frac{{\sum_{i=1}^n x_i }}{n}$$
-\end{block}
-\pause
-\begin{block}{Estimación de la varianza}
-Un buen estimador de $\sigma^2$ es la cuasivarianza muestral:
-$$\widehat{\sigma}^2=\frac{n-1}{n}s^2$$
-siendo $s^2$ la varianza muestral:
-$$s^2=\frac{\sum_{i=1}^n x_i^2 }{n} - \bar x^2$$
-\end{block}
-\end{frame}
-
-\begin{frame}{Ejemplo}
-\begin{block}{}
-Una muestra aleatoria de 36 personas, empleadas en una gran industria, da el número medio de días al año que faltan al trabajo es $\overline{x} = 12$ con $s = 4$
-\end{block}
-
-\begin{itemize}[<+->]
-    \item Dar una estimación puntual de $\mu$ (media poblacional)
-    \pause 
-    \\ Un estimador es la media muestral que en este caso vale 12
-    \item Dar una estimación puntual de $\sigma^2$ (varianza poblacional)
-    \pause 
-    \\ Un estimador es la cuasivarianza muestral:
-    $$\widehat{\sigma}^2=\frac{n-1}{n}s^2=\frac{35}{36}\cdot 4\approx 3.9$$
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Estimación por intervalos}
-\begin{block}{}
-La estimación puntual sirve de poco mientras
-desconozcamos cuál es el grado de aproximación del estimador al parámetro real. Por ese motivo se procede
-a la \textbf{estimación mediante un intervalo de confianza}.
-\end{block}
-\pause
-Veremos cómo calcular intervalos de confianza para estimar
-\begin{itemize}
-    \item La media de la población
-    \item La proporción de la población que cumple una característica
-\end{itemize}
-\end{frame}
-
-
-
-
-\begin{frame}{Distribuciones muestrales}
-\begin{block}{} A partir de los diferentes valores que puede tomar una muestra se pude construir una variable aleatoria a la que podemos asociar una probabilidad. Esto nos da una distribución a la que llamaremos \textbf{distribución muestral}
-
-\end{block}    
-\pause
-\begin{itemize}[<+->]
-    \item{Media} La distribución de medias muestrales nos permitirá obtener intervalos de confianza de la media poblacional
+\begin{frame}{Repaso del cálculo de probabilidades de una Normal}
+\begin{center}
+    La mayoría de los resultados que aparecen en la estimación por intervalos están relacionados con \textbf{distribuciones Normales}
     \begin{block}{}
-        $$\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$$
+    $$X \sim \mathcal{N}(\mu,\,\sigma)$$
     \end{block}
-
-    \item{Proporción} La distribución de proporciones muestrales nos permitirá obtener intervalos de confianza de la media poblacional
-    \begin{block}{}
-    $$\widehat{p} \rightarrow N \left ( p , \sqrt{ \frac{p \cdot (1-p)} {n}}\right )$$
-    \end{block}
-    
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Ejemplo}
-
-
-Solución: Como $\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$, tipificando $\frac{\overline{X} -\mu}{\frac{\sigma}{\sqrt{n}}} \rightarrow Z(0,1)$ y por tanto: $P(\mu-1 < \overline{X} < \mu +1)=P(\frac{-1}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{1}{\frac{\sigma}{\sqrt{n}}})\approx 0.967866646858422$
-
-\begin{itemize}[<+->]
-    \item  Se ha seleccionado una muestra al azar de 50 mujeres de una población de mayores
-de 18 años. En la muestra se ha observado que la media de las 50 tallas es 1,60 m. Si se sabe que
-la desviación típica en la población es de 3,3 cm, determina la probabilidad de que la
-media de la población no difiere en más de 1 cm de la de la muestra. 
-    \item Como $\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$, tipificando $\frac{\overline{X} -\mu}{\frac{\sigma}{\sqrt{n}}} \rightarrow Z(0,1)$ y por tanto: $P(\mu-1 < \overline{X} < \mu +1)=P(\frac{-1}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{1}{\frac{\sigma}{\sqrt{n}}})\approx 0.967866646858422$
-    
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}
-{Estimación de la media por intervalo de confianza}
-A partir de una muestra de tamaño n y un grado de confianza $1-\alpha$: 
-\begin{block}{Intervalo de confianza para la media}
-$$ \left( \overline{x} - z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} ,  \overline{x} + z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}
-\right)$$
-siendo: \begin{itemize}
-\item $\overline{x}$: La media de los datos de la muestra
-\item $z_{\alpha / 2}$ o valor crítico: El valor de la distribución normal  $Z\leadsto N\left((0,1\right)$ tal que $P(Z>z_{\alpha / 2})=\frac{\alpha}{2}$ 
-\item $\sigma$: La desviación típica de la distribución de la población (o si no se conoce de un estimador sesgado de la misma)
-\item $n$: El tamaño de la muestra
-\end{itemize}
-\end{block}
-\pause
-
-\end{frame}
-
-\begin{frame}
-{Ejemplo}
-\begin{block}{Ejemplo} La duración de las bombillas de un fabricante es una variable aleatoria con distribución
-normal de desviación típica 75 horas. Decidimos tomar un tamaño de la muestra igual a 150, comprobamos la duración de cada
-bombilla y calculamos su promedio, que resulta ser 1053 horas. Calcular el intervalo de confianza al 98\%
-para la media de la duración de las bombillas del fabricante.
-\end{block}
-Un suceso que cumple el enunciado es:
-$$S_1=\left\lbrace C,C,C,X,X \right\rbrace$$
-Teniendo en cuenta que lanzar cada moneda son experimentos independientes, la probabilidad de ese suceso será:
-%$$P\left(S_1\right)=P\left(C_1\right)\cdot P\left(C_2 C_1 \right)$$
-\begin{eqnarray*}
-P\left(S_1\right) & = &P\left(C_1\right)\cdot P\left(C_2 | C_1 \right)\cdot ... \cdot P\left(X_5 | C_1 \cap C_2  \cap C_3  \cap X_4   \right)= \\ &  = & P\left(C_1\right)\cdot  P\left(C_2\right) \cdot P\left(C_3\right) \cdot P\left(X_4\right) \cdot P\left(X_5\right)= \\
-& = & P\left(C\right)^3\cdot  P\left(X\right)^2
-\end{eqnarray*}
-
-
-\end{frame}
-
-\begin{frame}{}
-Como la probabilidad de que una moneda sea cara es $\frac{1}{2}$ y la de que sea cruz también:
-
-$$P\left(S_1\right)=\left(\frac{1}{2}\right)^3\cdot  \left(\frac{1}{2}\right)^2$$
-Ahora bien, habrá tantos sucesos que cumplan el enunciado como combinaciones de 5 elementos tomados de 3 en 3. Por tanto la probabilidad de que salgan 3 caras será:
-
-$$P\left(Salgan \ 3 \ caras\right)=\binom{5}{3}\left(\frac{1}{2}\right)^3\cdot  \left(\frac{1}{2}\right)^2$$
-
-\end{frame}
-
-\begin{frame}{}
-
-Podemos determinar la probabilidad mediante la siguiente función.
-
-$$P\colon \begin{array}{l} 
-          X \rightarrow \mathbb{R} \\ 
-          k\mapsto P(X=k)=\binom{5}{k}\left(\frac{1}{2}\right)^k\cdot  \left(\frac{1}{2}\right)^{5-k} 
-         \end{array}$$
-
-\end{frame}
-
-
-\begin{frame}{}
-Realizando los cálculos para $k = 1,...,5 $, la distribución de probabilidad de $X$ que resulta es:
-\begin{columns}
-\begin{column}{0.3\textwidth}
-\begin{center}
-\begin{tabular}{ccc}
- & $P(X)$ &  \\
-$x_i$ &  &  $P(x_i)$\\ \hline 
-0 & $\rightarrow$ & $0.03125$ \\ 
-1 & $\rightarrow$ & $0.15625$ \\ 
-2 & $\rightarrow$ & $0.3125$ \\ 
-3 & $\rightarrow$ & $0.3125$ \\ 
-4 & $\rightarrow$ & $0.15625$ \\ 
-5 & $\rightarrow$ & $0.03125$ \\ 
-\end{tabular} 
+    Por esta razón es conveniente hacer un repaso de su manejo
 \end{center}
-\end{column}
-\begin{column}{0.7\textwidth}
-\begin{center}
-\input{img_tikz/tikz_binomial_0}
-\end{center}
-\end{column}
-
-\end{columns}
-\pause
-Esto es un ejemplo de \textbf{distribución binomial} de tamaño $5$ y probabilidad $0.5$ .
-\end{frame}
-
-
-
-\begin{frame}{Distribución Binomial}
-Hablaremos de una \textbf{distribución binomial} cuando:
-\begin{itemize}[<+->]
-\item Se parte de un \textbf{experimento compuesto} de varios simples independientes
-\item Los experimentos simples son \textbf{dicotómicos}. Es decir, solo puede haber dos sucesos elementales: uno al que llamaremos acierto y otro al que llamaremos fracaso
-\item Asociado al experimento compuesto tenemos la variable \textbf{número de aciertos} cuando realizamos el experimento simple un número determinado de veces
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Distribución Binomial}
-En la situación anterior, la distribución binomial vendrá determinada por dos parámetros:
-\begin{itemize}[<+->]
-\item Parámetro $n$: Número de veces que se realiza el experimento simple 
-\item Parámetro $p$: La probabilidad de que ocurra el suceso acierto
-\end{itemize}
-\pause
-
-A este tipo de variable y su distribución de probabilidades se le llama \textbf{binomial} y se denota $$X \sim \mathcal{B}(n,\,p)$$.
-\end{frame}
-
-\begin{frame}{Ejemplo}
-\begin{block}{Lanzamineto de 5 monedas} El experimento se compone de \textbf{5 lanzamientos de moneda}. Si sale cara es acierto y si no fracaso. La variable aleatoria asociada al experimento será el número de caras que salen al lanzar 5 monedas. Esta variable sigue una distribución binomial $X \sim \mathcal{B}(5,\,0.5)$.
-\end{block}
-
-
-
-\end{frame}
-
-\begin{frame}{Probabilidad de la binomial}
-\textbf{En general tendremos una binomial de tamaño $n$ y probabilidad $p$}, cuando el experimento simple se haga $n$ veces y la probabilidad de acierto sea $p$.
-
-La función de probabilidad en este caso nos queda:
-
-\begin{block}{}
- $$P\colon \begin{array}{l} 
-          X \rightarrow \mathbb{R} \\ 
-          k\mapsto P(X=k)=\binom{n}{k}\left(p\right)^k\cdot  \left(1-p\right)^{n-k} 
-         \end{array}$$
-
-\end{block} 
-    
-\end{frame}
-
-\begin{frame}{Distribución Binomial}
-Ejemplos de representación gráfica de la distribución de probabilidad de algunas binomiales:    
-         
-\input{img_tikz/tikz_binomial}
-    
-\end{frame}
-
-
-\begin{frame}{Distribución de probabilidades en una variable continua}
-
-Observa que la probabilidad total tiene que ser 1 y la variable $X$, al ser continua, puede tomar $\infty$ valores.
-\begin{block}{}
-Si queremos repartir la probabilidad entre infinitos valores, \textbf{la probabilidad de un valor concreto será 0} ($\lim_{x \to \infty}\frac{1}{x}=0$). 
-\end{block}
-   
-
-Para calcular las probabilidades no se utilizarán funciones de probabilidad como hemos visto hasta ahora sino \textbf{funciones de densidad}:
-\end{frame}
-
-\begin{frame}{Función de densidad}
-En variables continuas solo tiene sentido calcular la probabilidad en intervalos.
-Se llama \textbf{función de densidad} ($f(x)$) a aquella que: 
-\begin{block}{}
-$$P\left(a\leq X \leq b \right) = \int_{a}^{b} f(x) dx$$
-\end{block}    
-
-
-La interpretación gráfica de lo anterior nos dice que la probabilidad de un intervalo corresponde con el área de la función de densidad en ese intervalo.
-\begin{center}
-\input{img_tikz/tikz_densidad_1}
-
-\end{center}
-\end{frame}
-
-\begin{frame}
-{Distribución Normal}
-
-Se trata de una distribución asociada a a un variable continua . Resulta de aproximar una binomial para valores muy grandes de $n$. 
-\begin{block}{} Y se denota: $
-X \sim \mathcal{N}(\mu,\,\sigma)\,.
-    $ 
-\end{block}
-\pause
-Tiene dos parámetros:
-\begin{itemize} [<+->]
-    \item $\mu :$ Media de la distribución
-    \item $\sigma :$ Desviación típica
-\end{itemize}
-
-\pause    
-Esta distribución aparece asociada a muchos fenómenos naturales. 
-\end{frame}
-
-
-\begin{frame}{Función de densidad de una distribución normal}  
-\begin{columns}
-\begin{column}{0.4\textwidth}
-\begin{block}{}
-Si $
-X \sim \mathcal{N}(\mu,\,\sigma)
-    $, la función de densidad es:
-    $$f(x)=\frac{1}{{\sigma \sqrt {2\pi } }}e^{{{ - \left( {x - \mu } \right)^2 } \mathord{\left/ {\vphantom {{ - \left( {x - \mu } \right)^2 } {2\sigma ^2 }}} \right. \kern-\nulldelimiterspace} {2\sigma ^2 }}}$$
-\end{block}
-\end{column}
-\begin{column}{0.6\textwidth} Ejemplos de gráficas:
-\input{img_tikz/tikz_normal}
-\end{column}
-\end{columns}{}
-
 \end{frame}
 
 \begin{frame}{Cálculo práctico de la probabilidad de la Normal:}
 \begin{columns}
 \begin{column}{0.4\textwidth}
 \begin{block}{}
-En realidad, para calcular la probabilidad no se hace la integral, sino que \textbf{se utiliza una tabla} que ya tiene calculadas probabilidades de la  $Z \sim \mathcal{N}(0,\,1)
+Para calcular la probabilidad  \textbf{se utiliza una tabla} que ya tiene calculadas probabilidades de la  $Z \sim \mathcal{N}(0,\,1)
     $ ...
 \end{block}
 \end{column}
@@ -476,7 +198,7 @@ $$0.84849 < 0.85 < 0.85083 $$
 Como queda más cerca del $0.85083$, me quedo con la celda correspondiente a la fila $1$ y columna $0.04$  $\Rightarrow k=1.04$.
 \end{frame}
 
-\begin{frame}{Cálculo en $X \sim \mathcal{N}(\mu,\,\sigma)$ - Tipifiación}
+\begin{frame}{Cálculo en $X \sim \mathcal{N}(\mu,\,\sigma)$ - Tipificación}
 Para manejar $X \sim \mathcal{N}(\mu,\,\sigma)$ reduciremos los cálculos a cálculos en la $Z \sim \mathcal{N}(0,\,1)$ a partir de la siguiente propiedad:
 
 \begin{block}{}
@@ -499,6 +221,255 @@ Al proceso de transformar la variable anterior a una $Z\sim \mathcal{N}(0,\,1)$ 
     \item $X \sim \mathcal{N}(5,\,3) \to P(X<=3.59)=P(X'<=\frac{3.59-5}{3})=P(Z<=-0.47)=1-P(Z<=0.47)=1-0.68082=0.31918$
 \end{itemize}
 \end{frame}
+
+
+\begin{frame}{Estimación Puntual de la media y la varianza}
+Dada una población de media $\mu$ y desviación típica $\sigma$
+\begin{block}{Estimación de la media}
+ Un buen estimador de $\mu$ es la \textbf{media muestral} $\overline{x}$:
+$$\overline{x}= \frac{x_1 + x_2 + ....+x_n} {n}=\frac{{\sum_{i=1}^n x_i }}{n}$$
+\end{block}
+\pause
+\begin{block}{Estimación de la varianza}
+Un buen estimador de $\sigma^2$ es la cuasivarianza muestral:
+$$\widehat{\sigma}^2=\frac{n-1}{n}s^2$$
+siendo $s^2$ la varianza muestral:
+$$s^2=\frac{\sum_{i=1}^n x_i^2 }{n} - \bar x^2$$
+\end{block}
+\end{frame}
+
+\begin{frame}{Ejemplo}
+\begin{block}{}
+Una muestra aleatoria de 36 personas, empleadas en una gran industria, da el número medio de días al año que faltan al trabajo es $\overline{x} = 12$ con $s = 4$
+\end{block}
+
+\begin{itemize}[<+->]
+    \item Dar una estimación puntual de $\mu$ (media poblacional)
+    \pause 
+    \\ Un estimador es la media muestral que en este caso vale 12
+    \item Dar una estimación puntual de $\sigma^2$ (varianza poblacional)
+    \pause 
+    \\ Un estimador es la cuasivarianza muestral:
+    $$\widehat{\sigma}^2=\frac{n-1}{n}s^2=\frac{35}{36}\cdot 4\approx 3.9$$
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Estimación por intervalos}
+\begin{block}{}
+La estimación puntual sirve de poco mientras
+desconozcamos cuál es el grado de aproximación del estimador al parámetro real. Por ese motivo se procede
+a la \textbf{estimación mediante un intervalo de confianza}.
+\end{block}
+\pause
+Veremos cómo calcular intervalos de confianza para estimar
+\begin{itemize}
+    \item La media de la población
+    \item La proporción de la población que cumple una característica
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Distribuciones muestrales}
+\begin{block}{} A partir de los diferentes valores que puede tomar una muestra se pude construir una variable aleatoria a la que podemos asociar una probabilidad. Esto nos da una distribución a la que llamaremos \textbf{distribución muestral}
+
+\end{block}    
+\pause
+\begin{itemize}[<+->]
+    \item{Media} La distribución de medias muestrales nos permitirá obtener intervalos de confianza de la media poblacional
+    \begin{block}{}
+        $$\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$$
+    \end{block}
+
+    \item{Proporción} La distribución de proporciones muestrales nos permitirá obtener intervalos de confianza de la media poblacional
+    \begin{block}{}
+    $$\widehat{p} \rightarrow N \left ( p , \sqrt{ \frac{p \cdot (1-p)} {n}}\right )$$
+    \end{block}
+    
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ejemplo}
+
+
+Solución: Como $\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$, tipificando $\frac{\overline{X} -\mu}{\frac{\sigma}{\sqrt{n}}} \rightarrow Z(0,1)$ y por tanto: $P(\mu-1 < \overline{X} < \mu +1)=P(\frac{-1}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{1}{\frac{\sigma}{\sqrt{n}}})\approx 0.967866646858422$
+
+\begin{itemize}[<+->]
+    \item  Se ha seleccionado una muestra al azar de 50 mujeres de una población de mayores
+de 18 años. En la muestra se ha observado que la media de las 50 tallas es 1,60 m. Si se sabe que
+la desviación típica en la población es de 3,3 cm, determina la probabilidad de que la
+media de la población no difiere en más de 1 cm de la de la muestra. 
+    \item Como $\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$, tipificando $\frac{\overline{X} -\mu}{\frac{\sigma}{\sqrt{n}}} \rightarrow Z(0,1)$ y por tanto: $P(\mu-1 < \overline{X} < \mu +1)=P(\frac{-1}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{1}{\frac{\sigma}{\sqrt{n}}})\approx 0.967866646858422$
+    
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+{Estimación de la media por intervalo de confianza}
+A partir de una muestra de tamaño n y un grado de confianza $1-\alpha$: 
+\begin{block}{Intervalo de confianza para la media}
+$$ \left( \overline{x} - z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} ,  \overline{x} + z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}
+\right)$$
+siendo: \begin{itemize}
+\item $\overline{x}$: La media de los datos de la muestra
+\item $z_{\alpha / 2}$ o valor crítico: El valor de la distribución normal  $Z\leadsto N\left((0,1\right)$ tal que $P(Z>z_{\alpha / 2})=\frac{\alpha}{2}$ 
+\item $\sigma$: La desviación típica de la distribución de la población (o si no se conoce de un estimador sesgado de la misma)
+\item $n$: El tamaño de la muestra
+\end{itemize}
+\end{block}
+\pause
+
+\end{frame}
+
+\begin{frame}
+{Ejemplo}
+\begin{block}{Problema} La duración de las bombillas de un fabricante es una variable aleatoria con distribución
+normal de desviación típica 75 horas. Decidimos tomar un tamaño de la muestra igual a 150, comprobamos la duración de cada
+bombilla y calculamos su promedio, que resulta ser 1053 horas. Calcular el intervalo de confianza al 98\%
+para la media de la duración de las bombillas del fabricante.
+\end{block}
+\end{frame}
+
+\begin{frame}{Ejemplo: Solución}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+    \textbf{Datos:} $\overline{x}=1053$, Confianza=$98$, $\sigma=75$ y n=150 \\
+    $\alpha=1-0.98=0.02 \to \frac{\alpha}{2}=\frac{0.02}{2}=0.01$
+    . \\ Por tanto, el valor crítico será: \\
+    $P\left(Z \leqslant z_{\alpha / 2} \right)= 0.98 + 0.1 = 0.99 \to z_{\alpha / 2} = 2.33$ \\
+    A partir de la definición de intervalo de confianza de la media:
+    $$ \left( \overline{x} - z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} ,  \overline{x} + z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}
+    \right)$$
+
+\end{column}
+\begin{column}{0.5\textwidth}
+    \input{img_tikz/tikz_intervalo_2}
+\end{column}
+\end{columns}
+    
+    Operando nos queda:
+    $$ \left( 1053 - 2.33 \cdot \frac{75}{\sqrt{150}} ,  1053 - 2.33 \cdot \frac{75}{\sqrt{150}}
+    \right)=\left(1038.73 ,  1067.27\right)
+    $$
+\end{frame}
+
+
+\begin{frame}{Error máximo del intervalo de la media}
+\begin{center}
+        \begin{tikzpicture}[scale=0.4]
+        
+        \tikzmath{
+        			\a = -10; \b = 10; \aa = \a -1; \bb = \b + 1 ;
+        			\dist = \b - \a; \med = (\a + \b)/2;
+                  }
+        
+        \draw[very thick] (\a,0) -- (\b,0);
+        \path [draw=black, fill=white] (\b,0) circle (2pt);
+        \path [draw=black, fill=white] (\a,0.0) circle (2pt);
+        \draw[latex-latex] (\a - 1.5,0) -- (\b + 1.5,0) ;
+        
+        % \foreach \x in  {\a,...,\b}
+        % \draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt);
+        % \foreach \x in  {\aa,...,\bb}
+        % \draw[shift={(\x,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] % {$\pgfmathprintnumber{\x}$};
+        \draw[shift={(\a,0)},color=black] (0pt,3pt) -- (0pt,-3pt);
+        \draw[shift={(\a,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] {$\overline{x} - z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}$};
+        \draw[shift={(\med,0)},color=black] (0pt,3pt) -- (0pt,-3pt);
+        \draw[shift={(\med,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] {$\overline{x}$};
+        \draw[shift={(\b,0)},color=black] (0pt,3pt) -- (0pt,-3pt);
+        \draw[shift={(\b,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] {$\overline{x} + z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}$};
+        
+          \draw[decorate,decoration={brace}, thick]
+            (\med,0.2)--(\b,0.2) node[above, midway] 
+        {$E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}$}; 
+        \end{tikzpicture}
+\end{center}
+
+\begin{block}{Error máximo cometido:} $$E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}$$
+Es el radio del entorno dado por el intervalo de confianza.
+\end{block}
+
+\textbf{NOTA:} Disminuye al aumentar el tamaño de la muestra y por tanto si se quiere garantizar un error determinado para un nivel de confianza habrá que tomar muestras de al menos un \textbf{tamaño determinado de la muestra}.
+
+
+\end{frame}
+
+\begin{frame}{Ejemplo}
+\begin{block}{}
+Se desea realizar una investigación para estimar el peso medio de los recién nacidos de madres fumadoras. Se admite un error máximo de 50 gramos, con una confianza del 95\%. Si por estudios anteriores se sabe que la desviación típica del peso medio de tales recién nacidos es de 400 gramos, ¿qué tamaño mínimo de muestra se necesita en la investigación?
+\end{block}
+    
+\end{frame}{}
+
+\begin{frame}{Ejemplo: Solución}
+
+    \textbf{Datos:} $E=50$, Confianza=$95$ y $\sigma=400$ \\
+$\alpha=1-0.95=0.05 \to \frac{\alpha}{2}=\frac{0.05}{2}=0.025$
+. \\ Por tanto, el valor crítico será: \\
+$P\left(Z \leqslant z_{\alpha / 2} \right)= 0.95 + 0.025 = 0.975 \to z_{\alpha / 2} = 1.96$\\ A partir de la definición de error máximo admitido:
+$$E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} \to 
+n = \left( \frac{z_{\alpha / 2} \cdot \sigma}{E} \right) ^ 2$$
+Luego: \\
+$$n = \left( \frac{1.96 \cdot 400}{50} \right) ^ 2\approx 245.8534 \to n=246
+$$
+\end{frame}
+
+\begin{frame}
+{Estimación de la proporción por intervalo de confianza}
+A partir de una muestra de tamaño n y un grado de confianza $1-\alpha$: 
+\begin{block}{Intervalo de confianza para la proporción}
+$$ \left( \overline{p} - z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}} ,  \overline{p} + z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}}\right)$$
+siendo: \begin{itemize}
+\item $\overline{p}$: La proporción muestral
+\item $z_{\alpha / 2}$ o valor crítico:  $P(Z>z_{\alpha / 2})=\frac{\alpha}{2}$ 
+\item $\sigma$: La desviación típica de la distribución de la población \item $n$: El tamaño de la muestra
+\end{itemize}
+\end{block}
+Llamaremos error máximo a:
+\begin{block}{}
+$$E=z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}}$$
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+{Ejemplo}
+\begin{block}{Problema} Para estimar la proporción de personas con sobrepeso en una población se ha tomado una
+muestra aleatoria simple de tamaño 100 personas, de las cuales 21 tienen sobrepeso. Calcular el intervalo
+de confianza al 96\% para la proporción de personas con sobrepeso en la población.
+\end{block}
+\end{frame}
+
+\begin{frame}{Ejemplo: Solución}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+    \textbf{Datos:} $\overline{p}=0.21$, Confianza=$96$ \\
+$\alpha=1-0.96=0.04 \to \frac{\alpha}{2}=\frac{0.04}{2}=0.02$
+. \\ Por tanto, el valor crítico será: \\
+
+$P\left(Z \leqslant z_{\alpha / 2} \right)= 0.96 + 0.02 = 0.98 \to z_{\alpha / 2} \approx 2.05$ \\ 
+A partir de la definición de error máximo admitido:
+$$E=z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}}\approx 2.05 \cdot \sqrt{\frac{0.21\cdot 0.79}{100}}\approx 0.08$$
+
+\end{column}
+\begin{column}{0.45\textwidth}
+    \input{img_tikz/tikz_intervalo_1}
+\end{column}
+\end{columns}
+Luego el intervalo es: $$\left( 0.21 - 0.08 , 0.21 + 0,08 \right) = \left(0.13, 0.29 \right)$$ 
+\end{frame}
+
+
+
 
 
 \end{document}

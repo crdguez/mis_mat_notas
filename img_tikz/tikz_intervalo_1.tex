@@ -5,14 +5,14 @@
 
 
 
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[scale=0.45]
 
 \pgfmathdeclarefunction{gauss}{2}{%
   \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
 }
 
 \tikzmath{
-			\conf = 0.96; \crit= 2.05; \a=round(1-\conf)/2,2);
+			\conf = 0.96; \crit= 2.05; \a=round((1-\conf)/2),2);
           }
 
 %\begin{axis}[

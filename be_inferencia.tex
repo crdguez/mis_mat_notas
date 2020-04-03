@@ -296,8 +296,6 @@ Veremos cómo calcular intervalos de confianza para estimar
 \begin{frame}{Ejemplo}
 
 
-Solución: Como $\overline{X} \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$, tipificando $\frac{\overline{X} -\mu}{\frac{\sigma}{\sqrt{n}}} \rightarrow Z(0,1)$ y por tanto: $P(\mu-1 < \overline{X} < \mu +1)=P(\frac{-1}{\frac{\sigma}{\sqrt{n}}} < Z < \frac{1}{\frac{\sigma}{\sqrt{n}}})\approx 0.967866646858422$
-
 \begin{itemize}[<+->]
     \item  Se ha seleccionado una muestra al azar de 50 mujeres de una población de mayores
 de 18 años. En la muestra se ha observado que la media de las 50 tallas es 1,60 m. Si se sabe que
@@ -427,16 +425,16 @@ $$
 {Estimación de la proporción por intervalo de confianza}
 A partir de una muestra de tamaño n y un grado de confianza $1-\alpha$: 
 \begin{block}{Intervalo de confianza para la proporción}
-$$ \left( \overline{p} - z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}} ,  \overline{p} + z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}}\right)$$
+$$ \left( \widehat{p} - z_{\alpha / 2}\cdot \sqrt{\frac{\widehat{p}\cdot\left(1-\overline{p} \right)}{n}} ,  \widehat{p} + z_{\alpha / 2}\cdot \sqrt{\frac{\widehat{p}\cdot\left(1-\widehat{p} \right)}{n}}\right)$$
 siendo: \begin{itemize}
-\item $\overline{p}$: La proporción muestral
+\item $\widehat{p}$: La proporción muestral
 \item $z_{\alpha / 2}$ o valor crítico:  $P(Z>z_{\alpha / 2})=\frac{\alpha}{2}$ 
 \item $\sigma$: La desviación típica de la distribución de la población \item $n$: El tamaño de la muestra
 \end{itemize}
 \end{block}
 Llamaremos error máximo a:
 \begin{block}{}
-$$E=z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}}$$
+$$E=z_{\alpha / 2}\cdot \sqrt{\frac{\widehat{p}\cdot\left(1-\widehat{p} \right)}{n}}$$
 \end{block}
 
 \end{frame}
@@ -452,13 +450,13 @@ de confianza al 96\% para la proporción de personas con sobrepeso en la poblaci
 \begin{frame}{Ejemplo: Solución}
 \begin{columns}
 \begin{column}{0.55\textwidth}
-    \textbf{Datos:} $\overline{p}=0.21$, Confianza=$96$ \\
+    \textbf{Datos:} $\widehat{p}=0.21$, Confianza=$96$ \\
 $\alpha=1-0.96=0.04 \to \frac{\alpha}{2}=\frac{0.04}{2}=0.02$
 . \\ Por tanto, el valor crítico será: \\
 
 $P\left(Z \leqslant z_{\alpha / 2} \right)= 0.96 + 0.02 = 0.98 \to z_{\alpha / 2} \approx 2.05$ \\ 
 A partir de la definición de error máximo admitido:
-$$E=z_{\alpha / 2}\cdot \sqrt{\frac{\overline{p}\cdot\left(1-\overline{p} \right)}{n}}\approx 2.05 \cdot \sqrt{\frac{0.21\cdot 0.79}{100}}\approx 0.08$$
+$$E=z_{\alpha / 2}\cdot \sqrt{\frac{\widehat{p}\cdot\left(1-\widehat{p} \right)}{n}}\approx 2.05 \cdot \sqrt{\frac{0.21\cdot 0.79}{100}}\approx 0.08$$
 
 \end{column}
 \begin{column}{0.45\textwidth}

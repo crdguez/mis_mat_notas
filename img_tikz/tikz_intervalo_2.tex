@@ -60,4 +60,16 @@
 
 \end{tikzpicture}
 
+
+  \begin{tikzpicture}[scale=0.45]
+    \pgfmathdeclarefunction{gauss}{2}{\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}}
+    \tikzmath{\conf = 0.96; \crit= 2.05; \a=round((1-\conf)/2),3);}
+    \begin{axis}[no markers, domain=-5:5, samples=100, axis lines=left, height=5cm, width=12cm, xtick={0,\crit}, ytick=\empty, xticklabels = {$0$, $z_{\frac{\alpha}{2}}=\crit$},enlargelimits=false, clip=false, axis on top]
+      \addplot [fill=cyan!20, draw=none, domain=-\crit:\crit] {gauss(0,1)} \closedcycle;
+      \addplot [very thick,cyan!50!black] {gauss(0,1)};
+    \end{axis}
+    \node[] at (5.2,1.5) {$\conf$};	
+    \draw[->]   (\crit+6.5,1)node[right]{$\a$}  --  (\crit+5.6,0.1) ;
+  \end{tikzpicture}
+
 %\end{document}

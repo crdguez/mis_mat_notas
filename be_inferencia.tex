@@ -305,6 +305,7 @@ media de la población no difiere en más de 1 cm de la de la muestra.
     
 \end{itemize}
 
+
 \end{frame}
 
 
@@ -392,21 +393,30 @@ para la media de la duración de las bombillas del fabricante.
         \end{tikzpicture}
 \end{center}
 
-\begin{block}{Error máximo cometido:} $$E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}$$
+\begin{block}{} $$E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}$$
 Es el radio del entorno dado por el intervalo de confianza.
 \end{block}
 
-\textbf{NOTA:} Disminuye al aumentar el tamaño de la muestra y por tanto si se quiere garantizar un error determinado para un nivel de confianza habrá que tomar muestras de al menos un \textbf{tamaño determinado de la muestra}.
+\textbf{NOTA:} Disminuye al aumentar el tamaño de la muestra y por tanto si se quiere garantizar un error determinado para un nivel de confianza habrá que tomar muestras de al menos un \textbf{tamaño determinado de la muestra}:.
+
+\begin{block}{} $$E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} \Rightarrow n =\frac{\sigma^2 \cdot z_{\alpha / 2}^2}{E^2}$$
+
+\end{block}
 
 
 \end{frame}
 
 \begin{frame}{Ejemplo}
+Como $E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} \Rightarrow z_{\alpha / 2} =\frac{E \cdot \sqrt{n}}{\sigma}\to z_{\alpha / 2}=2.0$ \\ $P(Z>z_{\alpha / 2})=P(Z>2.0)=\frac{\alpha}{2}=0.02275$ \\ $\alpha=0.0455 \to \quad confianza=1 - \alpha=0.9545 \to 95.45 \%$
+
+Como $E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} \Rightarrow z_{\alpha / 2} =\frac{E \cdot \sqrt{n}}{\sigma}\to z_{\alpha / 2}=2.83$ \\ $P(Z>z_{\alpha / 2})=P(Z>2.83)=\frac{\alpha}{2}=0.002326$ \\ $\alpha=0.004652 \to \quad confianza=1 - \alpha=0.9953 \to 99.53 \%$ 
+
 \begin{block}{}
 Se desea realizar una investigación para estimar el peso medio de los recién nacidos de madres fumadoras. Se admite un error máximo de 50 gramos, con una confianza del 95\%. Si por estudios anteriores se sabe que la desviación típica del peso medio de tales recién nacidos es de 400 gramos, ¿qué tamaño mínimo de muestra se necesita en la investigación?
 \end{block}
     
 \end{frame}{}
+
 
 \begin{frame}{Ejemplo: Solución}
 

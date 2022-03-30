@@ -107,13 +107,149 @@
 %\begin{multicols*}{2}
 
 \section{Conjuntos de números reales}
+\subsection{Intervalos}
+Los intervalos son subconjuntos de la recta real. Cuando el intervalo no está acotado en uno de los extremos decimos que es una semirrecta:
+
+% \adjustbox{max width=\columnwidth}{
+% \begin{tabular}{c|c|c|c|c}
+%      \hline
+%      & NOMBRE & INTERVALO & REPRESENTACIÓN EN LA RECTA REAL & FORMA ALGEBRAICA / SIGNIFICADO\\
+%      & & & &
+% \end{tabular}
+% }
+\paragraph{Intervalos Abiertos:}
+\begin{itemize}
+    \item Dados $a$ y $b \in \mathbf{R}$: Números comprendidos entre $a$ y $b$ sin incluir $a$ y $b$ ó Números mayores que $a$ y menores que $b$
+    \item Representación en la recta $\mathbf{R}$ \vfill 
+    %\smallskip
+    \begin{tikzpicture}[scale=0.6]
+\tikzmath{
+			\a = -2; \b = 4; 
+          }
+\draw[latex-latex] (\a - 2,0) -- (\b + 3,0) ;
+%\node[below](\a - 2,0){$-\infty$}
+\draw[very thick] (\a,0) -- (\b,0);
+\path [draw=black, fill=white, very thick] (\b,0) circle (3pt) node[below] {$b$};
+\draw [] (\a -2,0) circle (0pt) node [below] {$-\infty$};
+\draw [] (\b + 3,0) circle (0pt) node [below] {$+\infty$};
+
+\path [draw=black, fill=white, very thick] (\a,0) circle (3pt) node [below] {$a$};
+
+\end{tikzpicture}
+    \item Notación en forma de intervalo: $$\left(a,b\right)$$
+    \item Notación en forma de desigualdad: $$\left\{x \in \mathbf{R} | a<x<b \right\} $$
+
+\end{itemize}
+
+\paragraph{Intervalos Cerrados:}
+\begin{itemize}
+    \item Dados $a$ y $b \in \mathbf{R}$: Números comprendidos entre $a$ y $b$ incluyendo a $a$ y $b$ ó Números mayores o iguales que $a$ y menores o iguales que $b$
+    \item Representación en la recta $\mathbf{R}$ \vfill 
+    %\smallskip
+    \begin{tikzpicture}[scale=0.6]
+\tikzmath{
+			\a = -2; \b = 4; 
+          }
+\draw[latex-latex] (\a - 2,0) -- (\b + 3,0) ;
+%\node[below](\a - 2,0){$-\infty$}
+\draw[very thick] (\a,0) -- (\b,0);
+\path [draw=black, fill=black, very thick] (\b,0) circle (3pt) node[below] {$b$};
+\draw [] (\a -2,0) circle (0pt) node [below] {$-\infty$};
+\draw [] (\b + 3,0) circle (0pt) node [below] {$+\infty$};
+
+\path [draw=black, fill=black, very thick] (\a,0) circle (3pt) node [below] {$a$};
+
+\end{tikzpicture}
+    \item Notación en forma de intervalo: $$\left[a,b\right]$$
+    \item Notación en forma de desigualdad: $$\left\{x \in \mathbf{R} | a\leq x \leq b \right\} $$
+
+\end{itemize}
+
+\paragraph{Intervalos Semiabiertos:} En los intervalos genéricos anteriores a $a$ y a $b$ se les llama extremos. Si solo se incluye en el conjunto a uno de los extremos se dice que el intervalo es \textbf{semiabierto}.
+
+
+\paragraph{Semirrectas:} Si uno de los extremos del intervalo es $-\infty$ o $+\infty$, se dice que el conjunto númerico es una \textbf{semirrecta}. La parte correspondiente al infinito siempre se deja abierta.
+
+\paragraph{El conjunto $\mathbf{R}$ en forma de intervalo:} $\mathbf{R}=\left(-\infty,+\infty\right)$
+
+\paragraph{Ejemplos:}
+\subparagraph{Intervalo abierto $\left(-1,5\right)$}
+\begin{itemize}
+    \item Es el conjunto de números comprendidos entre $-1$ y $5$ sin incluir a $-1$ ni a $5$ ó los números mayores que $-1$ y menores que $5$
+    \item Representación en la recta $\mathbf{R}$ \vfill 
+    %\smallskip
+    \begin{tikzpicture}[scale=0.6]
+\tikzmath{
+			\a = -2; \b = 4; 
+          }
+\draw[latex-latex] (\a - 2,0) -- (\b + 3,0) ;
+%\node[below](\a - 2,0){$-\infty$}
+\draw[very thick] (\a,0) -- (\b,0);
+\path [draw=black, fill=white, very thick] (\b,0) circle (3pt) node[below] {$5$};
+\draw [] (\a -2,0) circle (0pt) node [below] {$-\infty$};
+\draw [] (\b + 3,0) circle (0pt) node [below] {$+\infty$};
+
+\path [draw=black, fill=white, very thick] (\a,0) circle (3pt) node [below] {$-1$};
+
+\end{tikzpicture}
+    \item Notación en forma de desigualdad: $$\left\{x \in \mathbf{R} | -1<x<5 \right\} $$
+\end{itemize}
+
+\subparagraph{Intervalo semiabierto $\left(-1,5\right]$}
+\begin{itemize}
+    \item Es el conjunto de números comprendidos entre $-1$ y $5$ sin incluir a $-1$ pero sí a $5$ ó los números mayores que $-1$ y menores o iguales que $5$
+    \item Representación en la recta $\mathbf{R}$ \vfill 
+    %\smallskip
+    \begin{tikzpicture}[scale=0.6]
+\tikzmath{
+			\a = -2; \b = 4; 
+          }
+\draw[latex-latex] (\a - 2,0) -- (\b + 3,0) ;
+%\node[below](\a - 2,0){$-\infty$}
+\draw[very thick] (\a,0) -- (\b,0);
+\path [draw=black, fill=black, very thick] (\b,0) circle (3pt) node[below] {$5$};
+\draw [] (\a -2,0) circle (0pt) node [below] {$-\infty$};
+\draw [] (\b + 3,0) circle (0pt) node [below] {$+\infty$};
+
+\path [draw=black, fill=white, very thick] (\a,0) circle (3pt) node [below] {$-1$};
+
+\end{tikzpicture}
+    \item Notación en forma de desigualdad: $$\left\{x \in \mathbf{R} | -1<x\leq 5 \right\} $$
+\end{itemize}
+
+\subparagraph{Semirrecta $\left(-1,+\infty\right)$}
+\begin{itemize}
+    \item Es el conjunto de números comprendidos entre $-1$ y $+\infty$ ó los números mayores que $-1$
+    \item Representación en la recta $\mathbf{R}$ \vfill 
+    %\smallskip
+    \begin{tikzpicture}[scale=0.6]
+\tikzmath{
+			\a = -2; \b = 4; 
+          }
+\draw[latex-latex] (\a - 2,0) -- (\b + 3,0) ;
+%\node[below](\a - 2,0){$-\infty$}
+\draw[-latex, very thick] (\a,0) -- (\b+3,0);
+%\path [draw=black, fill=white, very thick] (\b,0) circle (3pt) node[below] {$5$};
+\draw [] (\a -2,0) circle (0pt) node [below] {$-\infty$};
+\draw [] (\b + 3,0) circle (0pt) node [below] {$+\infty$};
+
+\path [draw=black, fill=white, very thick] (\a,0) circle (3pt) node [below] {$-1$};
+
+\end{tikzpicture}
+    \item Notación en forma de desigualdad: $$\left\{x \in \mathbf{R} | x>-1 \right\} $$
+\end{itemize}
+
+\subsection{Operaciones con conjuntos de números reales}
+\paragraph{Unión:}La expresión $A\cup B$ se lee “A unión B” e indica un conjunto que contiene todos los elementos de A y B.
+\paragraph{Intersección:}La expresión $A\cap B$ se lee “A intersección B” e indica un conjunto que contiene los elementos comunes de A y B.
+
 \subsection{Repaso de Intervalos, Entornos y Valor Absoluto}
 
 \begin{itemize}
 \item Se define el \textbf{valor absoluto} de un número como la distancia al cero. Se calcula tomando el número con signo positivo.
 
-\paragraph*{Ejemplos:} 
-
+\paragraph*{Ejemplo:} Valor absoluto de -2 
+\vfill
 \begin{tikzpicture}[scale=0.75]
 \tikzmath{
 			\a = -2; \b = 4; \aa = -3; \bb = 5 ;

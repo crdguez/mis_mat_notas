@@ -320,7 +320,7 @@ $$ \left( \overline{x} - z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} ,  \overlin
 \right)$$
 siendo: \begin{itemize}
 \item $\overline{x}$: La media de los datos de la muestra
-\item $z_{\alpha / 2}$ o valor crítico: El valor de la distribución normal  $Z\leadsto N\left((0,1\right)$ tal que $P(Z>z_{\alpha / 2})=\frac{\alpha}{2}$ 
+\item $z_{\alpha / 2}$ o valor crítico: El valor de la distribución normal  $Z\leadsto N\left((0,1\right)$ tal que $P(Z>z_{\alpha / 2})=\frac{\alpha}{2}$ ($\alpha$ es el nivel de significación)
 \item $\sigma$: La desviación típica de la distribución de la población (o si no se conoce de un estimador sesgado de la misma)
 \item $n$: El tamaño de la muestra
 \end{itemize}
@@ -341,10 +341,10 @@ para la media de la duración de las bombillas del fabricante.
 \begin{frame}{Ejemplo: Solución}
 \begin{columns}
 \begin{column}{0.5\textwidth}
-    \textbf{Datos:} $\overline{x}=1053$, Confianza=$98$, $\sigma=75$ y n=150 \\
+    \textbf{Datos:} $\overline{x}=1053$, Confianza=$98$\%, $\sigma=75$ y n=150 \\
     $\alpha=1-0.98=0.02 \to \frac{\alpha}{2}=\frac{0.02}{2}=0.01$
     . \\ Por tanto, el valor crítico será: \\
-    $P\left(Z \leqslant z_{\alpha / 2} \right)= 0.98 + 0.1 = 0.99 \to z_{\alpha / 2} = 2.33$ \\
+    $P\left(Z \leqslant z_{\alpha / 2} \right)= 0.98 + 0.01 = 0.99 \to z_{\alpha / 2} = 2.33$ \\
     A partir de la definición de intervalo de confianza de la media:
     $$ \left( \overline{x} - z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} ,  \overline{x} + z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}
     \right)$$
@@ -356,7 +356,7 @@ para la media de la duración de las bombillas del fabricante.
 \end{columns}
     
     Operando nos queda:
-    $$ \left( 1053 - 2.33 \cdot \frac{75}{\sqrt{150}} ,  1053 - 2.33 \cdot \frac{75}{\sqrt{150}}
+    $$ \left( 1053 - 2.33 \cdot \frac{75}{\sqrt{150}} ,  1053 + 2.33 \cdot \frac{75}{\sqrt{150}}
     \right)=\left(1038.73 ,  1067.27\right)
     $$
 \end{frame}
@@ -407,9 +407,7 @@ Es el radio del entorno dado por el intervalo de confianza.
 \end{frame}
 
 \begin{frame}{Ejemplo}
-Como $E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} \Rightarrow z_{\alpha / 2} =\frac{E \cdot \sqrt{n}}{\sigma}\to z_{\alpha / 2}=2.0$ \\ $P(Z>z_{\alpha / 2})=P(Z>2.0)=\frac{\alpha}{2}=0.02275$ \\ $\alpha=0.0455 \to \quad confianza=1 - \alpha=0.9545 \to 95.45 \%$
 
-Como $E=z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}} \Rightarrow z_{\alpha / 2} =\frac{E \cdot \sqrt{n}}{\sigma}\to z_{\alpha / 2}=2.83$ \\ $P(Z>z_{\alpha / 2})=P(Z>2.83)=\frac{\alpha}{2}=0.002326$ \\ $\alpha=0.004652 \to \quad confianza=1 - \alpha=0.9953 \to 99.53 \%$ 
 
 \begin{block}{}
 Se desea realizar una investigación para estimar el peso medio de los recién nacidos de madres fumadoras. Se admite un error máximo de 50 gramos, con una confianza del 95\%. Si por estudios anteriores se sabe que la desviación típica del peso medio de tales recién nacidos es de 400 gramos, ¿qué tamaño mínimo de muestra se necesita en la investigación?

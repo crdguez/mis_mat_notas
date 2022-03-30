@@ -1,5 +1,5 @@
-\documentclass[11pt]{beamer}
-%\documentclass[11pt,handout]{beamer}
+% \documentclass[11pt]{beamer}
+\documentclass[11pt,handout]{beamer}
 \usetheme{Boadilla}
 %\usetheme{metropolis}
 
@@ -279,9 +279,29 @@ La función de probabilidad en este caso nos queda:
           k\mapsto P(X=k)=\binom{n}{k}\left(p\right)^k\cdot  \left(1-p\right)^{n-k} 
          \end{array}$$
 
-\end{block} 
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Parámetros estadísticos de la binomial}
+\textbf{La media y la desviación típica} de la distribución binomial $X \sim \mathcal{B}(n,\,p)$:
+
+\begin{block}{}
+\begin{itemize}
+    \item La media de la Binomial es:  $$\overline{x}=n\cdot p$$
+    \item La desviación típica de la Binomial es:  $$\sigma=\sqrt{n\cdot p\cdot q}$$
+\end{itemize}
+\end{block}
+
+\textbf{Ejemplo:} Si $X \sim \mathcal{B}(10000,\,0.002)$
+\begin{itemize}
+    \item La media:  $$\overline{x}=10000\cdot 0.002= 200$$
+    \item La desviación típica:  $$\sigma=\sqrt{10000\cdot 0.002\cdot (1-0.002)}=\sqrt{196}=14$$
+\end{itemize}
+
     
 \end{frame}
+
 
 \begin{frame}{Distribución Binomial}
 Ejemplos de representación gráfica de la distribución de probabilidad de algunas binomiales:    
